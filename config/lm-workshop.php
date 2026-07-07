@@ -72,6 +72,12 @@ return [
         ['title' => 'Government & Infrastructure', 'desc' => 'Delivering dependable engineering support for public infrastructure, utilities and technical projects.', 'img' => 'factory'],
     ],
 
+    'industries_value' => [
+        ['heading' => 'One Engineering Partner', 'body' => 'Rather than managing multiple contractors, LM Workshop provides multi-disciplinary engineering support through a single accountable partner.'],
+        ['heading' => 'Operational Understanding', 'body' => 'We work closely with each client to understand their specific operational environment, equipment, schedules and maintenance requirements.'],
+        ['heading' => 'Maldives Expertise', 'body' => 'Deep experience operating in the unique logistical and environmental conditions of the Maldives, including remote island and marine environments.'],
+    ],
+
     'why' => [
         ['icon' => 'clock', 'title' => 'Reliable Response', 'body' => 'We recognise the operational impact of downtime and respond with urgency, professionalism and practical engineering solutions.', 'detail' => 'When critical equipment fails, every hour matters. Our team mobilises quickly, arrives prepared and focuses on restoring operations as efficiently as possible.'],
         ['icon' => 'settings', 'title' => 'Practical Engineering', 'body' => 'Our recommendations are based on real-world engineering experience, providing solutions that work in operational environments—not just on paper.', 'detail' => "We don't over-engineer or under-deliver. Our solutions are designed around your actual operating conditions, equipment age, budget constraints and long-term maintenance strategy."],
