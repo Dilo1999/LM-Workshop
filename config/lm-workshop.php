@@ -26,6 +26,7 @@ return [
 
     'images' => [
         'hero' => 'images/homepage/ChatGPT Image Jul 7, 2026, 10_20_17 AM.png',
+        'reliabilityBg' => 'images/home/ChatGPT Image Jul 7, 2026, 02_56_52 PM.png',
         'aboutHero' => 'images/aboutus/ChatGPT Image Jul 7, 2026, 11_14_42 AM.png',
         'servicesHero' => 'images/services/ChatGPT Image Jul 7, 2026, 11_23_25 AM.png',
         'industriesHero' => 'images/industries/ChatGPT Image Jul 7, 2026, 11_28_23 AM.png',
@@ -72,12 +73,20 @@ return [
     ],
 
     'why' => [
-        ['icon' => 'clock', 'title' => 'Reliable Response', 'body' => 'We recognise the operational impact of downtime and respond with urgency, professionalism and practical engineering solutions.'],
-        ['icon' => 'settings', 'title' => 'Practical Engineering', 'body' => 'Our recommendations are based on real-world engineering experience, providing solutions that work in operational environments—not just on paper.'],
-        ['icon' => 'layers', 'title' => 'Multi-Disciplinary Expertise', 'body' => 'Marine, mechanical, electrical and fabrication capabilities are available through a single engineering partner, simplifying project coordination.'],
-        ['icon' => 'star', 'title' => 'Quality Workmanship', 'body' => 'Every project is approached with attention to detail, safety and professional engineering standards.'],
-        ['icon' => 'message-square', 'title' => 'Transparent Communication', 'body' => 'Clear scopes of work, realistic timelines and regular updates ensure clients remain informed throughout every project.'],
-        ['icon' => 'handshake', 'title' => 'Long-Term Partnership', 'body' => "We measure success not by completing individual jobs, but by building trusted relationships that support our clients' operations for years to come."],
+        ['icon' => 'clock', 'title' => 'Reliable Response', 'body' => 'We recognise the operational impact of downtime and respond with urgency, professionalism and practical engineering solutions.', 'detail' => 'When critical equipment fails, every hour matters. Our team mobilises quickly, arrives prepared and focuses on restoring operations as efficiently as possible.'],
+        ['icon' => 'settings', 'title' => 'Practical Engineering', 'body' => 'Our recommendations are based on real-world engineering experience, providing solutions that work in operational environments—not just on paper.', 'detail' => "We don't over-engineer or under-deliver. Our solutions are designed around your actual operating conditions, equipment age, budget constraints and long-term maintenance strategy."],
+        ['icon' => 'layers', 'title' => 'Multi-Disciplinary Expertise', 'body' => 'Marine, mechanical, electrical and fabrication capabilities are available through a single engineering partner, simplifying project coordination.', 'detail' => 'Rather than coordinating multiple contractors for different disciplines, LM Workshop provides a single point of accountability across all engineering requirements.'],
+        ['icon' => 'star', 'title' => 'Quality Workmanship', 'body' => 'Every project is approached with attention to detail, safety and professional engineering standards.', 'detail' => 'From straightforward maintenance to complex engineering projects, we apply the same rigorous standards to every task we undertake.'],
+        ['icon' => 'message-square', 'title' => 'Transparent Communication', 'body' => 'Clear scopes of work, realistic timelines and regular updates ensure clients remain informed throughout every project.', 'detail' => 'We provide written proposals, agreed scopes of work, progress updates and clear completion reports — so you always know where your project stands.'],
+        ['icon' => 'handshake', 'title' => 'Long-Term Partnership', 'body' => "We measure success not by completing individual jobs, but by building trusted relationships that support our clients' operations for years to come.", 'detail' => 'Our goal is to become an extension of your operations team — a trusted engineering partner who understands your equipment, your systems and your priorities.'],
+    ],
+
+    'why_promise' => [
+        'Written proposals and agreed scopes of work',
+        'Experienced engineers deployed on every project',
+        'Quality checks before project completion and handover',
+        'Follow-up support to ensure lasting performance',
+        'Preventive maintenance planning to reduce future risk',
     ],
 
     'why_home' => [

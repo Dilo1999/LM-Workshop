@@ -180,19 +180,19 @@
 </section>
 
 {{-- Long-Term Reliability --}}
-<section class="relative py-28 overflow-hidden">
-    <div class="absolute inset-0 bg-cover bg-center brightness-[0.18] saturate-50" style="background-image: url('{{ $images['weldingAdrian'] }}')"></div>
-    <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(7,21,41,0.96) 40%, rgba(7,21,41,0.6) 100%)"></div>
+<section class="relative py-20 overflow-hidden">
+    <div class="absolute inset-0 bg-cover bg-center brightness-[0.45] saturate-90" style="background-image: url('{{ asset($images['reliabilityBg']) }}')"></div>
+    <div class="absolute inset-0" style="background: linear-gradient(to right, rgba(7,21,41,0.55) 40%, rgba(7,21,41,0.2) 100%)"></div>
     <div class="absolute left-0 top-0 bottom-0 w-1 bg-gold"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-6">
         <div class="max-w-2xl">
             <x-lm.section-label light>Our Commitment</x-lm.section-label>
-            <h2 class="font-display font-bold text-white mb-6 leading-tight text-[clamp(2rem,4vw,3.2rem)]">Let's Build Long-Term Reliability</h2>
-            <p class="text-white/70 mb-4 leading-relaxed font-body">Engineering is not only about repairing equipment when problems occur.</p>
-            <p class="text-white/70 mb-4 leading-relaxed font-body">It is about helping businesses operate with confidence.</p>
-            <p class="text-white/70 mb-4 leading-relaxed font-body">By combining practical engineering knowledge with responsive support and dependable workmanship, LM Workshop helps organisations minimise downtime, improve equipment reliability and maintain efficient operations.</p>
-            <p class="text-white/70 mb-8 leading-relaxed font-body">Whether supporting a single repair, a major engineering project or an ongoing maintenance programme, we aim to become a trusted engineering partner that contributes to your long-term operational success.</p>
-            <blockquote class="pl-5 py-4 border-l-4 border-gold mb-10 bg-gold/7">
+            <h2 class="font-display font-bold text-white mb-5 leading-tight text-[clamp(2rem,4vw,3.2rem)]">Let's Build Long-Term Reliability</h2>
+            <p class="text-white/70 mb-3 leading-relaxed font-body">Engineering is not only about repairing equipment when problems occur.</p>
+            <p class="text-white/70 mb-3 leading-relaxed font-body">It is about helping businesses operate with confidence.</p>
+            <p class="text-white/70 mb-3 leading-relaxed font-body">By combining practical engineering knowledge with responsive support and dependable workmanship, LM Workshop helps organisations minimise downtime, improve equipment reliability and maintain efficient operations.</p>
+            <p class="text-white/70 mb-6 leading-relaxed font-body">Whether supporting a single repair, a major engineering project or an ongoing maintenance programme, we aim to become a trusted engineering partner that contributes to your long-term operational success.</p>
+            <blockquote class="pl-5 py-3 border-l-4 border-gold mb-8 bg-gold/7">
                 <p class="text-white/90 font-semibold italic leading-snug font-body">&ldquo;Your success depends on reliable operations. Our success depends on earning your trust.&rdquo;</p>
             </blockquote>
             <x-lm.gold-btn :href="route('contact')">Contact LM Workshop</x-lm.gold-btn>
