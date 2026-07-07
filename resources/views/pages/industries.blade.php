@@ -14,41 +14,53 @@
     :img="$images['industriesHero']"
 />
 
-<section class="py-24 bg-white">
+<section class="industries-page py-24 bg-white">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-14">
+        <div class="text-center mb-8 sm:mb-14">
             <x-lm.section-label>Our Sectors</x-lm.section-label>
             <h2 class="font-display font-bold mb-4 text-display text-navy">Engineering for Every Industry</h2>
         </div>
-        <div class="grid md:grid-cols-2 gap-8">
+        <div class="industries-page-cards industry-slider grid md:grid-cols-2 gap-3 md:gap-8" data-industry-slider>
             @foreach($industries as $industry)
-                <div class="group industry-card relative overflow-hidden h-72 md:h-80 cursor-default">
-                    <img src="{{ $images[$industry['img']] }}" alt="{{ $industry['title'] }}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                    <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(7,21,41,0.96) 0%, rgba(11,31,63,0.53) 55%, transparent 100%)"></div>
-                    <div class="industry-overlay absolute inset-0 opacity-0 transition-opacity duration-300 bg-navy-deep/73"></div>
-                    <div class="industry-bar absolute left-0 top-0 bottom-0 w-1.5 bg-gold"></div>
-                    <div class="absolute inset-0 flex flex-col justify-end p-8">
-                        <h3 class="font-display font-bold text-white text-2xl mb-2 tracking-[0.03em]">{{ $industry['title'] }}</h3>
-                        <p class="industry-desc text-white/80 text-sm leading-relaxed max-w-sm opacity-0 transition-opacity duration-300 font-body">{{ $industry['desc'] }}</p>
-                        <div class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 industry-more">
-                            <span class="inline-flex items-center gap-1.5 text-xs font-heading font-bold uppercase tracking-widest text-gold-light">
-                                Learn More
-                                <x-lm.icon name="arrow-right" :size="12" />
-                            </span>
+                <div class="industry-slider__slide">
+                    <div class="group industry-card relative overflow-hidden h-64 md:h-80 cursor-default">
+                        <img src="{{ $images[$industry['img']] }}" alt="{{ $industry['title'] }}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(7,21,41,0.96) 0%, rgba(11,31,63,0.53) 55%, transparent 100%)"></div>
+                        <div class="industry-overlay absolute inset-0 opacity-0 transition-opacity duration-300 bg-navy-deep/73"></div>
+                        <div class="industry-bar absolute left-0 top-0 bottom-0 w-1.5 bg-gold"></div>
+                        <div class="absolute inset-0 flex flex-col justify-end p-5 sm:p-8">
+                            <h3 class="font-display font-bold text-white text-lg sm:text-2xl mb-2 tracking-[0.03em] leading-snug">{{ $industry['title'] }}</h3>
+                            <p class="industry-desc text-white/80 text-xs sm:text-sm leading-relaxed max-w-sm opacity-0 transition-opacity duration-300 font-body">{{ $industry['desc'] }}</p>
+                            <div class="mt-3 sm:mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 industry-more">
+                                <span class="inline-flex items-center gap-1.5 text-xs font-heading font-bold uppercase tracking-widest text-gold-light">
+                                    Learn More
+                                    <x-lm.icon name="arrow-right" :size="12" />
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
             @endforeach
         </div>
+        <div class="industry-slider-dots mt-6 md:hidden" data-industry-slider-dots>
+            @foreach($industries as $i => $industry)
+                <button
+                    type="button"
+                    class="industry-slider-dot{{ $i === 0 ? ' is-active' : '' }}"
+                    data-industry-slider-dot="{{ $i }}"
+                    aria-label="Go to {{ $industry['title'] }}"
+                ></button>
+            @endforeach
+        </div>
     </div>
 </section>
 
-<section class="py-24 bg-cream">
+<section class="industries-page-values py-24 bg-cream">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="grid lg:grid-cols-3 gap-8">
+        <div class="grid lg:grid-cols-3 gap-4 sm:gap-8">
             @foreach($industriesValue as $value)
-                <div class="bg-white p-8 border-l-4 border-gold">
-                    <h3 class="font-heading font-bold text-lg mb-3 text-navy">{{ $value['heading'] }}</h3>
+                <div class="bg-white p-5 sm:p-8 border-l-4 border-gold">
+                    <h3 class="font-heading font-bold text-base sm:text-lg mb-2 sm:mb-3 text-navy">{{ $value['heading'] }}</h3>
                     <p class="text-gray-500 text-sm leading-relaxed font-body">{{ $value['body'] }}</p>
                 </div>
             @endforeach
@@ -56,7 +68,7 @@
     </div>
 </section>
 
-<section class="relative py-24 bg-navy">
+<section class="relative py-20 sm:py-24 bg-navy">
     <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('{{ $images['construction'] }}')"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
         <x-lm.section-label light>Let's Connect</x-lm.section-label>

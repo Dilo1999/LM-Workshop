@@ -123,7 +123,7 @@
             <h2 class="font-display font-bold mb-4 text-display text-navy">Engineering Solutions</h2>
             <p class="text-gray-500 max-w-xl mx-auto font-body">LM Workshop delivers comprehensive engineering services across multiple technical disciplines, enabling clients to work with one trusted engineering partner.</p>
         </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="home-services-grid grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5">
             @foreach(array_slice($services, 0, 6) as $service)
                 <x-lm.service-card :icon="$service['icon']" :title="$service['title']" :desc="$service['desc']" />
             @endforeach
@@ -223,8 +223,8 @@
 {{-- Contact CTA --}}
 <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
+        <div class="flex flex-col xl:flex-row xl:items-start xl:justify-between gap-10 xl:gap-12">
+            <div class="max-w-xl shrink-0">
                 <x-lm.section-label>Get In Touch</x-lm.section-label>
                 <h2 class="font-display font-bold mb-4 text-[clamp(2rem,4vw,2.8rem)] text-navy">Let's Talk</h2>
                 <p class="text-gray-500 mb-6 leading-relaxed font-body">Whether you require emergency engineering support, preventive maintenance or technical expertise for your next project, our team is ready to assist.</p>
@@ -238,20 +238,27 @@
                 </div>
                 <x-lm.gold-btn :href="route('contact')">Send an Inquiry</x-lm.gold-btn>
             </div>
-            <div class="flex items-center justify-center">
-                <div class="p-6 sm:p-10 w-full max-w-md text-center bg-navy">
-                    <div class="w-12 h-12 flex items-center justify-center font-heading font-bold text-lg mx-auto mb-4 bg-gold text-white">LM</div>
-                    <h3 class="text-white font-display font-bold text-xl mb-1 tracking-[0.08em]">LM Workshop</h3>
-                    <p class="text-xs uppercase tracking-widest mb-4 text-gold-light font-heading">{{ $brand['tagline'] }}</p>
-                    <p class="text-white/55 text-sm leading-relaxed font-body">{{ $brand['description'] }}</p>
-                    <div class="mt-6 w-24 h-24 mx-auto border-2 border-gold/30 bg-white flex items-center justify-center">
-                        <div class="grid grid-cols-3 gap-0.5 p-2">
-                            @foreach([0,1,2,3,4,5,6,7,8] as $i)
-                                <div class="w-2 h-2 rounded-sm {{ in_array($i, [0,2,6,8]) ? 'bg-navy' : 'bg-gold' }}"></div>
-                            @endforeach
+
+            <div class="w-full xl:max-w-md xl:shrink-0 xl:ml-auto">
+                <div class="p-6 sm:p-8 bg-navy-deep">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-9 h-9 flex items-center justify-center font-heading font-bold text-sm bg-gold text-white">LM</div>
+                        <div>
+                            <div class="text-white font-heading font-bold tracking-[0.18em] text-sm">WORKSHOP</div>
+                            <div class="text-gold-light font-body text-[9px] uppercase tracking-wider">{{ $brand['tagline'] }}</div>
                         </div>
                     </div>
-                    <p class="text-white/35 text-xs mt-2 font-body">QR Code</p>
+                    <p class="text-white/55 text-sm leading-relaxed font-body mb-6">{{ $brand['description'] }}</p>
+                    <div class="pt-6 border-t border-white/10 flex items-center gap-4">
+                        <div class="w-20 h-20 flex items-center justify-center shrink-0 bg-white">
+                            <div class="grid grid-cols-3 gap-0.5 p-2">
+                                @foreach([0,1,2,3,4,5,6,7,8] as $i)
+                                    <div class="w-2 h-2 rounded-sm {{ in_array($i, [0,2,6,8]) ? 'bg-navy' : 'bg-gold' }}"></div>
+                                @endforeach
+                            </div>
+                        </div>
+                        <p class="text-white/45 text-xs leading-snug font-body">Scan to connect with our team directly via WhatsApp.</p>
+                    </div>
                 </div>
             </div>
         </div>
