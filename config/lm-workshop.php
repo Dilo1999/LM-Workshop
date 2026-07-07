@@ -4,19 +4,15 @@ return [
     'brand' => [
         'name' => 'LM Workshop',
         'tagline' => 'Engineering You Can Count On',
-        'phone' => '+960 XXX XXXX',
-        'whatsapp' => '+960 XXX XXXX',
-        'email' => 'info@lmworkshop.mv',
-        'website' => 'www.lmworkshop.mv',
-        'location' => 'Malé, Maldives',
+        'description' => 'Reliable engineering support for marine, industrial and commercial operations across the Maldives.',
     ],
 
     'nav' => [
         ['label' => 'Home', 'route' => 'home'],
         ['label' => 'About Us', 'route' => 'about'],
-        ['label' => 'Services', 'route' => 'services'],
-        ['label' => 'Industries', 'route' => 'industries'],
         ['label' => 'Why Choose Us', 'route' => 'why'],
+        ['label' => 'Industries', 'route' => 'industries'],
+        ['label' => 'Services', 'route' => 'services'],
         ['label' => 'Capability', 'route' => 'capability'],
         ['label' => 'How We Work', 'route' => 'how-we-work'],
         ['label' => 'Team', 'route' => 'team'],
@@ -57,7 +53,7 @@ return [
         ['icon' => 'truck', 'title' => 'Heavy Equipment', 'desc' => 'Maintenance and repairs for construction machinery, industrial diesel engines and hydraulic equipment.'],
         ['icon' => 'droplets', 'title' => 'Fuel & Water Systems', 'desc' => 'Design, installation, maintenance and modification of storage and distribution systems.'],
         ['icon' => 'package', 'title' => 'Spare Parts & Technical Support', 'desc' => 'Technical verification, parts identification, procurement coordination and installation support.'],
-        ['icon' => 'shield-check', 'title' => 'Preventive Maintenance', 'desc' => 'Planned maintenance programmes designed to reduce downtime, extend equipment life and improve reliability.'],
+        ['icon' => 'shield-check', 'title' => 'Preventive Maintenance', 'desc' => 'Planned maintenance programmes designed to reduce downtime, extend equipment life and improve operational reliability.'],
     ],
 
     'industries' => [
@@ -70,29 +66,39 @@ return [
     ],
 
     'why' => [
-        ['icon' => 'clock', 'title' => 'Reliable Response', 'body' => 'We recognise the operational impact of downtime and respond with urgency, professionalism and practical engineering solutions.', 'detail' => 'When critical equipment fails, every hour matters. Our team mobilises quickly, arrives prepared and focuses on restoring operations as efficiently as possible.'],
-        ['icon' => 'settings', 'title' => 'Practical Engineering', 'body' => 'Our recommendations are based on real-world engineering experience, providing solutions that work in operational environments—not just on paper.', 'detail' => "We don't over-engineer or under-deliver. Our solutions are designed around your actual operating conditions, equipment age, budget constraints and long-term maintenance strategy."],
-        ['icon' => 'layers', 'title' => 'Multi-Disciplinary Expertise', 'body' => 'Marine, mechanical, electrical and fabrication capabilities are available through a single engineering partner, simplifying project coordination.', 'detail' => 'Rather than coordinating multiple contractors for different disciplines, LM Workshop provides a single point of accountability across all engineering requirements.'],
-        ['icon' => 'star', 'title' => 'Quality Workmanship', 'body' => 'Every project is approached with attention to detail, safety and professional engineering standards.', 'detail' => 'From straightforward maintenance to complex engineering projects, we apply the same rigorous standards to every task we undertake.'],
-        ['icon' => 'message-square', 'title' => 'Transparent Communication', 'body' => 'Clear scopes of work, realistic timelines and regular updates ensure clients remain informed throughout every project.', 'detail' => 'We provide written proposals, agreed scopes of work, progress updates and clear completion reports — so you always know where your project stands.'],
-        ['icon' => 'handshake', 'title' => 'Long-Term Partnership', 'body' => "We measure success not by completing individual jobs, but by building trusted relationships that support our clients' operations for years to come.", 'detail' => 'Our goal is to become an extension of your operations team — a trusted engineering partner who understands your equipment, your systems and your priorities.'],
+        ['icon' => 'clock', 'title' => 'Reliable Response', 'body' => 'We recognise the operational impact of downtime and respond with urgency, professionalism and practical engineering solutions.'],
+        ['icon' => 'settings', 'title' => 'Practical Engineering', 'body' => 'Our recommendations are based on real-world engineering experience, providing solutions that work in operational environments—not just on paper.'],
+        ['icon' => 'layers', 'title' => 'Multi-Disciplinary Expertise', 'body' => 'Marine, mechanical, electrical and fabrication capabilities are available through a single engineering partner, simplifying project coordination.'],
+        ['icon' => 'star', 'title' => 'Quality Workmanship', 'body' => 'Every project is approached with attention to detail, safety and professional engineering standards.'],
+        ['icon' => 'message-square', 'title' => 'Transparent Communication', 'body' => 'Clear scopes of work, realistic timelines and regular updates ensure clients remain informed throughout every project.'],
+        ['icon' => 'handshake', 'title' => 'Long-Term Partnership', 'body' => "We measure success not by completing individual jobs, but by building trusted relationships that support our clients' operations for years to come."],
     ],
 
-    'why_home' => [
-        ['icon' => 'clock', 'title' => 'Reliable Response', 'desc' => 'We respond with urgency, professionalism and practical engineering solutions.'],
-        ['icon' => 'settings', 'title' => 'Practical Engineering', 'desc' => 'Real-world solutions that work in operational environments — not just on paper.'],
-        ['icon' => 'layers', 'title' => 'Multi-Disciplinary Expertise', 'desc' => 'Marine, mechanical, electrical and fabrication capabilities through one partner.'],
-        ['icon' => 'star', 'title' => 'Quality Workmanship', 'desc' => 'Every project approached with attention to detail, safety and professional standards.'],
-        ['icon' => 'message-square', 'title' => 'Transparent Communication', 'desc' => 'Clear scopes of work, realistic timelines and regular updates throughout.'],
-        ['icon' => 'handshake', 'title' => 'Long-Term Partnership', 'desc' => 'Building trusted relationships that support your operations for years to come.'],
+    'process' => [
+        ['icon' => 'message-circle', 'title' => 'Consultation', 'body' => 'Understanding your operational requirements.'],
+        ['icon' => 'search', 'title' => 'Site Assessment', 'body' => 'Inspecting equipment, identifying issues and evaluating project requirements.'],
+        ['icon' => 'file-text', 'title' => 'Engineering Proposal', 'body' => 'Providing a clear scope of work, recommendations, timelines and commercial proposal.'],
+        ['icon' => 'wrench', 'title' => 'Execution', 'body' => 'Delivering engineering services using experienced personnel, appropriate equipment and professional workmanship.'],
+        ['icon' => 'check-square', 'title' => 'Testing & Handover', 'body' => 'Verifying performance, ensuring quality and completing project handover.'],
+        ['icon' => 'heart-handshake', 'title' => 'Ongoing Support', 'body' => 'Providing continued technical assistance, maintenance and long-term engineering partnership.'],
+    ],
+
+    'capability_gallery' => [
+        ['label' => 'Marine engines', 'img' => 'marine'],
+        ['label' => 'Generator servicing', 'img' => 'powerPlant'],
+        ['label' => 'Electrical panels', 'img' => 'machine'],
+        ['label' => 'Fabrication workshop', 'img' => 'weldingSparks'],
+        ['label' => 'Pump systems', 'img' => 'valves'],
+        ['label' => 'Heavy equipment', 'img' => 'excavator'],
+        ['label' => 'Welding', 'img' => 'welding'],
+        ['label' => 'Engineers on-site', 'img' => 'workerGears'],
     ],
 
     'team' => [
-        ['name' => 'Team Member 01', 'role' => 'Head of Marine Engineering', 'years' => '18 Years Experience', 'spec' => 'Marine Propulsion & Vessel Systems', 'img' => 'engineer'],
-        ['name' => 'Team Member 02', 'role' => 'Senior Power Systems Engineer', 'years' => '14 Years Experience', 'spec' => 'Generators & Powerhouse Systems', 'img' => 'workerClimb'],
-        ['name' => 'Team Member 03', 'role' => 'Mechanical & Electrical Engineer', 'years' => '12 Years Experience', 'spec' => 'Pumps, HVAC & Electrical Infrastructure', 'img' => 'industrial'],
-        ['name' => 'Team Member 04', 'role' => 'Fabrication Specialist', 'years' => '10 Years Experience', 'spec' => 'Steel, Stainless & Aluminium Fabrication', 'img' => 'hero'],
-        ['name' => 'Team Member 05', 'role' => 'Heavy Equipment Engineer', 'years' => '15 Years Experience', 'spec' => 'Construction Machinery & Diesel Engines', 'img' => 'welding'],
-        ['name' => 'Team Member 06', 'role' => 'Preventive Maintenance Coordinator', 'years' => '9 Years Experience', 'spec' => 'Maintenance Planning & Asset Management', 'img' => 'weldingSparks'],
+        ['name' => 'Name', 'role' => 'Position', 'years' => 'Years of experience', 'spec' => 'Specialisation', 'img' => 'engineer'],
+        ['name' => 'Name', 'role' => 'Position', 'years' => 'Years of experience', 'spec' => 'Specialisation', 'img' => 'workerClimb'],
+        ['name' => 'Name', 'role' => 'Position', 'years' => 'Years of experience', 'spec' => 'Specialisation', 'img' => 'industrial'],
     ],
+
+    'contact_labels' => ['Phone', 'WhatsApp', 'Email', 'Website', 'QR Code'],
 ];

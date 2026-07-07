@@ -549,12 +549,8 @@ body {
 }
 
 .section-hero .section-hero-container {
-  position: relative;
-  z-index: 5;
-  max-width: 1900px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 100px 8% 95px;
+  padding-top: 100px;
+  padding-bottom: 95px;
 }
 
 .section-hero .section-hero-content {
@@ -668,7 +664,8 @@ body {
   }
 
   .section-hero .section-hero-container {
-    padding: 90px 6% 90px;
+    padding-top: 90px;
+    padding-bottom: 90px;
   }
 
   .section-hero .section-gold-line {
@@ -692,7 +689,8 @@ body {
   }
 
   .section-hero .section-hero-container {
-    padding: 70px 24px 85px;
+    padding-top: 70px;
+    padding-bottom: 85px;
   }
 
   .section-hero .section-eyebrow {

@@ -1,6 +1,6 @@
 @php
     $brand = config('lm-workshop.brand');
-    $images = config('lm-workshop.images');
+    $contactLabels = ['Phone', 'WhatsApp', 'Email', 'Website'];
 @endphp
 
 <footer class="bg-navy-deep">
@@ -12,9 +12,7 @@
                     <div class="text-white font-heading font-bold tracking-[0.18em] text-sm">WORKSHOP</div>
                 </div>
                 <p class="text-xs uppercase tracking-widest mb-3 text-gold font-heading">{{ $brand['tagline'] }}</p>
-                <p class="text-white/50 text-sm leading-relaxed font-body">
-                    Reliable engineering support for marine, industrial and commercial operations across the Maldives.
-                </p>
+                <p class="text-white/50 text-sm leading-relaxed font-body">{{ $brand['description'] }}</p>
             </div>
 
             <div>
@@ -41,25 +39,16 @@
 
             <div>
                 <h4 class="text-xs font-heading font-bold uppercase tracking-[0.18em] mb-5 text-gold">Contact</h4>
-                <ul class="flex flex-col gap-3">
-                    @foreach([
-                        ['phone', $brand['phone']],
-                        ['mail', $brand['email']],
-                        ['globe', $brand['website']],
-                        ['map-pin', $brand['location']],
-                    ] as [$icon, $text])
-                        <li class="flex items-center gap-2.5">
-                            <x-lm.icon :name="$icon" :size="13" class="text-gold shrink-0" />
-                            <span class="text-white/60 text-sm font-body">{{ $text }}</span>
-                        </li>
+                <ul class="flex flex-col gap-2.5">
+                    @foreach($contactLabels as $label)
+                        <li class="text-white/60 text-sm font-body">{{ $label }}</li>
                     @endforeach
                 </ul>
             </div>
         </div>
 
-        <div class="pt-6 border-t border-white/8 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p class="text-white/35 text-xs font-body">&copy; LM Workshop. All rights reserved. Engineering Division of LITUS Maldives.</p>
-            <p class="text-white/25 text-xs font-body">Marine · Industrial · Commercial · Maldives</p>
+        <div class="pt-6 border-t border-white/8">
+            <p class="text-white/35 text-xs font-body">&copy; LM Workshop. All rights reserved.</p>
         </div>
     </div>
 </footer>

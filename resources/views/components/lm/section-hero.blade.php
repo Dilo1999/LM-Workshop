@@ -1,13 +1,15 @@
-@props(['label', 'title', 'subtitle' => null, 'body' => null, 'img'])
+@props(['label' => null, 'title', 'subtitle' => null, 'body' => null, 'img'])
 
 @php
     $bgImage = str_starts_with($img, 'http') ? $img : asset($img);
 @endphp
 
 <section class="section-hero" style="--section-hero-bg-image: url('{{ $bgImage }}')">
-    <div class="section-hero-container">
+    <div class="section-hero-container relative z-[5] max-w-7xl mx-auto px-6 w-full">
         <div class="section-hero-content">
-            <div class="section-eyebrow">{{ $label }}</div>
+            @if($label)
+                <div class="section-eyebrow">{{ $label }}</div>
+            @endif
 
             <h1 class="section-hero-title">{!! $title !!}</h1>
 
