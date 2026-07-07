@@ -110,9 +110,18 @@ return [
     ],
 
     'team' => [
-        ['name' => 'Name', 'role' => 'Position', 'years' => 'Years of experience', 'spec' => 'Specialisation', 'img' => 'engineer'],
-        ['name' => 'Name', 'role' => 'Position', 'years' => 'Years of experience', 'spec' => 'Specialisation', 'img' => 'workerClimb'],
-        ['name' => 'Name', 'role' => 'Position', 'years' => 'Years of experience', 'spec' => 'Specialisation', 'img' => 'industrial'],
+        ['name' => 'Team Member 01', 'role' => 'Head of Marine Engineering', 'years' => '18 Years Experience', 'spec' => 'Marine Propulsion & Vessel Systems', 'img' => 'engineer'],
+        ['name' => 'Team Member 02', 'role' => 'Senior Power Systems Engineer', 'years' => '14 Years Experience', 'spec' => 'Generators & Powerhouse Systems', 'img' => 'workerClimb'],
+        ['name' => 'Team Member 03', 'role' => 'Mechanical & Electrical Engineer', 'years' => '12 Years Experience', 'spec' => 'Pumps, HVAC & Electrical Infrastructure', 'img' => 'industrial'],
+        ['name' => 'Team Member 04', 'role' => 'Fabrication Specialist', 'years' => '10 Years Experience', 'spec' => 'Steel, Stainless & Aluminium Fabrication', 'img' => 'hero'],
+        ['name' => 'Team Member 05', 'role' => 'Heavy Equipment Engineer', 'years' => '15 Years Experience', 'spec' => 'Construction Machinery & Diesel Engines', 'img' => 'welding'],
+        ['name' => 'Team Member 06', 'role' => 'Preventive Maintenance Coordinator', 'years' => '9 Years Experience', 'spec' => 'Maintenance Planning & Asset Management', 'img' => 'weldingSparks'],
+    ],
+
+    'team_values' => [
+        ['heading' => 'Safety First', 'body' => 'Every engineer is trained in safe work practices and complies with safety requirements across all project environments.'],
+        ['heading' => 'Technical Excellence', 'body' => 'Continuous learning and on-the-job experience ensure our team stays current with engineering standards and best practices.'],
+        ['heading' => 'Accountable Professionals', 'body' => 'Our engineers take pride in their work and take responsibility for the quality of every project they deliver.'],
     ],
 
     'contact_labels' => ['Phone', 'WhatsApp', 'Email', 'Website', 'QR Code'],
