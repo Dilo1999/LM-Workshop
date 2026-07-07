@@ -1,6 +1,6 @@
 @props(['href' => '#'])
 
-<a href="{{ $href }}" {{ $attributes->merge(['class' => 'inline-flex items-center gap-2 px-7 py-3 font-heading font-bold uppercase tracking-[0.12em] text-sm bg-gold text-white transition-all hover:brightness-110']) }}>
+<a href="{{ $href }}" {{ $attributes->merge(['class' => 'inline-flex items-center gap-2 px-7 py-3 font-heading font-bold uppercase tracking-[0.12em] text-sm bg-gold text-white transition-all hover:brightness-110 w-full sm:w-auto justify-center']) }}>
     {{ $slot }}
     <x-lm.icon name="arrow-right" :size="14" />
 </a>

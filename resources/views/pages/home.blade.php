@@ -38,10 +38,18 @@
 
             <div class="stats-wrap">
                 <div class="stats-grid">
-                    @foreach([['10+', 'Years Experience'], ['6', 'Engineering Disciplines'], ['200+', 'Projects Completed'], ['24/7', 'Support Available']] as [$n, $l])
+                    @foreach([
+                        ['10+', 'Years Experience', 'Years Exp.'],
+                        ['6', 'Engineering Disciplines', 'Disciplines'],
+                        ['200+', 'Projects Completed', 'Projects'],
+                        ['24/7', 'Support Available', 'Support'],
+                    ] as [$n, $l, $lShort])
                         <div class="stat-item">
                             <div class="stat-number">{{ $n }}</div>
-                            <div class="stat-label">{{ $l }}</div>
+                            <div class="stat-label">
+                                <span class="hidden sm:inline">{{ $l }}</span>
+                                <span class="sm:hidden">{{ $lShort }}</span>
+                            </div>
                         </div>
                     @endforeach
                 </div>
@@ -72,9 +80,9 @@
                     <p class="font-semibold italic leading-snug text-navy font-body text-[1.05rem]">&ldquo;Reliable engineering is not about fixing problems. It's about preventing disruption.&rdquo;</p>
                 </blockquote>
             </div>
-            <div class="relative">
-                <img src="{{ $images['workerGears'] }}" alt="Workers repairing large industrial machinery" class="w-full h-[480px] object-cover">
-                <div class="absolute -bottom-6 -left-6 w-32 h-32 flex flex-col items-center justify-center text-center bg-gold text-white">
+            <div class="relative overflow-hidden sm:overflow-visible">
+                <img src="{{ $images['workerGears'] }}" alt="Workers repairing large industrial machinery" class="w-full h-64 sm:h-80 lg:h-[480px] object-cover">
+                <div class="lm-home-badge lm-home-badge--offset absolute bottom-4 left-4 sm:-bottom-6 sm:-left-6 w-28 h-28 sm:w-32 sm:h-32 flex flex-col items-center justify-center text-center bg-gold text-white">
                     <span class="text-3xl font-display font-bold">24/7</span>
                     <span class="text-xs font-heading font-bold uppercase tracking-wider mt-1">Support</span>
                 </div>
@@ -87,9 +95,9 @@
 <section class="py-24 bg-cream">
     <div class="max-w-7xl mx-auto px-6">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
-            <div class="relative">
-                <img src="{{ $images['engineer'] }}" alt="LM Workshop engineer on site" class="w-full h-[480px] object-cover">
-                <div class="absolute -top-5 -right-5 w-36 h-36 flex flex-col items-center justify-center text-center bg-navy">
+            <div class="relative overflow-hidden sm:overflow-visible">
+                <img src="{{ $images['engineer'] }}" alt="LM Workshop engineer on site" class="w-full h-64 sm:h-80 lg:h-[480px] object-cover">
+                <div class="lm-home-badge lm-home-badge--top absolute top-4 right-4 sm:-top-5 sm:-right-5 w-28 h-28 sm:w-36 sm:h-36 flex flex-col items-center justify-center text-center bg-navy">
                     <span class="text-xs font-heading font-bold uppercase tracking-widest text-white/60 mb-1">Division of</span>
                     <span class="text-lg font-display font-bold text-white tracking-[0.08em]">LITUS</span>
                     <span class="text-xs font-heading font-bold text-white/60 uppercase tracking-widest">Maldives</span>
@@ -134,18 +142,30 @@
             <h2 class="font-display font-bold mb-4 text-display text-white">Industries We Support</h2>
             <p class="text-white/60 max-w-lg mx-auto font-body">Every industry operates differently, but they all depend on reliable engineering. LM Workshop provides tailored engineering support across a wide range of sectors throughout the Maldives.</p>
         </div>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="industry-slider grid sm:grid-cols-2 lg:grid-cols-3 gap-4" data-industry-slider>
             @foreach($industries as $industry)
-                <div class="group industry-card relative overflow-hidden h-64 cursor-default">
-                    <img src="{{ $images[$industry['img']] }}" alt="{{ $industry['title'] }}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500">
-                    <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(7,21,41,0.94) 0%, rgba(11,31,63,0.53) 60%, rgba(11,31,63,0.27) 100%)"></div>
-                    <div class="industry-overlay absolute inset-0 opacity-0 transition-opacity duration-300 bg-navy-deep/80"></div>
-                    <div class="industry-bar absolute left-0 top-0 bottom-0 w-1 bg-gold"></div>
-                    <div class="absolute inset-0 flex flex-col justify-end p-6">
-                        <h3 class="font-heading font-bold text-white text-lg mb-2 tracking-[0.05em]">{{ $industry['title'] }}</h3>
-                        <p class="industry-desc text-white/70 text-sm leading-relaxed opacity-0 transition-opacity duration-300 font-body">{{ $industry['desc'] }}</p>
+                <div class="industry-slider__slide">
+                    <div class="group industry-card relative overflow-hidden h-64 sm:h-72 lg:h-64 cursor-default">
+                        <img src="{{ $images[$industry['img']] }}" alt="{{ $industry['title'] }}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500">
+                        <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(7,21,41,0.94) 0%, rgba(11,31,63,0.53) 60%, rgba(11,31,63,0.27) 100%)"></div>
+                        <div class="industry-overlay absolute inset-0 opacity-0 transition-opacity duration-300 bg-navy-deep/80"></div>
+                        <div class="industry-bar absolute left-0 top-0 bottom-0 w-1 bg-gold"></div>
+                        <div class="absolute inset-0 flex flex-col justify-end p-6">
+                            <h3 class="font-heading font-bold text-white text-lg mb-2 tracking-[0.05em]">{{ $industry['title'] }}</h3>
+                            <p class="industry-desc text-white/70 text-sm leading-relaxed opacity-0 transition-opacity duration-300 font-body">{{ $industry['desc'] }}</p>
+                        </div>
                     </div>
                 </div>
+            @endforeach
+        </div>
+        <div class="industry-slider-dots mt-6 sm:hidden" data-industry-slider-dots>
+            @foreach($industries as $i => $industry)
+                <button
+                    type="button"
+                    class="industry-slider-dot{{ $i === 0 ? ' is-active' : '' }}"
+                    data-industry-slider-dot="{{ $i }}"
+                    aria-label="Go to {{ $industry['title'] }}"
+                ></button>
             @endforeach
         </div>
         <div class="text-center mt-12">
@@ -219,7 +239,7 @@
                 <x-lm.gold-btn :href="route('contact')">Send an Inquiry</x-lm.gold-btn>
             </div>
             <div class="flex items-center justify-center">
-                <div class="p-10 text-center bg-navy">
+                <div class="p-6 sm:p-10 w-full max-w-md text-center bg-navy">
                     <div class="w-12 h-12 flex items-center justify-center font-heading font-bold text-lg mx-auto mb-4 bg-gold text-white">LM</div>
                     <h3 class="text-white font-display font-bold text-xl mb-1 tracking-[0.08em]">LM Workshop</h3>
                     <p class="text-xs uppercase tracking-widest mb-4 text-gold-light font-heading">{{ $brand['tagline'] }}</p>

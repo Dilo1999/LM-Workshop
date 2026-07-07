@@ -22,7 +22,7 @@
         </div>
         <div class="grid md:grid-cols-2 gap-8">
             @foreach($industries as $industry)
-                <div class="group industry-card relative overflow-hidden h-80 cursor-default">
+                <div class="group industry-card relative overflow-hidden h-72 md:h-80 cursor-default">
                     <img src="{{ $images[$industry['img']] }}" alt="{{ $industry['title'] }}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                     <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(7,21,41,0.96) 0%, rgba(11,31,63,0.53) 55%, transparent 100%)"></div>
                     <div class="industry-overlay absolute inset-0 opacity-0 transition-opacity duration-300 bg-navy-deep/73"></div>
@@ -30,7 +30,7 @@
                     <div class="absolute inset-0 flex flex-col justify-end p-8">
                         <h3 class="font-display font-bold text-white text-2xl mb-2 tracking-[0.03em]">{{ $industry['title'] }}</h3>
                         <p class="industry-desc text-white/80 text-sm leading-relaxed max-w-sm opacity-0 transition-opacity duration-300 font-body">{{ $industry['desc'] }}</p>
-                        <div class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 industry-more">
                             <span class="inline-flex items-center gap-1.5 text-xs font-heading font-bold uppercase tracking-widest text-gold-light">
                                 Learn More
                                 <x-lm.icon name="arrow-right" :size="12" />

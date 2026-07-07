@@ -20,7 +20,7 @@
                 <p class="text-gray-500 leading-relaxed font-body">Every project we undertake is guided by the same commitment, to deliver practical engineering solutions with professionalism, reliability and accountability.</p>
             </div>
             <div class="relative">
-                <img src="{{ $images['workerGears'] }}" alt="LM Workshop engineers working on industrial machinery" class="w-full h-[480px] object-cover">
+                <img src="{{ $images['workerGears'] }}" alt="LM Workshop engineers working on industrial machinery" class="w-full h-64 sm:h-80 lg:h-[480px] object-cover">
             </div>
         </div>
     </div>
@@ -50,7 +50,7 @@
     <div class="max-w-7xl mx-auto px-6">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
             <div class="relative">
-                <img src="{{ $images['factory'] }}" alt="Professional engineering facility" class="w-full h-[440px] object-cover">
+                <img src="{{ $images['factory'] }}" alt="Professional engineering facility" class="w-full h-64 sm:h-80 lg:h-[440px] object-cover">
             </div>
             <div>
                 <h2 class="font-display font-bold mb-6 leading-tight text-display-md text-navy">The Strength Behind LM Workshop</h2>

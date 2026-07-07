@@ -27,10 +27,12 @@
 html {
   font-size: var(--font-size);
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
   font-family: var(--font-body);
+  overflow-x: hidden;
 }
 
 .font-display {
@@ -94,6 +96,64 @@ body {
 
 .industry-card:hover img {
   transform: scale(1.05);
+}
+
+/* Industry mobile slider */
+.industry-slider-dots {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.industry-slider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  border: none;
+  padding: 0;
+  background: rgba(255, 255, 255, 0.28);
+  transition: width 0.25s ease, background-color 0.25s ease;
+  cursor: pointer;
+}
+
+.industry-slider-dot.is-active {
+  width: 24px;
+  background: var(--color-gold-light);
+}
+
+@media (max-width: 639px) {
+  .industry-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 1rem;
+    margin-inline: -1.5rem;
+    padding-inline: 1.5rem;
+    padding-bottom: 0.25rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .industry-slider::-webkit-scrollbar {
+    display: none;
+  }
+
+  .industry-slider__slide {
+    flex: 0 0 86%;
+    scroll-snap-align: center;
+    min-width: 0;
+  }
+
+  .industry-slider .industry-card {
+    height: 18rem;
+    width: 100%;
+  }
+
+  .industry-slider-dots {
+    display: flex;
+  }
 }
 
 .team-card:hover .team-bar {
@@ -422,80 +482,161 @@ body {
 
 @media (max-width: 700px) {
   .lm-hero {
-    min-height: 100vh;
-    background: var(--hero-bg-image);
-    background-size: cover;
-    background-position: center;
+    min-height: 82svh;
+    align-items: center;
+    background-position: 72% center;
+  }
+
+  .lm-hero::before {
+    background:
+      linear-gradient(180deg, rgba(7, 21, 41, 0.78) 0%, rgba(7, 21, 41, 0.58) 38%, rgba(7, 21, 41, 0.38) 100%),
+      linear-gradient(90deg, rgba(7, 21, 41, 0.82) 0%, rgba(7, 21, 41, 0.52) 55%, rgba(7, 21, 41, 0.18) 100%);
   }
 
   .lm-hero .hero-container {
-    padding-top: 60px;
-    padding-bottom: 100px;
+    padding-top: 5.5rem;
+    padding-bottom: 2.75rem;
+  }
+
+  .lm-hero .hero-content {
+    max-width: 100%;
   }
 
   .lm-hero .eyebrow {
-    font-size: 11px;
-    letter-spacing: 3px;
-    gap: 14px;
-    margin-bottom: 26px;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    gap: 10px;
+    margin-bottom: 1rem;
+    line-height: 1.4;
   }
 
   .lm-hero .eyebrow::before {
-    width: 42px;
+    width: 28px;
+    flex-shrink: 0;
   }
 
   .lm-hero .hero-title {
-    font-size: 44px;
-    line-height: 0.96;
-    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    font-size: 2.75rem;
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.75rem;
   }
 
   .lm-hero .hero-subtitle {
-    font-size: 15px;
-    letter-spacing: 4px;
+    font-size: 0.8125rem;
+    letter-spacing: 0.14em;
+    margin-bottom: 0.875rem;
+    color: rgba(255, 255, 255, 0.82);
+    font-weight: 600;
   }
 
   .lm-hero .hero-description {
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+    max-width: 100%;
+    color: rgba(213, 220, 231, 0.92);
   }
 
   .lm-hero .hero-actions {
-    gap: 14px;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
   }
 
   .lm-hero .hero-btn {
-    width: 100%;
-    min-width: unset;
+    flex: 1;
+    width: auto;
+    min-width: 0;
+    height: 48px;
+    padding: 0 0.75rem;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+  }
+
+  .lm-hero .btn-outline {
+    backdrop-filter: none;
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.32);
+  }
+
+  .lm-hero .stats-wrap {
+    border-top: none;
+    padding-top: 0;
+    max-width: 100%;
+    background: rgba(7, 21, 41, 0.32);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 6px;
+    padding: 1rem 1.125rem;
+  }
+
+  .lm-hero .stats-wrap::before {
+    display: none;
   }
 
   .lm-hero .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 26px 20px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
+  .lm-hero .stat-item {
+    border-right: none;
+    padding: 0;
+    text-align: center;
   }
 
   .lm-hero .stat-number {
-    font-size: 26px;
+    font-size: 1.375rem;
+    margin-bottom: 0.25rem;
   }
 
   .lm-hero .stat-label {
-    font-size: 10px;
-    letter-spacing: 1.5px;
+    font-size: 0.5625rem;
+    letter-spacing: 0.06em;
+    line-height: 1.25;
+    color: rgba(207, 214, 223, 0.88);
   }
 }
 
 @media (max-width: 420px) {
   .lm-hero .hero-title {
-    font-size: 38px;
+    font-size: 2.375rem;
   }
 
   .lm-hero .hero-subtitle {
-    font-size: 14px;
-    letter-spacing: 3px;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+  }
+
+  .lm-hero .hero-description {
+    font-size: 0.875rem;
+  }
+
+  .lm-hero .hero-btn {
+    height: 46px;
+    font-size: 10px;
+    padding: 0 0.5rem;
   }
 
   .lm-hero .stats-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.875rem 1rem;
+  }
+
+  .lm-hero .stat-item {
+    text-align: left;
+    padding-left: 0.25rem;
+  }
+
+  .lm-hero .stat-number {
+    font-size: 1.5rem;
+  }
+
+  .lm-hero .stat-label {
+    font-size: 0.625rem;
   }
 }
 
@@ -746,5 +887,174 @@ body {
   .section-hero .section-hero-subtitle {
     font-size: 13px;
     letter-spacing: 3px;
+  }
+}
+
+/* ─── Mobile responsive ─────────────────────────────────────────────────── */
+
+@media (max-width: 767px) {
+  main section.py-24,
+  main section.py-20 {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  main .gap-16,
+  main .gap-14,
+  main .gap-12 {
+    gap: 2rem;
+  }
+
+  main .mb-14 {
+    margin-bottom: 2.5rem;
+  }
+
+  .industry-card .industry-desc,
+  .industry-card .industry-more {
+    opacity: 1 !important;
+  }
+
+  .industry-card .industry-overlay {
+    opacity: 0.35 !important;
+  }
+
+  .industry-card .industry-bar {
+    transform: scaleY(1);
+  }
+
+  .gallery-item .gallery-caption {
+    opacity: 1 !important;
+  }
+
+  .gallery-item .gallery-overlay {
+    opacity: 0.55 !important;
+  }
+
+  .lm-home-badge {
+    position: static !important;
+    margin-top: 1rem;
+    width: 7rem;
+    height: 7rem;
+  }
+
+  .lm-home-badge--offset {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  .lm-home-badge--top {
+    margin-bottom: 1rem;
+    margin-left: auto;
+  }
+
+  .lm-stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .lm-stat-grid .capability-stat-label {
+    font-size: 10px;
+    letter-spacing: 0.08em;
+  }
+
+  .lm-footer-nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.35rem 1rem;
+  }
+
+  .lm-footer-nav a {
+    font-size: 11px;
+    letter-spacing: 0.06em;
+  }
+
+  .lm-footer {
+    padding-bottom: 0.25rem;
+  }
+
+  .lm-footer > div {
+    padding-top: 2rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .lm-footer-brand {
+    text-align: center;
+    max-width: none;
+  }
+
+  .lm-footer-brand > a {
+    justify-content: center;
+  }
+
+  .lm-footer-columns {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .lm-footer-panel--hide-mobile {
+    display: none !important;
+  }
+
+  .lm-footer-cta {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .lm-footer-bottom {
+    text-align: center;
+  }
+
+  .lm-mobile-full-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .lm-contact-panel {
+    padding: 1.5rem;
+  }
+
+  .lm-qr-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 700px) {
+  .lm-hero .scroll-indicator {
+    display: none;
+  }
+
+  .section-hero {
+    min-height: auto;
+  }
+
+  .section-hero .section-hero-container {
+    padding-top: 56px;
+    padding-bottom: 64px;
+  }
+
+  .section-hero .section-gold-line,
+  .section-hero .section-gold-dot {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .lm-hero .hero-container {
+    padding-bottom: 72px;
+  }
+
+  .lm-hero .eyebrow {
+    flex-wrap: wrap;
+  }
+
+  .team-stats {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .industry-slider .industry-card {
+    height: 17rem;
   }
 }

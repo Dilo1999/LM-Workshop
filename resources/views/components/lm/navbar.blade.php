@@ -50,7 +50,7 @@
         </div>
     </div>
 
-    <div class="xl:hidden hidden px-6 pb-6 pt-2 bg-navy-deep" data-mobile-menu-panel>
+    <div class="xl:hidden hidden max-h-[calc(100vh-4rem)] overflow-y-auto px-6 pb-6 pt-2 bg-navy-deep" data-mobile-menu-panel>
         <ul class="flex flex-col gap-0.5">
             @foreach($navLinks as $link)
                 <li>

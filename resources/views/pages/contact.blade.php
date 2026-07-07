@@ -18,7 +18,7 @@
     <div class="max-w-7xl mx-auto px-6">
         <div class="grid lg:grid-cols-5 gap-10">
             <div class="lg:col-span-2">
-                <div class="h-full p-8 bg-navy">
+                <div class="h-full p-6 sm:p-8 bg-navy lm-contact-panel">
                     <div class="mb-8">
                         <div class="w-12 h-12 flex items-center justify-center font-heading font-bold text-base mb-4 bg-gold text-white">LM</div>
                         <h3 class="font-display font-bold text-white text-2xl mb-1 tracking-[0.06em]">LM WORKSHOP</h3>
@@ -46,7 +46,7 @@
                         @endforeach
                     </div>
 
-                    <div class="pt-6 border-t border-white/10 flex items-center gap-4">
+                    <div class="pt-6 border-t border-white/10 flex items-center gap-4 lm-qr-row">
                         <div class="w-20 h-20 flex items-center justify-center shrink-0 bg-white">
                             <div class="grid grid-cols-4 gap-0.5 p-1.5">
                                 @foreach(range(0, 15) as $i)
@@ -131,7 +131,7 @@
                         </div>
 
                         <div class="sm:col-span-2">
-                            <button type="submit" class="inline-flex items-center gap-2 px-8 py-3.5 font-heading font-bold uppercase tracking-[0.12em] text-sm bg-navy text-white transition-all hover:brightness-110">
+                            <button type="submit" class="lm-mobile-full-btn inline-flex items-center gap-2 px-8 py-3.5 font-heading font-bold uppercase tracking-[0.12em] text-sm bg-navy text-white transition-all hover:brightness-110">
                                 Send Inquiry
                                 <x-lm.icon name="send" :size="14" />
                             </button>

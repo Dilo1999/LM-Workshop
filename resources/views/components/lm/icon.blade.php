@@ -4,6 +4,7 @@
 $paths = [
     'arrow-right' => 'M5 12h14M12 5l7 7-7 7',
     'chevron-right' => 'M9 18l6-6-6-6',
+    'chevron-down' => 'M6 9l6 6 6-6',
     'menu' => 'M4 6h16M4 12h16M4 18h16',
     'x' => 'M18 6L6 18M6 6l12 12',
     'anchor' => 'M12 22V8M5 12H2a10 10 0 0 0 20 0h-3M12 2v2M7 7l1.5 1.5M17 7l-1.5 1.5',

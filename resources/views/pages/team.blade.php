@@ -22,7 +22,7 @@
                 <h2 class="font-display font-bold mb-6 leading-tight text-display-md text-navy">Expertise You Can Count On</h2>
                 <p class="text-gray-500 mb-4 leading-relaxed font-body">LM Workshop's engineering team brings together decades of experience across marine engineering, mechanical systems, electrical infrastructure, fabrication, diesel engines and industrial maintenance.</p>
                 <p class="text-gray-500 mb-8 leading-relaxed font-body">Their combined expertise enables us to deliver dependable engineering support across a broad range of industries while maintaining the high standards our clients expect.</p>
-                <div class="flex gap-8">
+                <div class="flex flex-wrap gap-6 sm:gap-8 team-stats">
                     @foreach([['60+', 'Combined Years'], ['6+', 'Disciplines'], ['100%', 'Professional']] as [$n, $l])
                         <div>
                             <div class="text-2xl font-display font-bold text-gold">{{ $n }}</div>
@@ -31,7 +31,7 @@
                     @endforeach
                 </div>
             </div>
-            <img src="{{ $images['engineer'] }}" alt="LM Workshop engineering team" class="w-full h-[400px] object-cover">
+            <img src="{{ $images['engineer'] }}" alt="LM Workshop engineering team" class="w-full h-64 sm:h-80 lg:h-[400px] object-cover">
         </div>
     </div>
 </section>
