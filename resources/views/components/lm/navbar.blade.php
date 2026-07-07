@@ -9,10 +9,10 @@
 >
     <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
         <a href="{{ route('home') }}" class="flex items-center gap-3 select-none">
-            <div class="w-9 h-9 flex items-center justify-center font-heading font-bold text-sm bg-gold text-navy-deep">LM</div>
+            <div class="w-9 h-9 flex items-center justify-center font-heading font-bold text-sm bg-gold text-white">LM</div>
             <div>
                 <div class="text-white font-heading font-bold tracking-[0.18em] text-sm">WORKSHOP</div>
-                <div class="text-gold font-body text-[9px] uppercase tracking-wider">{{ config('lm-workshop.brand.tagline') }}</div>
+                <div class="text-gold-light font-body text-[9px] uppercase tracking-wider">{{ config('lm-workshop.brand.tagline') }}</div>
             </div>
         </a>
 
@@ -21,7 +21,7 @@
                 <li>
                     <a
                         href="{{ route($link['route']) }}"
-                        class="text-xs font-heading font-bold uppercase tracking-[0.1em] transition-colors {{ request()->routeIs($link['route']) ? 'text-gold' : 'text-white/75 hover:text-white' }}"
+                        class="text-xs font-heading font-bold uppercase tracking-[0.1em] transition-colors {{ request()->routeIs($link['route']) ? 'text-gold-light' : 'text-white/75 hover:text-white' }}"
                     >
                         {{ $link['label'] }}
                     </a>
@@ -32,7 +32,7 @@
         <div class="flex items-center gap-3">
             <a
                 href="{{ route('contact') }}"
-                class="hidden sm:inline-flex items-center gap-1.5 px-5 py-2 text-xs font-heading font-bold tracking-[0.12em] uppercase bg-gold text-navy-deep transition-all hover:brightness-110"
+                class="hidden sm:inline-flex items-center gap-1.5 px-5 py-2 text-xs font-heading font-bold tracking-[0.12em] uppercase bg-gold text-white transition-all hover:brightness-110"
             >
                 Let's Talk
                 <x-lm.icon name="chevron-right" :size="11" />
@@ -66,7 +66,7 @@
         </ul>
         <a
             href="{{ route('contact') }}"
-            class="mt-4 block text-center py-3 text-sm font-heading font-bold uppercase tracking-widest bg-gold text-navy-deep"
+            class="mt-4 block text-center py-3 text-sm font-heading font-bold uppercase tracking-widest bg-gold text-white"
             data-mobile-menu-close
         >
             Let's Talk

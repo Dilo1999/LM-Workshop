@@ -32,9 +32,9 @@
                     @endif
 
                     <div class="hidden md:flex flex-col items-center">
-                        <div class="w-14 h-14 rounded-full flex items-center justify-center font-display font-bold text-lg shrink-0 z-10 bg-navy text-gold border-[3px] border-gold">{{ str_pad($i + 1, 2, '0', STR_PAD_LEFT) }}</div>
+                        <div class="w-14 h-14 rounded-full flex items-center justify-center font-display font-bold text-lg shrink-0 z-10 bg-navy text-gold-light border-[3px] border-gold">{{ str_pad($i + 1, 2, '0', STR_PAD_LEFT) }}</div>
                         @if($i < count($steps) - 1)
-                            <div class="w-0.5 flex-1 min-h-[80px]" style="background: linear-gradient(to bottom, rgba(201,168,76,0.53), rgba(11,31,63,0.1))"></div>
+                            <div class="w-0.5 flex-1 min-h-[80px]" style="background: linear-gradient(to bottom, rgba(10, 53, 69, 0.53), rgba(11,31,63,0.1))"></div>
                         @endif
                     </div>
 
@@ -44,7 +44,7 @@
                                 <div class="w-8 h-8 flex items-center justify-center bg-cream">
                                     <x-lm.icon :name="$step['icon']" :size="16" class="text-gold" />
                                 </div>
-                                <span class="md:hidden font-display font-bold text-2xl text-gold">{{ str_pad($i + 1, 2, '0', STR_PAD_LEFT) }}</span>
+                                <span class="md:hidden font-display font-bold text-2xl text-gold-light">{{ str_pad($i + 1, 2, '0', STR_PAD_LEFT) }}</span>
                             </div>
                             <h3 class="font-heading font-bold text-xl mb-2 text-navy">{{ $step['title'] }}</h3>
                             <p class="text-gray-600 text-sm font-medium font-body">{{ $step['body'] }}</p>
@@ -52,7 +52,7 @@
                     @else
                         <div class="md:hidden p-6">
                             <div class="flex items-center gap-2 mb-3">
-                                <span class="font-display font-bold text-2xl text-gold">{{ str_pad($i + 1, 2, '0', STR_PAD_LEFT) }}</span>
+                                <span class="font-display font-bold text-2xl text-gold-light">{{ str_pad($i + 1, 2, '0', STR_PAD_LEFT) }}</span>
                             </div>
                             <h3 class="font-heading font-bold text-xl mb-2 text-navy">{{ $step['title'] }}</h3>
                             <p class="text-gray-600 text-sm font-medium font-body">{{ $step['body'] }}</p>

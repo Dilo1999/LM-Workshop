@@ -9,6 +9,7 @@ return [
         'whatsapp' => '+960 XXX XXXX',
         'email' => 'info@lmworkshop.mv',
         'website' => 'www.lmworkshop.mv',
+        'location' => 'Malé, Maldives',
     ],
 
     'nav' => [

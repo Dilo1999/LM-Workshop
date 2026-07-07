@@ -74,9 +74,9 @@
             </div>
             <div class="relative">
                 <img src="{{ $images['workerGears'] }}" alt="Workers repairing large industrial machinery" class="w-full h-[480px] object-cover">
-                <div class="absolute -bottom-6 -left-6 w-32 h-32 flex flex-col items-center justify-center text-center bg-gold">
-                    <span class="text-3xl font-display font-bold text-navy-deep">24/7</span>
-                    <span class="text-xs font-heading font-bold uppercase tracking-wider mt-1 text-navy-deep">Support</span>
+                <div class="absolute -bottom-6 -left-6 w-32 h-32 flex flex-col items-center justify-center text-center bg-gold text-white">
+                    <span class="text-3xl font-display font-bold">24/7</span>
+                    <span class="text-xs font-heading font-bold uppercase tracking-wider mt-1">Support</span>
                 </div>
             </div>
         </div>
@@ -149,7 +149,7 @@
             @endforeach
         </div>
         <div class="text-center mt-12">
-            <a href="{{ route('industries') }}" class="inline-flex items-center gap-2 px-8 py-3 font-heading font-bold uppercase tracking-[0.12em] text-sm border border-gold text-gold transition-all hover:bg-white/10">
+            <a href="{{ route('industries') }}" class="inline-flex items-center gap-2 px-8 py-3 font-heading font-bold uppercase tracking-[0.12em] text-sm border border-gold-light text-gold-light transition-all hover:bg-white/10">
                 Explore Industries
                 <x-lm.icon name="arrow-right" :size="14" />
             </a>
@@ -220,9 +220,9 @@
             </div>
             <div class="flex items-center justify-center">
                 <div class="p-10 text-center bg-navy">
-                    <div class="w-12 h-12 flex items-center justify-center font-heading font-bold text-lg mx-auto mb-4 bg-gold text-navy-deep">LM</div>
+                    <div class="w-12 h-12 flex items-center justify-center font-heading font-bold text-lg mx-auto mb-4 bg-gold text-white">LM</div>
                     <h3 class="text-white font-display font-bold text-xl mb-1 tracking-[0.08em]">LM Workshop</h3>
-                    <p class="text-xs uppercase tracking-widest mb-4 text-gold font-heading">{{ $brand['tagline'] }}</p>
+                    <p class="text-xs uppercase tracking-widest mb-4 text-gold-light font-heading">{{ $brand['tagline'] }}</p>
                     <p class="text-white/55 text-sm leading-relaxed font-body">{{ $brand['description'] }}</p>
                     <div class="mt-6 w-24 h-24 mx-auto border-2 border-gold/30 bg-white flex items-center justify-center">
                         <div class="grid grid-cols-3 gap-0.5 p-2">

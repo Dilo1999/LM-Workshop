@@ -8,15 +8,15 @@
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
             <div>
                 <div class="flex items-center gap-3 mb-5">
-                    <div class="w-9 h-9 flex items-center justify-center font-heading font-bold text-sm bg-gold text-navy-deep">LM</div>
+                    <div class="w-9 h-9 flex items-center justify-center font-heading font-bold text-sm bg-gold text-white">LM</div>
                     <div class="text-white font-heading font-bold tracking-[0.18em] text-sm">WORKSHOP</div>
                 </div>
-                <p class="text-xs uppercase tracking-widest mb-3 text-gold font-heading">{{ $brand['tagline'] }}</p>
+                <p class="text-xs uppercase tracking-widest mb-3 text-gold-light font-heading">{{ $brand['tagline'] }}</p>
                 <p class="text-white/50 text-sm leading-relaxed font-body">{{ $brand['description'] }}</p>
             </div>
 
             <div>
-                <h4 class="text-xs font-heading font-bold uppercase tracking-[0.18em] mb-5 text-gold">Quick Links</h4>
+                <h4 class="text-xs font-heading font-bold uppercase tracking-[0.18em] mb-5 text-gold-light">Quick Links</h4>
                 <ul class="flex flex-col gap-2.5">
                     @foreach([['Home', 'home'], ['About Us', 'about'], ['Services', 'services'], ['Industries', 'industries'], ['Contact', 'contact']] as [$label, $route])
                         <li>
@@ -27,7 +27,7 @@
             </div>
 
             <div>
-                <h4 class="text-xs font-heading font-bold uppercase tracking-[0.18em] mb-5 text-gold">Services</h4>
+                <h4 class="text-xs font-heading font-bold uppercase tracking-[0.18em] mb-5 text-gold-light">Services</h4>
                 <ul class="flex flex-col gap-2.5">
                     @foreach(['Marine Engineering', 'Power Systems', 'Mechanical & Electrical', 'Fabrication', 'Preventive Maintenance'] as $service)
                         <li>
@@ -38,7 +38,7 @@
             </div>
 
             <div>
-                <h4 class="text-xs font-heading font-bold uppercase tracking-[0.18em] mb-5 text-gold">Contact</h4>
+                <h4 class="text-xs font-heading font-bold uppercase tracking-[0.18em] mb-5 text-gold-light">Contact</h4>
                 <ul class="flex flex-col gap-2.5">
                     @foreach($contactLabels as $label)
                         <li class="text-white/60 text-sm font-body">{{ $label }}</li>
