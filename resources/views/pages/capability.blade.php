@@ -13,10 +13,21 @@
 
 <section class="bg-white py-20">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="max-w-3xl">
-            <p class="text-gray-500 mb-4 leading-relaxed font-body">Our experience extends across a diverse range of engineering environments throughout the Maldives.</p>
-            <p class="text-gray-500 mb-4 leading-relaxed font-body">From maintaining marine propulsion systems and powerhouse generators to fabricating structural components and supporting mechanical infrastructure, LM Workshop has developed practical engineering capability through hands-on experience across multiple industries.</p>
-            <p class="text-gray-500 leading-relaxed font-body">Every project strengthens our understanding of the operational challenges our clients face, enabling us to deliver engineering solutions that are practical, reliable and built around real working conditions.</p>
+        <div class="grid lg:grid-cols-2 gap-14 items-center">
+            <div>
+                <x-lm.section-label>Experience That Counts</x-lm.section-label>
+                <h2 class="font-display font-bold mb-6 leading-tight text-display-md text-navy">Built Through Hands-On Engineering Experience</h2>
+                <p class="text-gray-500 mb-4 leading-relaxed font-body">Our experience extends across a diverse range of engineering environments throughout the Maldives. From maintaining marine propulsion systems and powerhouse generators to fabricating structural components and supporting mechanical infrastructure.</p>
+                <p class="text-gray-500 leading-relaxed font-body">Every project strengthens our understanding of the operational challenges our clients face, enabling us to deliver engineering solutions that are practical, reliable and built around real working conditions.</p>
+            </div>
+            <div class="grid grid-cols-3 gap-3">
+                @foreach([['10+', 'Years Active'], ['6', 'Disciplines'], ['200+', 'Projects'], ['24/7', 'Response'], ['Multi-Island', 'Coverage'], ['One Partner', 'All Services']] as [$n, $l])
+                    <div class="p-5 text-center border border-navy/10">
+                        <div class="font-display font-bold text-xl mb-1 text-gold">{{ $n }}</div>
+                        <div class="text-xs text-gray-500 uppercase tracking-widest font-heading">{{ $l }}</div>
+                    </div>
+                @endforeach
+            </div>
         </div>
     </div>
 </section>
