@@ -10,7 +10,7 @@
     label="Our Difference"
     title="Why Businesses Choose LM Workshop"
     body="Choosing an engineering partner is about more than technical capability. It is about working with a team that understands your operational priorities, responds when support is needed and consistently delivers quality workmanship."
-    :img="$images['engineer']"
+    :img="$images['whyHero']"
 />
 
 <section class="bg-white py-24">

@@ -26,6 +26,11 @@ return [
     'images' => [
         'hero' => 'images/homepage/ChatGPT Image Jul 7, 2026, 10_20_17 AM.png',
         'aboutHero' => 'images/aboutus/ChatGPT Image Jul 7, 2026, 11_14_42 AM.png',
+        'servicesHero' => 'images/services/ChatGPT Image Jul 7, 2026, 11_23_25 AM.png',
+        'industriesHero' => 'images/industries/ChatGPT Image Jul 7, 2026, 11_28_23 AM.png',
+        'whyHero' => 'images/why_choose_us/ChatGPT Image Jul 7, 2026, 11_32_47 AM.png',
+        'capabilityHero' => 'images/capability/ChatGPT Image Jul 7, 2026, 11_40_01 AM.png',
+        'howWeWorkHero' => 'images/How_We_Work/ChatGPT Image Jul 7, 2026, 11_44_19 AM.png',
         'workerGears' => 'https://images.unsplash.com/photo-1759692071969-c32285cffc40?w=900&h=700&fit=crop&auto=format',
         'welding' => 'https://images.unsplash.com/photo-1745448797900-35d08e85e9db?w=900&h=700&fit=crop&auto=format',
         'weldingSparks' => 'https://images.unsplash.com/photo-1738162837369-a2beec3a1d47?w=900&h=600&fit=crop&auto=format',

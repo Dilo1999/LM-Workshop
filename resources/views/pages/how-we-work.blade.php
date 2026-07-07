@@ -17,7 +17,7 @@
     label="Our Process"
     title="How We Work"
     body="A structured engineering process ensures every project is managed professionally from initial enquiry through to completion."
-    :img="$images['weldingSparks']"
+    :img="$images['howWeWorkHero']"
 />
 
 <section class="bg-white py-24">

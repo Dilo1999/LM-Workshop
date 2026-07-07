@@ -10,7 +10,7 @@
     label="Sectors We Serve"
     title="Industries We Support"
     body="Every industry operates differently, but they all depend on reliable engineering. LM Workshop provides tailored engineering support across a wide range of sectors throughout the Maldives."
-    :img="$images['marine']"
+    :img="$images['industriesHero']"
 />
 
 <section class="py-24 bg-white">

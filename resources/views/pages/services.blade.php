@@ -10,7 +10,7 @@
     label="What We Offer"
     title="Engineering Solutions"
     body="LM Workshop delivers comprehensive engineering services across multiple technical disciplines, enabling clients to work with one trusted engineering partner."
-    :img="$images['welding']"
+    :img="$images['servicesHero']"
 />
 
 <section class="bg-white py-24">
