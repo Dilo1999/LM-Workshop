@@ -6,7 +6,7 @@
     $team = config('lm-workshop.team');
 @endphp
 
-<x-lm.page-hero
+<x-lm.section-hero
     label="Our People"
     title="Meet Our Engineering Team"
     body="Behind every successful engineering project is a team committed to reliability, safety and practical problem solving."

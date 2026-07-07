@@ -13,7 +13,7 @@
     ];
 @endphp
 
-<x-lm.page-hero
+<x-lm.section-hero
     label="Our Process"
     title="How We Work"
     body="A structured engineering process ensures every project is managed professionally from initial enquiry through to completion."

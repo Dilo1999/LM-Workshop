@@ -7,7 +7,7 @@
     $services = config('lm-workshop.services');
 @endphp
 
-<x-lm.page-hero
+<x-lm.section-hero
     label="Reach Out"
     title="Let's Talk"
     body="Whether you require emergency engineering support, preventive maintenance or technical expertise for your next project, our team is ready to assist."

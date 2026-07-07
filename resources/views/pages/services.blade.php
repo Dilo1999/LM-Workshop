@@ -6,7 +6,7 @@
     $services = config('lm-workshop.services');
 @endphp
 
-<x-lm.page-hero
+<x-lm.section-hero
     label="What We Offer"
     title="Engineering Solutions"
     body="LM Workshop delivers comprehensive engineering services across multiple technical disciplines, enabling clients to work with one trusted engineering partner."

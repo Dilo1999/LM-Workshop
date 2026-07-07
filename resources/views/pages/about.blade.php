@@ -1,13 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-@php $images = config('lm-workshop.images'); @endphp
+@php
+    $images = config('lm-workshop.images');
+@endphp
 
-<x-lm.page-hero
+<x-lm.section-hero
     label="Who We Are"
-    title="Engineering You Can Count On"
+    title="Engineering You<br />Can Count On"
     subtitle="The Engineering Division of LITUS Maldives"
-    :img="$images['engineer']"
+    :img="$images['aboutHero']"
 />
 
 <section class="bg-white py-24">

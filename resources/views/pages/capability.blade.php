@@ -23,7 +23,7 @@
     ];
 @endphp
 
-<x-lm.page-hero
+<x-lm.section-hero
     label="Our Track Record"
     title="Proven Capability Across Critical Engineering Services"
     :img="$images['weldingAdrian']"

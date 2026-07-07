@@ -6,7 +6,7 @@
     $reasons = config('lm-workshop.why');
 @endphp
 
-<x-lm.page-hero
+<x-lm.section-hero
     label="Our Difference"
     title="Why Businesses Choose LM Workshop"
     body="Choosing an engineering partner is about more than technical capability. It is about working with a team that understands your operational priorities, responds when support is needed and consistently delivers quality workmanship."
