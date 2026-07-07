@@ -158,12 +158,8 @@ body {
 }
 
 .lm-hero .hero-container {
-  position: relative;
-  z-index: 5;
-  width: 100%;
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 90px 8% 80px;
+  padding-top: 90px;
+  padding-bottom: 80px;
 }
 
 .lm-hero .hero-content {
@@ -399,7 +395,8 @@ body {
   }
 
   .lm-hero .hero-container {
-    padding: 80px 6% 95px;
+    padding-top: 80px;
+    padding-bottom: 95px;
   }
 
   .lm-hero .hero-title {
@@ -430,7 +427,8 @@ body {
   }
 
   .lm-hero .hero-container {
-    padding: 60px 24px 100px;
+    padding-top: 60px;
+    padding-bottom: 100px;
   }
 
   .lm-hero .eyebrow {

@@ -9,7 +9,7 @@
 <x-lm.section-hero
     title="Meet Our Engineering Team"
     body="Behind every successful engineering project is a team committed to reliability, safety and practical problem solving."
-    :img="$images['workerGears']"
+    :img="$images['teamHero']"
 />
 
 <section class="bg-white py-20">

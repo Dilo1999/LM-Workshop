@@ -5,6 +5,10 @@ return [
         'name' => 'LM Workshop',
         'tagline' => 'Engineering You Can Count On',
         'description' => 'Reliable engineering support for marine, industrial and commercial operations across the Maldives.',
+        'phone' => '+960 XXX XXXX',
+        'whatsapp' => '+960 XXX XXXX',
+        'email' => 'info@lmworkshop.mv',
+        'website' => 'www.lmworkshop.mv',
     ],
 
     'nav' => [
@@ -27,6 +31,7 @@ return [
         'whyHero' => 'images/why_choose_us/ChatGPT Image Jul 7, 2026, 11_32_47 AM.png',
         'capabilityHero' => 'images/capability/ChatGPT Image Jul 7, 2026, 11_40_01 AM.png',
         'howWeWorkHero' => 'images/How_We_Work/ChatGPT Image Jul 7, 2026, 11_44_19 AM.png',
+        'teamHero' => 'images/team/ChatGPT Image Jul 7, 2026, 12_13_22 PM.png',
         'workerGears' => 'https://images.unsplash.com/photo-1759692071969-c32285cffc40?w=900&h=700&fit=crop&auto=format',
         'welding' => 'https://images.unsplash.com/photo-1745448797900-35d08e85e9db?w=900&h=700&fit=crop&auto=format',
         'weldingSparks' => 'https://images.unsplash.com/photo-1738162837369-a2beec3a1d47?w=900&h=600&fit=crop&auto=format',
@@ -72,6 +77,15 @@ return [
         ['icon' => 'star', 'title' => 'Quality Workmanship', 'body' => 'Every project is approached with attention to detail, safety and professional engineering standards.'],
         ['icon' => 'message-square', 'title' => 'Transparent Communication', 'body' => 'Clear scopes of work, realistic timelines and regular updates ensure clients remain informed throughout every project.'],
         ['icon' => 'handshake', 'title' => 'Long-Term Partnership', 'body' => "We measure success not by completing individual jobs, but by building trusted relationships that support our clients' operations for years to come."],
+    ],
+
+    'why_home' => [
+        ['icon' => 'clock', 'title' => 'Reliable Response', 'desc' => 'We respond with urgency, professionalism and practical engineering solutions.'],
+        ['icon' => 'settings', 'title' => 'Practical Engineering', 'desc' => 'Real-world solutions that work in operational environments — not just on paper.'],
+        ['icon' => 'layers', 'title' => 'Multi-Disciplinary Expertise', 'desc' => 'Marine, mechanical, electrical and fabrication capabilities through one partner.'],
+        ['icon' => 'star', 'title' => 'Quality Workmanship', 'desc' => 'Every project approached with attention to detail, safety and professional standards.'],
+        ['icon' => 'message-square', 'title' => 'Transparent Communication', 'desc' => 'Clear scopes of work, realistic timelines and regular updates throughout.'],
+        ['icon' => 'handshake', 'title' => 'Long-Term Partnership', 'desc' => 'Building trusted relationships that support your operations for years to come.'],
     ],
 
     'process' => [
