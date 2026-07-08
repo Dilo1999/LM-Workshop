@@ -8,7 +8,7 @@
     <div class="max-w-7xl mx-auto px-6 pt-10 pb-6">
         <div class="flex flex-col xl:flex-row xl:items-start xl:justify-between gap-8 mb-8">
             <div class="lm-footer-brand max-w-sm shrink-0">
-                <a href="{{ route('home') }}" class="inline-flex items-center mb-4 select-none">
+                <a href="{{ route('home') }}" class="inline-flex items-center mb-4 select-none -ml-3">
                     <img
                         src="{{ asset(config('lm-workshop.images.logo')) }}"
                         alt="{{ $brand['name'] }}"

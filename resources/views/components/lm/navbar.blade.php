@@ -8,7 +8,7 @@
     data-nav
 >
     <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16 overflow-visible">
-        <a href="{{ route('home') }}" class="flex items-center select-none shrink-0">
+        <a href="{{ route('home') }}" class="flex items-center select-none shrink-0 -ml-3">
             <img
                 src="{{ asset(config('lm-workshop.images.logo')) }}"
                 alt="{{ config('lm-workshop.brand.name') }}"
