@@ -87,7 +87,7 @@ body {
 }
 
 .industry-card:hover .industry-desc {
-  opacity: 1;
+    opacity: 1;
 }
 
 .industry-card:hover .industry-overlay {
@@ -155,7 +155,7 @@ body {
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
     gap: 1rem;
     margin-inline: -1.5rem;
     padding-inline: 1.5rem;
@@ -1746,8 +1746,8 @@ body {
 
   .hw-timeline-line {
     left: 2.2rem;
-    transform: none;
-  }
+  transform: none;
+}
 
   .hw-timeline-row {
     grid-template-columns: 1fr;

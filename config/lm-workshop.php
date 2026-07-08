@@ -25,6 +25,7 @@ return [
     ],
 
     'images' => [
+        'logo' => 'images/logo/LMW Logo H Alt.svg',
         'hero' => 'images/homepage/ChatGPT Image Jul 7, 2026, 10_20_17 AM.png',
         'heroVideo' => 'images/homepage/Main.webm',
         'reliabilityBg' => 'images/home/ChatGPT Image Jul 7, 2026, 02_56_52 PM.png',

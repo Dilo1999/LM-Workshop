@@ -8,12 +8,14 @@
     <div class="max-w-7xl mx-auto px-6 pt-10 pb-6">
         <div class="flex flex-col xl:flex-row xl:items-start xl:justify-between gap-8 mb-8">
             <div class="lm-footer-brand max-w-sm shrink-0">
-                <a href="{{ route('home') }}" class="flex items-center gap-3 mb-4 select-none">
-                    <div class="w-9 h-9 flex items-center justify-center font-heading font-bold text-sm bg-gold text-white">LM</div>
-                    <div>
-                        <div class="text-white font-heading font-bold tracking-[0.18em] text-sm">WORKSHOP</div>
-                        <div class="text-gold-light font-body text-[9px] uppercase tracking-wider">{{ $brand['tagline'] }}</div>
-                    </div>
+                <a href="{{ route('home') }}" class="inline-flex items-center mb-4 select-none">
+                    <img
+                        src="{{ asset(config('lm-workshop.images.logo')) }}"
+                        alt="{{ $brand['name'] }}"
+                        class="h-[5.5rem] w-auto"
+                        width="440"
+                        height="220"
+                    >
                 </a>
                 <p class="text-white/50 text-sm leading-relaxed font-body">{{ $brand['description'] }}</p>
             </div>

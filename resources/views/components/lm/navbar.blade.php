@@ -4,16 +4,18 @@
 
 <nav
     id="main-nav"
-    class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-navy-deep/96 backdrop-blur-md border-b border-transparent"
+    class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-navy-deep/96 backdrop-blur-md border-b border-transparent overflow-visible"
     data-nav
 >
-    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-        <a href="{{ route('home') }}" class="flex items-center gap-3 select-none">
-            <div class="w-9 h-9 flex items-center justify-center font-heading font-bold text-sm bg-gold text-white">LM</div>
-            <div>
-                <div class="text-white font-heading font-bold tracking-[0.18em] text-sm">WORKSHOP</div>
-                <div class="text-gold-light font-body text-[9px] uppercase tracking-wider">{{ config('lm-workshop.brand.tagline') }}</div>
-            </div>
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16 overflow-visible">
+        <a href="{{ route('home') }}" class="flex items-center select-none shrink-0">
+            <img
+                src="{{ asset(config('lm-workshop.images.logo')) }}"
+                alt="{{ config('lm-workshop.brand.name') }}"
+                class="h-[5.5rem] w-auto"
+                width="440"
+                height="220"
+            >
         </a>
 
         <ul class="hidden xl:flex items-center gap-6">
