@@ -110,7 +110,7 @@ return [
         ['icon' => 'file-text', 'title' => 'Engineering Proposal', 'body' => 'Providing a clear scope of work, recommendations, timelines and commercial proposal.'],
         ['icon' => 'wrench', 'title' => 'Execution', 'body' => 'Delivering engineering services using experienced personnel, appropriate equipment and professional workmanship.'],
         ['icon' => 'check-square', 'title' => 'Testing & Handover', 'body' => 'Verifying performance, ensuring quality and completing project handover.'],
-        ['icon' => 'heart-handshake', 'title' => 'Ongoing Support', 'body' => 'Providing continued technical assistance, maintenance and long-term engineering partnership.'],
+        ['icon' => 'headset', 'title' => 'Ongoing Support', 'body' => 'Providing continued technical assistance, maintenance and long-term engineering partnership.'],
     ],
 
     'capability_gallery' => [

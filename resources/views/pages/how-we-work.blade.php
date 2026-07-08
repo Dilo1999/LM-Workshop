@@ -12,63 +12,65 @@
     :img="$images['howWeWorkHero']"
 />
 
-<section class="bg-white py-24">
-    <div class="max-w-5xl mx-auto px-6">
-        <div class="md:hidden flex flex-col divide-y divide-navy/10">
-            @foreach($steps as $i => $step)
-                <div class="py-6 border-l-4 border-gold pl-5">
-                    <div class="flex items-center gap-3 mb-3">
-                        <span class="font-display font-bold text-2xl text-gold-light">{{ str_pad($i + 1, 2, '0', STR_PAD_LEFT) }}</span>
-                        <div class="w-8 h-8 flex items-center justify-center bg-cream">
-                            <x-lm.icon :name="$step['icon']" :size="16" class="text-gold" />
-                        </div>
-                    </div>
-                    <h3 class="font-heading font-bold text-xl mb-2 text-navy">{{ $step['title'] }}</h3>
-                    <p class="text-gray-600 text-sm font-medium font-body">{{ $step['body'] }}</p>
-                </div>
-            @endforeach
+<section class="hw-process-section">
+
+    <div class="hw-process-container max-w-7xl mx-auto px-6">
+        <div class="hw-process-intro">
+            <x-lm.section-label>Our Process</x-lm.section-label>
+            <h2 class="hw-process-title">How We<br>Work</h2>
+            <div class="hw-process-accent" aria-hidden="true"></div>
+            <p class="hw-process-lead">A proven, end-to-end process delivering reliable engineering solutions with precision and performance.</p>
         </div>
 
-        <div class="hidden md:flex flex-col gap-0">
+        <div class="hw-timeline">
+            <div class="hw-timeline-line" aria-hidden="true"></div>
+
             @foreach($steps as $i => $step)
-                <div class="relative grid md:grid-cols-[1fr_60px_1fr] gap-0 items-start">
-                    @if($i % 2 === 0)
-                        <div class="md:text-right p-6 md:pr-10">
-                            <div class="inline-flex items-center gap-2 mb-3">
-                                <div class="w-8 h-8 flex items-center justify-center bg-cream">
-                                    <x-lm.icon :name="$step['icon']" :size="16" class="text-gold" />
+                @php
+                    $num = str_pad($i + 1, 2, '0', STR_PAD_LEFT);
+                    $isLeft = $i % 2 === 0;
+                @endphp
+
+                <div class="hw-timeline-row step-row-{{ $i + 1 }}">
+                    <div class="hw-timeline-col hw-timeline-col--left">
+                        @if($isLeft)
+                            <div class="hw-step-card left">
+                                <div class="hw-card-icon">
+                                    <x-lm.icon :name="$step['icon']" :size="40" class="text-navy" />
+                                </div>
+                                <div class="hw-card-content">
+                                    <h3>{{ $step['title'] }}</h3>
+                                    <p>{{ $step['body'] }}</p>
                                 </div>
                             </div>
-                            <h3 class="font-heading font-bold text-xl mb-2 text-navy">{{ $step['title'] }}</h3>
-                            <p class="text-gray-600 text-sm font-medium font-body">{{ $step['body'] }}</p>
-                        </div>
-                    @else
-                        <div></div>
-                    @endif
-
-                    <div class="flex flex-col items-center">
-                        <div class="w-14 h-14 rounded-full flex items-center justify-center font-display font-bold text-lg shrink-0 z-10 bg-navy text-gold-light border-[3px] border-gold">{{ str_pad($i + 1, 2, '0', STR_PAD_LEFT) }}</div>
-                        @if($i < count($steps) - 1)
-                            <div class="w-0.5 flex-1 min-h-[80px]" style="background: linear-gradient(to bottom, rgba(10, 53, 69, 0.53), rgba(11,31,63,0.1))"></div>
                         @endif
                     </div>
 
-                    @if($i % 2 === 1)
-                        <div class="p-6 md:pl-10">
-                            <div class="flex items-center gap-2 mb-3">
-                                <div class="w-8 h-8 flex items-center justify-center bg-cream">
-                                    <x-lm.icon :name="$step['icon']" :size="16" class="text-gold" />
+                    <div class="hw-timeline-col hw-timeline-col--center">
+                        <div class="hw-step-number {{ $isLeft ? 'right-link' : 'left-link' }}">
+                            {{ $num }}<span class="dot" aria-hidden="true"></span>
+                        </div>
+                    </div>
+
+                    <div class="hw-timeline-col hw-timeline-col--right">
+                        @unless($isLeft)
+                            <div class="hw-step-card right">
+                                <div class="hw-card-content">
+                                    <h3>{{ $step['title'] }}</h3>
+                                    <p>{{ $step['body'] }}</p>
+                                </div>
+                                <div class="hw-card-icon">
+                                    <x-lm.icon :name="$step['icon']" :size="40" class="text-navy" />
                                 </div>
                             </div>
-                            <h3 class="font-heading font-bold text-xl mb-2 text-navy">{{ $step['title'] }}</h3>
-                            <p class="text-gray-600 text-sm font-medium font-body">{{ $step['body'] }}</p>
-                        </div>
-                    @else
-                        <div></div>
-                    @endif
+                        @endunless
+                    </div>
                 </div>
             @endforeach
         </div>
     </div>
+
+    <div class="hw-process-footer-strip" aria-hidden="true"></div>
+    <p class="hw-process-footer-text">Engineered Solutions. <span>Built to Last.</span></p>
 </section>
 @endsection
