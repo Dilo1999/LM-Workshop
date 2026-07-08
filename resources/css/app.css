@@ -1365,8 +1365,8 @@ body {
 .hw-process-section {
   position: relative;
   overflow: hidden;
-  min-height: 47.5rem;
-  padding: 4.375rem 0 4.375rem;
+  min-height: auto;
+  padding: 2.75rem 0 3rem;
   background: linear-gradient(
     90deg,
     rgba(247, 250, 253, 0.98) 0%,
@@ -1378,10 +1378,10 @@ body {
 .hw-process-section::before {
   content: "";
   position: absolute;
-  right: -7.5rem;
-  top: -4.5rem;
-  width: 35rem;
-  height: 35rem;
+  right: -5rem;
+  top: -3rem;
+  width: 24rem;
+  height: 24rem;
   border-radius: 50%;
   border: 1px solid rgba(6, 27, 53, 0.08);
   background: radial-gradient(circle, transparent 0 25%, rgba(6, 27, 53, 0.04) 26% 27%, transparent 28% 100%);
@@ -1406,30 +1406,30 @@ body {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: minmax(0, 22.5rem) minmax(0, 1fr);
-  gap: 5.625rem;
+  grid-template-columns: minmax(0, 17.5rem) minmax(0, 1fr);
+  gap: 3rem;
   align-items: start;
 }
 
 .hw-process-intro {
-  padding-top: 0.625rem;
+  padding-top: 0.25rem;
 }
 
 .hw-process-title {
   font-family: var(--font-display);
-  font-size: clamp(3.5rem, 5.5vw, 6.875rem);
+  font-size: clamp(2.25rem, 4vw, 4.25rem);
   line-height: 0.95;
   font-weight: 900;
   color: var(--color-navy);
   letter-spacing: -0.06em;
-  margin-bottom: 2.8125rem;
+  margin-bottom: 1.5rem;
   text-shadow: 0 10px 25px rgba(6, 27, 53, 0.08);
 }
 
 .hw-process-accent {
-  width: 7.5rem;
-  height: 0.875rem;
-  margin-bottom: 2.375rem;
+  width: 5.5rem;
+  height: 0.625rem;
+  margin-bottom: 1.25rem;
   position: relative;
 }
 
@@ -1437,9 +1437,9 @@ body {
   content: "";
   position: absolute;
   left: 0;
-  top: 0.25rem;
-  width: 2.625rem;
-  height: 0.625rem;
+  top: 0.125rem;
+  width: 2rem;
+  height: 0.5rem;
   background: var(--color-gold-light);
   transform: skewX(-28deg);
 }
@@ -1447,17 +1447,17 @@ body {
 .hw-process-accent::after {
   content: "";
   position: absolute;
-  left: 3.125rem;
-  top: 0.5rem;
-  width: 5.625rem;
+  left: 2.375rem;
+  top: 0.375rem;
+  width: 4rem;
   height: 2px;
   background: rgba(26, 122, 148, 0.55);
 }
 
 .hw-process-lead {
-  max-width: 21.25rem;
+  max-width: 17.5rem;
   color: #4c5866;
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1.45;
   font-weight: 600;
   font-family: var(--font-body);
@@ -1465,15 +1465,15 @@ body {
 
 .hw-timeline {
   position: relative;
-  min-height: 40rem;
-  padding-bottom: 1.25rem;
+  min-height: auto;
+  padding-bottom: 0.75rem;
 }
 
 .hw-timeline-line {
   position: absolute;
   left: 50%;
-  top: 2.375rem;
-  bottom: 1.25rem;
+  top: 1.5rem;
+  bottom: 0.75rem;
   width: 2px;
   transform: translateX(-50%);
   background: rgba(6, 27, 53, 0.35);
@@ -1482,19 +1482,19 @@ body {
 
 .hw-timeline-row {
   display: grid;
-  grid-template-columns: 1fr 6.5625rem 1fr;
-  column-gap: 1.5625rem;
+  grid-template-columns: 1fr 4.5rem 1fr;
+  column-gap: 1rem;
   align-items: center;
   position: relative;
   z-index: 2;
 }
 
 .hw-timeline-row.step-row-1 { margin-top: 0; }
-.hw-timeline-row.step-row-2 { margin-top: 4.875rem; }
-.hw-timeline-row.step-row-3 { margin-top: 3.625rem; }
-.hw-timeline-row.step-row-4 { margin-top: 5.125rem; }
-.hw-timeline-row.step-row-5 { margin-top: 3.625rem; }
-.hw-timeline-row.step-row-6 { margin-top: 5.125rem; }
+.hw-timeline-row.step-row-2 { margin-top: 2.5rem; }
+.hw-timeline-row.step-row-3 { margin-top: 1.75rem; }
+.hw-timeline-row.step-row-4 { margin-top: 2.5rem; }
+.hw-timeline-row.step-row-5 { margin-top: 1.75rem; }
+.hw-timeline-row.step-row-6 { margin-top: 2.5rem; }
 
 .hw-timeline-col--center {
   display: flex;
@@ -1504,16 +1504,40 @@ body {
 
 .hw-step-card {
   width: 100%;
-  min-height: 9.375rem;
+  min-height: auto;
   background: #ffffff;
   border: 1px solid #dfe6ef;
-  border-radius: 14px;
-  box-shadow: 0 18px 42px rgba(6, 27, 53, 0.09);
-  padding: 1.75rem 2.125rem;
+  border-radius: 12px;
+  box-shadow: 0 12px 28px rgba(6, 27, 53, 0.08);
+  padding: 1.125rem 1.375rem;
   display: flex;
   align-items: center;
-  gap: 2.125rem;
+  gap: 1.125rem;
   position: relative;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.hw-step-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(26, 122, 148, 0.45);
+  box-shadow: 0 18px 40px rgba(6, 27, 53, 0.14);
+}
+
+.hw-step-card:hover .hw-card-icon {
+  background: var(--color-navy);
+  transform: scale(1.06);
+}
+
+.hw-step-card:hover .hw-card-icon svg {
+  color: #ffffff;
+}
+
+.hw-step-card:hover .hw-card-content h3 {
+  color: var(--color-gold-light);
 }
 
 .hw-step-card::before {
@@ -1521,11 +1545,11 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  width: 3.375rem;
-  height: 1.5rem;
+  width: 2.5rem;
+  height: 1.125rem;
   background: var(--color-gold-light);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 26% 100%);
-  border-radius: 0 12px 0 0;
+  border-radius: 0 10px 0 0;
 }
 
 .hw-step-card.right::before {
@@ -1536,58 +1560,61 @@ body {
 }
 
 .hw-card-icon {
-  width: 7rem;
-  height: 7rem;
-  min-width: 7rem;
+  width: 4.5rem;
+  height: 4.5rem;
+  min-width: 4.5rem;
   border-radius: 50%;
   background: #eef3f9;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .hw-card-icon svg {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 1.75rem;
+  height: 1.75rem;
   color: var(--color-navy);
+  transition: color 0.3s ease;
 }
 
 .hw-card-content h3 {
   font-family: var(--font-heading);
-  font-size: 1.6875rem;
+  font-size: 1.125rem;
   font-weight: 900;
   color: var(--color-navy);
-  margin-bottom: 0.875rem;
+  margin-bottom: 0.375rem;
   line-height: 1.15;
+  transition: color 0.3s ease;
 }
 
 .hw-card-content p {
-  font-size: 1.0625rem;
-  line-height: 1.45;
+  font-size: 0.875rem;
+  line-height: 1.4;
   color: #344456;
   font-weight: 600;
   font-family: var(--font-body);
-  max-width: 26.25rem;
+  max-width: 20rem;
 }
 
 .hw-step-number {
   position: relative;
-  width: 4.375rem;
-  height: 4.375rem;
+  width: 3.25rem;
+  height: 3.25rem;
   border-radius: 50%;
   background: var(--color-navy);
   color: #ffffff;
-  border: 4px solid #ffffff;
+  border: 3px solid #ffffff;
   box-shadow:
     0 0 0 2px rgba(6, 27, 53, 0.35),
-    0 14px 26px rgba(6, 27, 53, 0.18);
+    0 10px 20px rgba(6, 27, 53, 0.16);
   z-index: 4;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-display);
-  font-size: 1.4375rem;
+  font-size: 1.0625rem;
   font-weight: 900;
   flex-shrink: 0;
 }
@@ -1595,7 +1622,7 @@ body {
 .hw-step-number::after {
   content: "";
   position: absolute;
-  width: 3.75rem;
+  width: 2.75rem;
   height: 2px;
   background: rgba(6, 27, 53, 0.55);
   top: 50%;
@@ -1621,11 +1648,11 @@ body {
 }
 
 .hw-step-number.right-link .dot {
-  right: calc(100% + 3.75rem);
+  right: calc(100% + 2.75rem);
 }
 
 .hw-step-number.left-link .dot {
-  left: calc(100% + 3.75rem);
+  left: calc(100% + 2.75rem);
 }
 
 .hw-process-footer-strip {
@@ -1633,7 +1660,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 4.375rem;
+  height: 3rem;
   background: var(--color-navy-deep);
   z-index: 3;
 }
@@ -1641,26 +1668,26 @@ body {
 .hw-process-footer-strip::before {
   content: "";
   position: absolute;
-  right: 26.875rem;
-  top: -2.625rem;
-  width: 13.125rem;
-  height: 2.625rem;
+  right: 20rem;
+  top: -1.75rem;
+  width: 9rem;
+  height: 1.75rem;
   background: var(--color-navy-deep);
   clip-path: polygon(18% 0, 100% 0, 82% 100%, 0% 100%);
 }
 
 .hw-process-footer-text {
   position: absolute;
-  right: 4.6875rem;
-  bottom: 1.25rem;
+  right: 3rem;
+  bottom: 0.75rem;
   z-index: 4;
   margin: 0;
   color: #ffffff;
   font-family: var(--font-heading);
-  font-size: 1.0625rem;
+  font-size: 0.8125rem;
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
 }
 
 .hw-process-footer-text span {
@@ -1674,7 +1701,7 @@ body {
 
   .hw-process-container {
     grid-template-columns: 1fr;
-    gap: 2.75rem;
+    gap: 2rem;
   }
 
   .hw-process-intro {
@@ -1703,9 +1730,9 @@ body {
   .hw-timeline-row {
     grid-template-columns: 1fr;
     margin-top: 0 !important;
-    margin-bottom: 1.375rem;
+    margin-bottom: 1rem;
     padding-left: 0;
-    min-height: 6rem;
+    min-height: 4.5rem;
     position: relative;
   }
 
@@ -1754,11 +1781,11 @@ body {
 
 @media (max-width: 700px) {
   .hw-process-section {
-    padding: 2.5rem 0 5.5rem;
+    padding: 2rem 0 4rem;
   }
 
   .hw-process-title {
-    font-size: 3.25rem;
+    font-size: 2.5rem;
   }
 
   .hw-process-lead {
@@ -1777,21 +1804,21 @@ body {
   .hw-step-card {
     flex-direction: column;
     text-align: center;
-    padding: 1.75rem 1.375rem;
+    padding: 1.25rem 1.125rem;
   }
 
   .hw-card-icon {
-    width: 5.625rem;
-    height: 5.625rem;
-    min-width: 5.625rem;
+    width: 4rem;
+    height: 4rem;
+    min-width: 4rem;
   }
 
   .hw-card-content h3 {
-    font-size: 1.25rem;
+    font-size: 1.0625rem;
   }
 
   .hw-card-content p {
-    font-size: 0.9375rem;
+    font-size: 0.8125rem;
     max-width: none;
   }
 

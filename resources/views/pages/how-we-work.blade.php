@@ -36,7 +36,7 @@
                         @if($isLeft)
                             <div class="hw-step-card left">
                                 <div class="hw-card-icon">
-                                    <x-lm.icon :name="$step['icon']" :size="40" class="text-navy" />
+                                    <x-lm.icon :name="$step['icon']" :size="28" class="text-navy" />
                                 </div>
                                 <div class="hw-card-content">
                                     <h3>{{ $step['title'] }}</h3>
@@ -60,7 +60,7 @@
                                     <p>{{ $step['body'] }}</p>
                                 </div>
                                 <div class="hw-card-icon">
-                                    <x-lm.icon :name="$step['icon']" :size="40" class="text-navy" />
+                                    <x-lm.icon :name="$step['icon']" :size="28" class="text-navy" />
                                 </div>
                             </div>
                         @endunless
