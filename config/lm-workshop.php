@@ -26,6 +26,7 @@ return [
 
     'images' => [
         'hero' => 'images/homepage/ChatGPT Image Jul 7, 2026, 10_20_17 AM.png',
+        'heroVideo' => 'images/homepage/Main.webm',
         'reliabilityBg' => 'images/home/ChatGPT Image Jul 7, 2026, 02_56_52 PM.png',
         'aboutHero' => 'images/aboutus/ChatGPT Image Jul 7, 2026, 11_14_42 AM.png',
         'servicesHero' => 'images/services/ChatGPT Image Jul 7, 2026, 11_23_25 AM.png',

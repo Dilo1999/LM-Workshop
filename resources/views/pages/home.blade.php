@@ -8,10 +8,22 @@
     $why = config('lm-workshop.why_home');
     $brand = config('lm-workshop.brand');
     $heroImage = asset($images['hero']);
+    $heroVideo = asset($images['heroVideo']);
 @endphp
 
 {{-- Hero --}}
 <section class="lm-hero" style="--hero-bg-image: url('{{ $heroImage }}')">
+    <video
+        class="hero-bg-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        aria-hidden="true"
+    >
+        <source src="{{ $heroVideo }}" type="video/webm">
+    </video>
     <div class="hero-container relative z-[5] max-w-7xl mx-auto px-6 w-full">
         <div class="hero-content">
             <div class="eyebrow">
