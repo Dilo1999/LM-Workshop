@@ -15,13 +15,6 @@
 <section class="hw-process-section">
 
     <div class="hw-process-container max-w-7xl mx-auto px-6">
-        <div class="hw-process-intro">
-            <x-lm.section-label>Our Process</x-lm.section-label>
-            <h2 class="hw-process-title">How We<br>Work</h2>
-            <div class="hw-process-accent" aria-hidden="true"></div>
-            <p class="hw-process-lead">A proven, end-to-end process delivering reliable engineering solutions with precision and performance.</p>
-        </div>
-
         <div class="hw-timeline">
             <div class="hw-timeline-line" aria-hidden="true"></div>
 
