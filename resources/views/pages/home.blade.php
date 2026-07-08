@@ -15,7 +15,9 @@
     <div class="hero-container relative z-[5] max-w-7xl mx-auto px-6 w-full">
         <div class="hero-content">
             <div class="eyebrow">
-                Engineering Division<span class="hero-mobile-br lg:hidden"><br></span> of LITUS Maldives
+                <span class="eyebrow-copy">
+                    <span class="hero-eyebrow-line1">Engineering Division</span><span class="hero-eyebrow-space hidden lg:inline"> </span><span class="hero-eyebrow-line2">of LITUS Maldives</span>
+                </span>
             </div>
 
             <h1 class="hero-title">

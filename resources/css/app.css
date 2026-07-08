@@ -317,6 +317,16 @@ body {
   text-transform: uppercase;
 }
 
+.lm-hero .eyebrow-copy {
+  display: inline;
+  line-height: inherit;
+}
+
+.lm-hero .hero-eyebrow-line1,
+.lm-hero .hero-eyebrow-line2 {
+  display: inline;
+}
+
 .lm-hero .eyebrow::before {
   content: "";
   width: 70px;
@@ -609,13 +619,29 @@ body {
   }
 
   .lm-hero .eyebrow {
-    align-items: flex-start;
-    font-size: 0.875rem;
-    letter-spacing: 0.28em;
-    gap: 1.25rem;
+    align-items: center;
+    font-size: 0.8125rem;
+    letter-spacing: 0.24em;
+    gap: 1rem;
     margin-bottom: 2.75rem;
-    line-height: 1.35;
+    line-height: 1;
     font-weight: 900;
+    color: var(--color-gold-light);
+  }
+
+  .lm-hero .eyebrow-copy {
+    display: block;
+    line-height: 1;
+  }
+
+  .lm-hero .hero-eyebrow-line1,
+  .lm-hero .hero-eyebrow-line2 {
+    display: block;
+    line-height: 1.05;
+  }
+
+  .lm-hero .hero-eyebrow-line2 {
+    margin-top: 0.2rem;
   }
 
   .lm-hero .eyebrow::before {
@@ -624,7 +650,8 @@ body {
     background: var(--color-gold-light);
     box-shadow: 0 0 18px rgba(26, 122, 148, 0.7);
     flex-shrink: 0;
-    margin-top: 0.35rem;
+    align-self: center;
+    margin-top: 0;
   }
 
   .lm-hero .hero-title {
