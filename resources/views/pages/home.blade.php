@@ -14,14 +14,18 @@
 <section class="lm-hero" style="--hero-bg-image: url('{{ $heroImage }}')">
     <div class="hero-container relative z-[5] max-w-7xl mx-auto px-6 w-full">
         <div class="hero-content">
-            <div class="eyebrow">Engineering Division of LITUS Maldives</div>
+            <div class="eyebrow">
+                Engineering Division<span class="hero-mobile-br lg:hidden"><br></span> of LITUS Maldives
+            </div>
 
             <h1 class="hero-title">
                 <span class="white">LM</span>
                 <span class="gold">Workshop</span>
             </h1>
 
-            <h2 class="hero-subtitle">Engineering You Can Count On</h2>
+            <div class="hero-title-line lg:hidden" aria-hidden="true"></div>
+
+            <h2 class="hero-subtitle">Engineering You Can<span class="hero-mobile-br lg:hidden"><br></span> Count On</h2>
 
             <p class="hero-description">
                 Reliable engineering support for marine, industrial and commercial operations across the Maldives.
@@ -29,26 +33,36 @@
 
             <div class="hero-actions">
                 <a href="{{ route('services') }}" class="hero-btn btn-gold">
-                    View Services <span>&rarr;</span>
+                    <span class="hero-btn-icon lg:hidden" aria-hidden="true">
+                        <x-lm.icon name="wrench" :size="16" />
+                    </span>
+                    <span class="hero-btn-text">View Services</span>
+                    <span class="hero-btn-arrow" aria-hidden="true">&rarr;</span>
                 </a>
                 <a href="{{ route('contact') }}" class="hero-btn btn-outline">
-                    Contact Us
+                    <span class="hero-btn-icon lg:hidden" aria-hidden="true">
+                        <x-lm.icon name="phone" :size="16" />
+                    </span>
+                    <span class="hero-btn-text">Contact Us</span>
                 </a>
             </div>
 
             <div class="stats-wrap">
                 <div class="stats-grid">
                     @foreach([
-                        ['10+', 'Years Experience', 'Years Exp.'],
-                        ['6', 'Engineering Disciplines', 'Disciplines'],
-                        ['200+', 'Projects Completed', 'Projects'],
-                        ['24/7', 'Support Available', 'Support'],
-                    ] as [$n, $l, $lShort])
+                        ['10+', 'Years Experience', 'Years Exp.', 'shield-check'],
+                        ['6', 'Engineering Disciplines', 'Disciplines', 'settings'],
+                        ['200+', 'Projects Completed', 'Projects', 'hard-hat'],
+                        ['24/7', 'Support Available', 'Support', 'headset'],
+                    ] as [$n, $l, $lShort, $icon])
                         <div class="stat-item">
+                            <div class="stat-icon lg:hidden">
+                                <x-lm.icon :name="$icon" :size="26" class="text-gold-light" />
+                            </div>
                             <div class="stat-number">{{ $n }}</div>
                             <div class="stat-label">
-                                <span class="hidden sm:inline">{{ $l }}</span>
-                                <span class="sm:hidden">{{ $lShort }}</span>
+                                <span class="hidden lg:inline">{{ $l }}</span>
+                                <span class="lg:hidden">{{ $lShort }}</span>
                             </div>
                         </div>
                     @endforeach
@@ -57,34 +71,38 @@
         </div>
     </div>
 
-    <div class="scroll-indicator">
+    <div class="scroll-indicator scroll-indicator--desktop">
         <div class="mouse"></div>
         <span>Scroll</span>
+    </div>
+    <div class="scroll-indicator scroll-indicator--mobile lg:hidden" aria-hidden="true">
+        <span class="scroll-chevron">&darr;</span>
     </div>
 </section>
 
 {{-- Downtime --}}
-<section class="bg-white py-24">
+<section class="home-split-section bg-white py-24">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div class="order-2 lg:order-1 home-split-copy">
                 <x-lm.section-label>The Challenge</x-lm.section-label>
-                <h2 class="font-display font-bold mb-6 leading-tight text-display text-navy">Every Minute of Downtime Has a Cost</h2>
+                <h2 class="font-display font-bold mb-4 lg:mb-6 leading-tight text-display text-navy">Every Minute of Downtime Has a Cost</h2>
                 <p class="text-gray-500 mb-4 leading-relaxed font-body">Reliable operations don't happen by chance.</p>
                 <p class="text-gray-500 mb-4 leading-relaxed font-body">Every successful business depends on equipment, systems and infrastructure performing exactly as they should. Whether it's a resort welcoming guests, a vessel transporting cargo, a construction project working against strict deadlines or an industrial facility operating around the clock, uninterrupted operations are essential to success.</p>
-                <p class="text-gray-500 mb-4 leading-relaxed font-body">When critical equipment fails, the impact extends far beyond the repair itself. Productivity slows, operating costs increase, schedules are disrupted and customer experience can be affected. In many industries, even a few hours of downtime can result in significant financial and operational consequences.</p>
-                <p class="text-gray-500 mb-4 leading-relaxed font-body">At LM Workshop, we understand these challenges because we've worked alongside businesses operating in the demanding environments of the Maldives. Our role is not simply to repair equipment, it is to help organisations maintain reliable operations through practical engineering expertise, responsive technical support and dependable workmanship.</p>
-                <p class="text-gray-500 mb-4 leading-relaxed font-body">Whether supporting preventive maintenance, emergency breakdowns or complex engineering projects, we focus on one objective:</p>
-                <p class="text-gray-500 mb-8 leading-relaxed font-body">Helping your business operate with confidence.</p>
-                <blockquote class="pl-5 py-4 border-l-4 border-gold bg-quote-bg rounded-r-sm">
-                    <p class="font-semibold italic leading-snug text-navy font-body text-[1.05rem]">&ldquo;Reliable engineering is not about fixing problems. It's about preventing disruption.&rdquo;</p>
+                <p class="max-lg:hidden text-gray-500 mb-4 leading-relaxed font-body">When critical equipment fails, the impact extends far beyond the repair itself. Productivity slows, operating costs increase, schedules are disrupted and customer experience can be affected. In many industries, even a few hours of downtime can result in significant financial and operational consequences.</p>
+                <p class="max-lg:hidden text-gray-500 mb-4 leading-relaxed font-body">At LM Workshop, we understand these challenges because we've worked alongside businesses operating in the demanding environments of the Maldives. Our role is not simply to repair equipment, it is to help organisations maintain reliable operations through practical engineering expertise, responsive technical support and dependable workmanship.</p>
+                <p class="lg:hidden text-gray-500 mb-4 leading-relaxed font-body">When equipment fails, productivity slows and costs rise. LM Workshop helps organisations across the Maldives maintain reliable operations through practical engineering expertise and responsive support.</p>
+                <p class="max-lg:hidden text-gray-500 mb-4 leading-relaxed font-body">Whether supporting preventive maintenance, emergency breakdowns or complex engineering projects, we focus on one objective:</p>
+                <p class="text-gray-500 mb-6 lg:mb-8 leading-relaxed font-body font-medium text-navy/80">Helping your business operate with confidence.</p>
+                <blockquote class="home-split-quote pl-4 lg:pl-5 py-3 lg:py-4 border-l-4 border-gold bg-quote-bg rounded-r-sm">
+                    <p class="font-semibold italic leading-snug text-navy font-body text-sm lg:text-[1.05rem]">&ldquo;Reliable engineering is not about fixing problems. It's about preventing disruption.&rdquo;</p>
                 </blockquote>
             </div>
-            <div class="relative overflow-hidden sm:overflow-visible">
-                <img src="{{ $images['workerGears'] }}" alt="Workers repairing large industrial machinery" class="w-full h-64 sm:h-80 lg:h-[480px] object-cover">
-                <div class="lm-home-badge lm-home-badge--offset absolute bottom-4 left-4 sm:-bottom-6 sm:-left-6 w-28 h-28 sm:w-32 sm:h-32 flex flex-col items-center justify-center text-center bg-gold text-white">
-                    <span class="text-3xl font-display font-bold">24/7</span>
-                    <span class="text-xs font-heading font-bold uppercase tracking-wider mt-1">Support</span>
+            <div class="order-1 lg:order-2 home-split-media relative">
+                <img src="{{ $images['workerGears'] }}" alt="Workers repairing large industrial machinery" class="w-full h-52 sm:h-64 lg:h-[480px] object-cover">
+                <div class="lm-home-badge lm-home-badge--offset hidden lg:flex absolute bottom-3 left-3 sm:bottom-4 sm:left-4 lg:-bottom-6 lg:-left-6 w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 flex-col items-center justify-center text-center bg-gold text-white shadow-lg">
+                    <span class="text-2xl sm:text-3xl font-display font-bold">24/7</span>
+                    <span class="text-[10px] sm:text-xs font-heading font-bold uppercase tracking-wider mt-1">Support</span>
                 </div>
             </div>
         </div>
@@ -92,23 +110,23 @@
 </section>
 
 {{-- About Preview --}}
-<section class="py-24 bg-cream">
+<section class="home-split-section py-24 bg-cream">
     <div class="max-w-7xl mx-auto px-6">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
-            <div class="relative overflow-hidden sm:overflow-visible">
-                <img src="{{ $images['engineer'] }}" alt="LM Workshop engineer on site" class="w-full h-64 sm:h-80 lg:h-[480px] object-cover">
-                <div class="lm-home-badge lm-home-badge--top absolute top-4 right-4 sm:-top-5 sm:-right-5 w-28 h-28 sm:w-36 sm:h-36 flex flex-col items-center justify-center text-center bg-navy">
-                    <span class="text-xs font-heading font-bold uppercase tracking-widest text-white/60 mb-1">Division of</span>
-                    <span class="text-lg font-display font-bold text-white tracking-[0.08em]">LITUS</span>
-                    <span class="text-xs font-heading font-bold text-white/60 uppercase tracking-widest">Maldives</span>
+        <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div class="home-split-media relative">
+                <img src="{{ $images['engineer'] }}" alt="LM Workshop engineer on site" class="w-full h-52 sm:h-64 lg:h-[480px] object-cover">
+                <div class="lm-home-badge lm-home-badge--top hidden lg:flex absolute top-3 right-3 sm:top-4 sm:right-4 lg:-top-5 lg:-right-5 w-24 h-24 sm:w-28 sm:h-28 lg:w-36 lg:h-36 flex-col items-center justify-center text-center bg-navy shadow-lg">
+                    <span class="text-[10px] sm:text-xs font-heading font-bold uppercase tracking-widest text-white/60 mb-1">Division of</span>
+                    <span class="text-base sm:text-lg font-display font-bold text-white tracking-[0.08em]">LITUS</span>
+                    <span class="text-[10px] sm:text-xs font-heading font-bold text-white/60 uppercase tracking-widest">Maldives</span>
                 </div>
             </div>
-            <div>
+            <div class="home-split-copy">
                 <x-lm.section-label>Who We Are</x-lm.section-label>
-                <h2 class="font-display font-bold mb-6 leading-tight text-display text-navy">Engineering You Can Count On</h2>
+                <h2 class="font-display font-bold mb-4 lg:mb-6 leading-tight text-display text-navy">Engineering You Can Count On</h2>
                 <p class="text-gray-500 mb-4 leading-relaxed font-body">LM Workshop is the engineering division of LITUS Maldives, providing multidisciplinary engineering solutions for marine, industrial and commercial operations throughout the Maldives.</p>
-                <p class="text-gray-500 mb-4 leading-relaxed font-body">Our team combines practical expertise across marine engineering, mechanical systems, electrical infrastructure, fabrication, power generation and industrial maintenance to deliver dependable engineering support.</p>
-                <p class="text-gray-500 mb-8 leading-relaxed font-body">Every project we undertake is guided by the same commitment: to deliver practical engineering solutions with professionalism, reliability and accountability.</p>
+                <p class="max-lg:hidden text-gray-500 mb-4 leading-relaxed font-body">Our team combines practical expertise across marine engineering, mechanical systems, electrical infrastructure, fabrication, power generation and industrial maintenance to deliver dependable engineering support.</p>
+                <p class="text-gray-500 mb-6 lg:mb-8 leading-relaxed font-body">Every project we undertake is guided by the same commitment: to deliver practical engineering solutions with professionalism, reliability and accountability.</p>
                 <x-lm.gold-btn :href="route('about')">Learn More About Us</x-lm.gold-btn>
             </div>
         </div>
