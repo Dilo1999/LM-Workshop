@@ -7,8 +7,8 @@ return [
         'description' => 'Reliable engineering support for marine, industrial and commercial operations across the Maldives.',
         'phone' => '+960 XXX XXXX',
         'whatsapp' => '+960 XXX XXXX',
-        'email' => 'info@lmworkshop.mv',
-        'website' => 'www.lmworkshop.mv',
+        'email' => 'info@lmworkshop.com',
+        'website' => 'www.lmworkshop.com',
         'location' => 'Malé, Maldives',
     ],
 

@@ -45,13 +45,21 @@ class ContactController extends Controller
             $validated['message'] ?? '',
         ])->filter(fn ($line) => $line !== null)->implode("\n");
 
-        Mail::to(config('mail.contact_to', config('mail.from.address')))
-            ->send(new ContactFormMail(
-                senderName: $validated['name'],
-                senderEmail: $validated['email'],
-                formSubject: $subject,
-                messageBody: $body,
-            ));
+        try {
+            Mail::to(config('mail.contact_to', config('mail.from.address')))
+                ->send(new ContactFormMail(
+                    senderName: $validated['name'],
+                    senderEmail: $validated['email'],
+                    formSubject: $subject,
+                    messageBody: $body,
+                ));
+        } catch (\Throwable $e) {
+            report($e);
+
+            return back()
+                ->withInput()
+                ->with('contact_error', 'We could not send your inquiry right now. Please email us directly at ' . config('lm-workshop.brand.email') . '.');
+        }
 
         return redirect()->route('contact')->with('contact_success', true);
     }

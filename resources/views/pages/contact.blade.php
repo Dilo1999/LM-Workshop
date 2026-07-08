@@ -28,19 +28,23 @@
 
                     <div class="flex flex-col gap-5 mb-8">
                         @foreach([
-                            ['phone', 'Phone', $brand['phone']],
-                            ['phone', 'WhatsApp', $brand['whatsapp']],
-                            ['mail', 'Email', $brand['email']],
-                            ['globe', 'Website', $brand['website']],
-                            ['map-pin', 'Location', $brand['location']],
-                        ] as [$icon, $label, $value])
+                            ['phone', 'Phone', $brand['phone'], null],
+                            ['phone', 'WhatsApp', $brand['whatsapp'], null],
+                            ['mail', 'Email', $brand['email'], 'mailto:' . $brand['email']],
+                            ['globe', 'Website', $brand['website'], 'https://' . preg_replace('#^https?://#', '', $brand['website'])],
+                            ['map-pin', 'Location', $brand['location'], null],
+                        ] as [$icon, $label, $value, $href])
                             <div class="flex items-start gap-3">
                                 <div class="w-9 h-9 flex items-center justify-center shrink-0 bg-gold/12">
                                     <x-lm.icon :name="$icon" :size="15" class="text-gold-light" />
                                 </div>
                                 <div>
                                     <p class="text-xs uppercase tracking-widest text-white/40 mb-0.5 font-heading">{{ $label }}</p>
-                                    <p class="text-white/80 text-sm font-body">{{ $value }}</p>
+                                    @if($href)
+                                        <a href="{{ $href }}" class="text-white/80 text-sm font-body hover:text-gold-light transition-colors">{{ $value }}</a>
+                                    @else
+                                        <p class="text-white/80 text-sm font-body">{{ $value }}</p>
+                                    @endif
                                 </div>
                             </div>
                         @endforeach
@@ -62,6 +66,12 @@
             <div class="lg:col-span-3">
                 <x-lm.section-label>Send an Inquiry</x-lm.section-label>
                 <h2 class="font-display font-bold mb-8 leading-tight text-display-md text-navy">Tell Us About Your Requirements</h2>
+
+                @if(session('contact_error'))
+                    <div class="mb-6 p-4 border border-red-300 bg-red-50 text-red-700 text-sm font-body">
+                        {{ session('contact_error') }}
+                    </div>
+                @endif
 
                 @if(session('contact_success'))
                     <div class="p-10 border border-gold text-center bg-quote-bg">
