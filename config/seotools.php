@@ -7,21 +7,25 @@
 return [
     'inertia' => env('SEO_TOOLS_INERTIA', false),
     'meta' => [
-        /*
-         * The default configurations to be used by the meta generator.
-         */
         'defaults' => [
             'title' => 'LM Workshop',
             'titleBefore' => false,
-            'description' => 'Reliable engineering support for marine, industrial and commercial operations across the Maldives. Engineering division of LITUS Maldives.',
+            'description' => 'Reliable engineering support for marine, industrial and commercial operations across the Maldives. Engineering You Can Count On.',
             'separator' => ' — ',
-            'keywords' => ['engineering', 'marine', 'industrial', 'Maldives', 'LITUS', 'workshop', 'maintenance'],
+            'keywords' => [
+                'LM Workshop',
+                'engineering Maldives',
+                'marine engineering Maldives',
+                'power systems',
+                'industrial maintenance',
+                'fabrication Maldives',
+                'preventive maintenance',
+                'Malé engineering',
+                'LITUS Maldives',
+            ],
             'canonical' => 'current',
-            'robots' => false, // Set to 'all', 'none' or any combination of index/noindex and follow/nofollow
+            'robots' => 'index, follow',
         ],
-        /*
-         * Webmaster tags are always added.
-         */
         'webmaster_tags' => [
             'google' => null,
             'bing' => null,
@@ -30,38 +34,27 @@ return [
             'yandex' => null,
             'norton' => null,
         ],
-
         'add_notranslate_class' => false,
     ],
     'opengraph' => [
-        /*
-         * The default configurations to be used by the opengraph generator.
-         */
         'defaults' => [
-            'title' => 'Al Zaha General Trading',
-            'description' => 'Premium sourcing and supply chain solutions from Dubai.',
+            'title' => 'LM Workshop — Engineering You Can Count On',
+            'description' => 'Reliable engineering support for marine, industrial and commercial operations across the Maldives.',
             'url' => null,
             'type' => 'website',
-            'site_name' => 'Al Zaha General Trading',
+            'site_name' => 'LM Workshop',
             'images' => [],
         ],
     ],
     'twitter' => [
-        /*
-         * The default values to be used by the twitter cards generator.
-         */
         'defaults' => [
-            // 'card'        => 'summary',
-            // 'site'        => '@LuizVinicius73',
+            'card' => 'summary_large_image',
         ],
     ],
     'json-ld' => [
-        /*
-         * The default configurations to be used by the json-ld generator.
-         */
         'defaults' => [
-            'title' => 'Al Zaha General Trading',
-            'description' => 'Premium sourcing and supply chain solutions from Dubai.',
+            'title' => 'LM Workshop',
+            'description' => 'Reliable engineering support for marine, industrial and commercial operations across the Maldives.',
             'url' => 'current',
             'type' => 'WebPage',
             'images' => [],

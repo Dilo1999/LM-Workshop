@@ -4,11 +4,98 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="theme-color" content="#1a2b4a">
+    <meta name="author" content="{{ config('lm-workshop.brand.name') }}">
+    <meta name="geo.region" content="MV">
+    <meta name="geo.placename" content="Malé">
+    <meta name="format-detection" content="telephone=yes">
 
     {!! \Artesaos\SEOTools\Facades\SEOTools::generate() !!}
 
     <link rel="icon" href="{{ asset(config('lm-workshop.images.favicon')) }}" type="image/svg+xml" sizes="any">
     <link rel="apple-touch-icon" href="{{ asset(config('lm-workshop.images.favicon')) }}">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="{{ url('/sitemap.xml') }}">
+
+    @php
+        $brand = config('lm-workshop.brand');
+        $logoUrl = asset(config('lm-workshop.images.logo'));
+        $phone = $brand['phone'] ?? '';
+        $hasRealPhone = $phone && ! str_contains($phone, 'XXX');
+        $sameAs = array_values(array_filter($brand['same_as'] ?? []));
+
+        $organization = [
+            '@context' => 'https://schema.org',
+            '@graph' => [
+                [
+                    '@type' => 'Organization',
+                    '@id' => url('/').'#organization',
+                    'name' => $brand['name'],
+                    'alternateName' => 'LMW',
+                    'url' => url('/'),
+                    'logo' => [
+                        '@type' => 'ImageObject',
+                        'url' => $logoUrl,
+                    ],
+                    'image' => $logoUrl,
+                    'email' => $brand['email'],
+                    'description' => $brand['description'],
+                    'address' => [
+                        '@type' => 'PostalAddress',
+                        'addressLocality' => 'Malé',
+                        'addressCountry' => 'MV',
+                    ],
+                    'areaServed' => [
+                        '@type' => 'Country',
+                        'name' => 'Maldives',
+                    ],
+                    'parentOrganization' => [
+                        '@type' => 'Organization',
+                        'name' => 'LITUS Maldives',
+                    ],
+                ],
+                [
+                    '@type' => 'WebSite',
+                    '@id' => url('/').'#website',
+                    'url' => url('/'),
+                    'name' => $brand['name'],
+                    'description' => $brand['description'],
+                    'publisher' => ['@id' => url('/').'#organization'],
+                    'inLanguage' => 'en',
+                ],
+                [
+                    '@type' => 'LocalBusiness',
+                    '@id' => url('/').'#localbusiness',
+                    'name' => $brand['name'],
+                    'image' => $logoUrl,
+                    'url' => url('/'),
+                    'email' => $brand['email'],
+                    'description' => $brand['description'],
+                    'address' => [
+                        '@type' => 'PostalAddress',
+                        'addressLocality' => 'Malé',
+                        'addressCountry' => 'MV',
+                    ],
+                    'geo' => [
+                        '@type' => 'GeoCoordinates',
+                        'latitude' => 4.1755,
+                        'longitude' => 73.5093,
+                    ],
+                    'areaServed' => 'Maldives',
+                    'priceRange' => '$$',
+                ],
+            ],
+        ];
+
+        if ($hasRealPhone) {
+            $organization['@graph'][0]['telephone'] = $phone;
+            $organization['@graph'][2]['telephone'] = $phone;
+        }
+
+        if ($sameAs !== []) {
+            $organization['@graph'][0]['sameAs'] = $sameAs;
+        }
+    @endphp
+    <script type="application/ld+json">{!! json_encode($organization, JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT) !!}</script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +107,7 @@
 <body class="min-h-screen flex flex-col bg-white text-navy antialiased">
     <x-lm.navbar />
 
-    <main class="flex-1">
+    <main class="flex-1" id="main-content">
         @yield('content')
     </main>
 

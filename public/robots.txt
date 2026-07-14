@@ -1,14 +1,12 @@
 User-agent: *
 
-# Block administrative and auth pages from being indexed
+# Block admin and utility paths
 Disallow: /admin/
-Disallow: /dashboard/
-Disallow: /login
-Disallow: /register
-Disallow: /password/
+Disallow: /livewire/
+Disallow: /storage/
 
-# Allow all other content to be crawled
+# Allow public site content
 Allow: /
 
-# XML sitemap (Laravel-generated)
-Sitemap: https://alzahageneraltrading.com/sitemap.xml
+# Sitemap
+Sitemap: https://lmworkshop.com/sitemap.xml

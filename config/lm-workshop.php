@@ -10,7 +10,25 @@ return [
         'email' => 'info@lmworkshop.com',
         'website' => 'www.lmworkshop.com',
         'location' => 'Malé, Maldives',
+        'same_as' => [
+            // Add social profile URLs when available, e.g. Facebook / LinkedIn / Instagram
+        ],
     ],
+
+    'seo' => [
+        'og_images' => [
+            'home' => 'hero',
+            'about' => 'aboutHero',
+            'services' => 'servicesHero',
+            'industries' => 'industriesHero',
+            'why' => 'whyHero',
+            'capability' => 'capabilityHero',
+            'how-we-work' => 'howWeWorkHero',
+            'team' => 'teamHero',
+            'contact' => 'weldingAdrian',
+        ],
+    ],
+
 
     'nav' => [
         ['label' => 'Home', 'route' => 'home'],

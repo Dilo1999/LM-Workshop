@@ -14,8 +14,13 @@ class ContactController extends Controller
     public function show(SeoService $seo): View
     {
         $seo->applyForPage('contact', [
-            'meta_title' => 'Contact — LM Workshop',
-            'meta_description' => 'Contact LM Workshop for emergency engineering support, preventive maintenance or technical expertise for your next project.',
+            'meta_title' => 'Contact LM Workshop — Get Engineering Support in the Maldives',
+            'meta_description' => 'Contact LM Workshop in Malé for emergency engineering support, preventive maintenance or technical expertise. Email info@lmworkshop.com.',
+            'keywords' => [
+                'contact LM Workshop',
+                'engineering enquiry Maldives',
+                'info@lmworkshop.com',
+            ],
         ]);
 
         return view('pages.contact');

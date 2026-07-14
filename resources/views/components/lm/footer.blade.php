@@ -51,14 +51,18 @@
                     <h4 class="text-xs font-heading font-bold uppercase tracking-[0.18em] mb-3 text-gold-light">Contact</h4>
                     <ul class="flex flex-col gap-2">
                         @foreach([
-                            ['phone', $brand['phone']],
-                            ['mail', $brand['email']],
-                            ['globe', $brand['website']],
-                            ['map-pin', $brand['location']],
-                        ] as [$icon, $text])
+                            ['phone', $brand['phone'], str_contains($brand['phone'], 'XXX') ? null : 'tel:'.preg_replace('/\s+/', '', $brand['phone'])],
+                            ['mail', $brand['email'], 'mailto:'.$brand['email']],
+                            ['globe', $brand['website'], 'https://'.preg_replace('#^https?://#', '', $brand['website'])],
+                            ['map-pin', $brand['location'], null],
+                        ] as [$icon, $text, $href])
                             <li class="flex items-center gap-2.5">
                                 <x-lm.icon :name="$icon" :size="13" class="text-gold-light shrink-0" />
-                                <span class="text-white/60 text-sm font-body">{{ $text }}</span>
+                                @if($href)
+                                    <a href="{{ $href }}" class="text-white/60 hover:text-white text-sm font-body transition-colors">{{ $text }}</a>
+                                @else
+                                    <span class="text-white/60 text-sm font-body">{{ $text }}</span>
+                                @endif
                             </li>
                         @endforeach
                     </ul>

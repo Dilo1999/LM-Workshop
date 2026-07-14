@@ -2,8 +2,11 @@
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
+
+Route::get('/sitemap.xml', SitemapController::class)->name('sitemap');
 
 Route::match(['get', 'head'], 'storage/{path}', function () {
     $requestPath = ltrim(request()->path(), '/');
