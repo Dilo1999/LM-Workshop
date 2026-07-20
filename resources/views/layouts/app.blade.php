@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="google-site-verification" content="_Jakyf766XD8eq1MHY5NMO5Pd5GGtFwuKxrMF2wmUxA">
     <meta name="theme-color" content="#1a2b4a">
     <meta name="author" content="{{ config('lm-workshop.brand.name') }}">
     <meta name="geo.region" content="MV">
