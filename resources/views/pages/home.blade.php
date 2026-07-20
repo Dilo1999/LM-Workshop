@@ -32,7 +32,7 @@
                 </span>
             </div>
 
-            <h1 class="hero-title">
+            <h1 class="hero-title" aria-label="LM Workshop">
                 <span class="white">LM</span>
                 <span class="gold">Workshop</span>
             </h1>
@@ -42,7 +42,7 @@
             <h2 class="hero-subtitle">Engineering You Can<span class="hero-mobile-br lg:hidden"><br></span> Count On</h2>
 
             <p class="hero-description">
-                Reliable engineering support for marine, industrial and commercial operations across the Maldives.
+                LM Workshop provides reliable engineering support for marine, industrial and commercial operations across the Maldives.
             </p>
 
             <div class="hero-actions">
@@ -113,7 +113,7 @@
                 </blockquote>
             </div>
             <div class="order-1 lg:order-2 home-split-media relative">
-                <img src="{{ $images['workerGears'] }}" alt="Workers repairing large industrial machinery" class="w-full h-52 sm:h-64 lg:h-[480px] object-cover">
+                <img src="{{ $images['workerGears'] }}" alt="LM Workshop engineers repairing industrial machinery in the Maldives" class="w-full h-52 sm:h-64 lg:h-[480px] object-cover">
                 <div class="lm-home-badge lm-home-badge--offset hidden lg:flex absolute bottom-3 left-3 sm:bottom-4 sm:left-4 lg:-bottom-6 lg:-left-6 w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 flex-col items-center justify-center text-center bg-gold text-white shadow-lg">
                     <span class="text-2xl sm:text-3xl font-display font-bold">24/7</span>
                     <span class="text-[10px] sm:text-xs font-heading font-bold uppercase tracking-wider mt-1">Support</span>

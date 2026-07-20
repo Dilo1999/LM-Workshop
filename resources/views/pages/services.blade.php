@@ -7,7 +7,7 @@
 @endphp
 
 <x-lm.section-hero
-    title="Engineering Solutions"
+    title="LM Workshop Services"
     body="LM Workshop delivers comprehensive engineering services across multiple technical disciplines, enabling clients to work with one trusted engineering partner."
     :img="$images['servicesHero']"
 />

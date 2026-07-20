@@ -5,7 +5,9 @@
 
 <x-lm.section-hero
     label="Who We Are"
-    title="Engineering You<br />Can Count On"
+    title="About LM Workshop"
+    subtitle="Engineering You Can Count On"
+    body="LM Workshop is the engineering division of LITUS Maldives, delivering dependable engineering solutions across the Maldives."
     :img="$images['aboutHero']"
 />
 

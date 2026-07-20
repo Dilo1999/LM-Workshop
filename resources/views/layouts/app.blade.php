@@ -22,23 +22,31 @@
         $phone = $brand['phone'] ?? '';
         $hasRealPhone = $phone && ! str_contains($phone, 'XXX');
         $sameAs = array_values(array_filter($brand['same_as'] ?? []));
+        $alternateNames = array_values(array_filter($brand['alternate_names'] ?? []));
 
         $organization = [
             '@context' => 'https://schema.org',
             '@graph' => [
                 [
-                    '@type' => 'Organization',
+                    '@type' => ['Organization', 'ProfessionalService'],
                     '@id' => url('/').'#organization',
                     'name' => $brand['name'],
-                    'alternateName' => 'LMW',
+                    'legalName' => $brand['legal_name'] ?? $brand['name'],
+                    'alternateName' => $alternateNames,
+                    'slogan' => $brand['tagline'],
                     'url' => url('/'),
                     'logo' => [
                         '@type' => 'ImageObject',
                         'url' => $logoUrl,
+                        'caption' => $brand['name'],
                     ],
                     'image' => $logoUrl,
                     'email' => $brand['email'],
                     'description' => $brand['description'],
+                    'foundingLocation' => [
+                        '@type' => 'Place',
+                        'name' => 'Malé, Maldives',
+                    ],
                     'address' => [
                         '@type' => 'PostalAddress',
                         'addressLocality' => 'Malé',
@@ -47,6 +55,13 @@
                     'areaServed' => [
                         '@type' => 'Country',
                         'name' => 'Maldives',
+                    ],
+                    'knowsAbout' => [
+                        'Marine engineering',
+                        'Power systems',
+                        'Industrial maintenance',
+                        'Fabrication',
+                        'Preventive maintenance',
                     ],
                     'parentOrganization' => [
                         '@type' => 'Organization',
@@ -58,6 +73,7 @@
                     '@id' => url('/').'#website',
                     'url' => url('/'),
                     'name' => $brand['name'],
+                    'alternateName' => $alternateNames,
                     'description' => $brand['description'],
                     'publisher' => ['@id' => url('/').'#organization'],
                     'inLanguage' => 'en',
@@ -66,6 +82,7 @@
                     '@type' => 'LocalBusiness',
                     '@id' => url('/').'#localbusiness',
                     'name' => $brand['name'],
+                    'alternateName' => $alternateNames,
                     'image' => $logoUrl,
                     'url' => url('/'),
                     'email' => $brand['email'],

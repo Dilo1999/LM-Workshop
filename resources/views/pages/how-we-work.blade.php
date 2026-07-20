@@ -7,8 +7,8 @@
 @endphp
 
 <x-lm.section-hero
-    title="How We Work"
-    body="A structured engineering process ensures every project is managed professionally from initial enquiry through to completion."
+    title="How LM Workshop Works"
+    body="LM Workshop follows a structured engineering process to manage every project professionally from initial enquiry through to completion."
     :img="$images['howWeWorkHero']"
 />
 

@@ -10,15 +10,16 @@ class PageController extends Controller
     public function home(SeoService $seo): View
     {
         $seo->applyForPage('home', [
-            'meta_title' => 'LM Workshop — Engineering You Can Count On | Maldives',
-            'meta_description' => 'LM Workshop provides reliable marine, industrial and commercial engineering support across the Maldives. Marine engines, power systems, fabrication and preventive maintenance.',
+            'meta_title' => 'LM Workshop | Official Site — Engineering Maldives',
+            'meta_description' => 'LM Workshop is a leading engineering company in the Maldives. Official site for marine engineering, power systems, fabrication, industrial maintenance and technical support in Malé.',
             'keywords' => [
                 'LM Workshop',
-                'engineering Maldives',
-                'marine engineering',
-                'industrial maintenance Malé',
-                'power systems Maldives',
+                'LM Workshop Maldives',
+                'LM Workshop Malé',
+                'LMWorkshop',
                 'engineering company Maldives',
+                'marine engineering Maldives',
+                'LITUS Maldives engineering',
             ],
         ]);
 
@@ -28,12 +29,13 @@ class PageController extends Controller
     public function about(SeoService $seo): View
     {
         $seo->applyForPage('about', [
-            'meta_title' => 'About LM Workshop — Engineering Division of LITUS Maldives',
-            'meta_description' => 'Learn about LM Workshop, the engineering division of LITUS Maldives. Multidisciplinary engineering solutions for marine, industrial and commercial operations.',
+            'meta_title' => 'LM Workshop | About Us — Engineering Division of LITUS Maldives',
+            'meta_description' => 'About LM Workshop: the engineering division of LITUS Maldives. Multidisciplinary marine, industrial and commercial engineering solutions across the Maldives.',
             'keywords' => [
+                'LM Workshop',
                 'about LM Workshop',
+                'LM Workshop Maldives',
                 'LITUS Maldives engineering',
-                'engineering company Malé',
             ],
         ]);
 
@@ -43,13 +45,13 @@ class PageController extends Controller
     public function services(SeoService $seo): View
     {
         $seo->applyForPage('services', [
-            'meta_title' => 'Engineering Services — Marine, Power, Fabrication | LM Workshop',
-            'meta_description' => 'Explore LM Workshop services: marine engineering, power systems, mechanical & electrical, fabrication, heavy equipment, fuel & water systems and preventive maintenance.',
+            'meta_title' => 'LM Workshop | Engineering Services — Marine, Power & Fabrication',
+            'meta_description' => 'LM Workshop engineering services in the Maldives: marine engineering, power systems, mechanical & electrical, fabrication, heavy equipment and preventive maintenance.',
             'keywords' => [
-                'marine engineering services Maldives',
+                'LM Workshop',
+                'LM Workshop services',
+                'marine engineering Maldives',
                 'generator maintenance Maldives',
-                'steel fabrication Maldives',
-                'preventive maintenance Maldives',
             ],
         ]);
 
@@ -59,13 +61,13 @@ class PageController extends Controller
     public function industries(SeoService $seo): View
     {
         $seo->applyForPage('industries', [
-            'meta_title' => 'Industries We Serve — Resorts, Marine & Industrial | LM Workshop',
-            'meta_description' => 'Tailored engineering support for resorts, marine operators, construction companies, industrial facilities, commercial businesses and government infrastructure in the Maldives.',
+            'meta_title' => 'LM Workshop | Industries — Resorts, Marine & Industrial',
+            'meta_description' => 'LM Workshop serves resorts, marine operators, construction, industrial facilities and commercial businesses with tailored engineering support across the Maldives.',
             'keywords' => [
+                'LM Workshop',
+                'LM Workshop industries',
                 'resort engineering Maldives',
                 'vessel maintenance Maldives',
-                'construction engineering support',
-                'industrial maintenance Maldives',
             ],
         ]);
 
@@ -75,12 +77,12 @@ class PageController extends Controller
     public function why(SeoService $seo): View
     {
         $seo->applyForPage('why', [
-            'meta_title' => 'Why Choose LM Workshop — Reliable Engineering Partner',
-            'meta_description' => 'Why businesses across the Maldives choose LM Workshop: reliable response, practical engineering, multi-disciplinary expertise, quality workmanship and transparent communication.',
+            'meta_title' => 'LM Workshop | Why Choose Us — Trusted Engineering Partner',
+            'meta_description' => 'Why choose LM Workshop: reliable response, practical engineering, multi-disciplinary expertise and quality workmanship for businesses across the Maldives.',
             'keywords' => [
-                'trusted engineering Maldives',
-                'reliable engineering partner',
+                'LM Workshop',
                 'why LM Workshop',
+                'trusted engineering Maldives',
             ],
         ]);
 
@@ -90,12 +92,12 @@ class PageController extends Controller
     public function capability(SeoService $seo): View
     {
         $seo->applyForPage('capability', [
-            'meta_title' => 'Engineering Capability — Proven Skills Across Disciplines | LM Workshop',
-            'meta_description' => 'Proven capability across marine engines, generators, electrical systems, fabrication, pumps and heavy equipment maintenance throughout the Maldives.',
+            'meta_title' => 'LM Workshop | Capability — Marine, Power & Fabrication',
+            'meta_description' => 'LM Workshop capability across marine engines, generators, electrical systems, fabrication, pumps and heavy equipment maintenance throughout the Maldives.',
             'keywords' => [
-                'engineering capability Maldives',
-                'marine engine repairs',
-                'generator servicing Maldives',
+                'LM Workshop',
+                'LM Workshop capability',
+                'marine engine repairs Maldives',
             ],
         ]);
 
@@ -105,12 +107,12 @@ class PageController extends Controller
     public function howWeWork(SeoService $seo): View
     {
         $seo->applyForPage('how-we-work', [
-            'meta_title' => 'How We Work — From Consultation to Ongoing Support | LM Workshop',
-            'meta_description' => 'Our structured engineering process: consultation, site assessment, proposal, execution, testing & handover, and ongoing support for long-term partnership.',
+            'meta_title' => 'LM Workshop | How We Work — Consultation to Ongoing Support',
+            'meta_description' => 'How LM Workshop works: consultation, site assessment, engineering proposal, execution, testing & handover, and ongoing technical support in the Maldives.',
             'keywords' => [
+                'LM Workshop',
+                'how LM Workshop works',
                 'engineering process Maldives',
-                'project delivery LM Workshop',
-                'engineering consultation Maldives',
             ],
         ]);
 
@@ -120,12 +122,12 @@ class PageController extends Controller
     public function team(SeoService $seo): View
     {
         $seo->applyForPage('team', [
-            'meta_title' => 'Our Engineering Team — Experienced Professionals | LM Workshop',
-            'meta_description' => 'Meet the LM Workshop engineering team — specialists in marine, power systems, mechanical & electrical, fabrication and preventive maintenance.',
+            'meta_title' => 'LM Workshop | Our Team — Experienced Engineers in Maldives',
+            'meta_description' => 'Meet the LM Workshop team — experienced engineers in marine, power systems, mechanical & electrical, fabrication and preventive maintenance in the Maldives.',
             'keywords' => [
-                'engineering team Maldives',
-                'marine engineers Malé',
+                'LM Workshop',
                 'LM Workshop team',
+                'engineers Maldives',
             ],
         ]);
 

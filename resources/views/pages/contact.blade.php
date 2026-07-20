@@ -9,8 +9,8 @@
 
 <x-lm.section-hero
     label="Reach Out"
-    title="Let's Talk"
-    body="Whether you require emergency engineering support, preventive maintenance or technical expertise for your next project, our team is ready to assist."
+    title="Contact LM Workshop"
+    body="Contact LM Workshop for emergency engineering support, preventive maintenance or technical expertise for your next project in the Maldives."
     :img="$images['weldingAdrian']"
 />
 

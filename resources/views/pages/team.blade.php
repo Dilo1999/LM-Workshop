@@ -9,8 +9,8 @@
 
 <x-lm.section-hero
     label="Our People"
-    title="Meet Our Engineering Team"
-    body="Behind every successful engineering project is a team committed to reliability, safety and practical problem solving."
+    title="LM Workshop Engineering Team"
+    body="Behind every successful LM Workshop project is a team committed to reliability, safety and practical problem solving."
     :img="$images['teamHero']"
 />
 

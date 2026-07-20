@@ -7,7 +7,8 @@
 @endphp
 
 <x-lm.section-hero
-    title="Proven Capability Across Critical Engineering Services"
+    title="LM Workshop Capability"
+    body="Proven capability across marine, power, fabrication and industrial engineering services throughout the Maldives."
     :img="$images['capabilityHero']"
 />
 

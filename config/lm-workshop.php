@@ -3,8 +3,15 @@
 return [
     'brand' => [
         'name' => 'LM Workshop',
+        'legal_name' => 'LM Workshop',
+        'alternate_names' => [
+            'LM Workshop Maldives',
+            'LM Workshop Malé',
+            'LMWorkshop',
+            'LMW',
+        ],
         'tagline' => 'Engineering You Can Count On',
-        'description' => 'Reliable engineering support for marine, industrial and commercial operations across the Maldives.',
+        'description' => 'LM Workshop is an engineering company in the Maldives providing reliable marine, industrial and commercial engineering support.',
         'phone' => '+960 XXX XXXX',
         'whatsapp' => '+960 XXX XXXX',
         'email' => 'info@lmworkshop.com',
