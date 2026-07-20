@@ -21,15 +21,22 @@ class SitemapController extends Controller
         ];
 
         $lastmod = now()->toAtomString();
+        $urls = '';
 
-        $urls = collect($pages)->map(fn (array $page) => [
-            'loc' => route($page['route']),
-            'lastmod' => $lastmod,
-            'changefreq' => $page['changefreq'],
-            'priority' => $page['priority'],
-        ]);
+        foreach ($pages as $page) {
+            $loc = e(route($page['route']));
+            $urls .= "    <url>\n"
+                . "        <loc>{$loc}</loc>\n"
+                . "        <lastmod>{$lastmod}</lastmod>\n"
+                . "        <changefreq>{$page['changefreq']}</changefreq>\n"
+                . "        <priority>{$page['priority']}</priority>\n"
+                . "    </url>\n";
+        }
 
-        $xml = view('sitemap', ['urls' => $urls])->render();
+        $xml = '<?xml version="1.0" encoding="UTF-8"?>'."\n"
+            . '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'."\n"
+            . $urls
+            . '</urlset>';
 
         return response($xml, 200)
             ->header('Content-Type', 'application/xml; charset=UTF-8');

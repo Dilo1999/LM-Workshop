@@ -10,13 +10,13 @@ class PageController extends Controller
     public function home(SeoService $seo): View
     {
         $seo->applyForPage('home', [
-            'meta_title' => 'LM Workshop | Official Site — Engineering Maldives',
-            'meta_description' => 'LM Workshop is a leading engineering company in the Maldives. Official site for marine engineering, power systems, fabrication, industrial maintenance and technical support in Malé.',
+            'meta_title' => 'LM Workshop Maldives | Marine & Industrial Engineering',
+            'meta_description' => 'Official website of LM Workshop Maldives. Marine engineering, power systems, fabrication and industrial maintenance in Malé. Engineering division of LITUS Maldives.',
             'keywords' => [
                 'LM Workshop',
                 'LM Workshop Maldives',
                 'LM Workshop Malé',
-                'LMWorkshop',
+                'LMWorkshop Maldives',
                 'engineering company Maldives',
                 'marine engineering Maldives',
                 'LITUS Maldives engineering',
