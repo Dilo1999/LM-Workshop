@@ -66,8 +66,8 @@ return [
         'welding' => 'https://images.unsplash.com/photo-1745448797900-35d08e85e9db?w=900&h=700&fit=crop&auto=format',
         'weldingSparks' => 'https://images.unsplash.com/photo-1738162837369-a2beec3a1d47?w=900&h=600&fit=crop&auto=format',
         'weldingAdrian' => 'https://images.unsplash.com/photo-1776159904891-e7b213b8198f?w=1920&h=900&fit=crop&auto=format',
-        'marine' => 'https://images.unsplash.com/photo-1587726849320-53589f1c4f4d?w=900&h=600&fit=crop&auto=format',
-        'powerPlant' => 'https://images.unsplash.com/photo-1655874837055-7adc909ae602?w=900&h=600&fit=crop&auto=format',
+        'marine' => 'images/home/Marine & Vessel Operators.webp',
+        'powerPlant' => 'images/home/Industrial Facilities.webp',
         'factory' => 'https://images.unsplash.com/photo-1636887584784-954392022b75?w=900&h=600&fit=crop&auto=format',
         'construction' => 'https://images.unsplash.com/photo-1583024011792-b165975b52f5?w=900&h=600&fit=crop&auto=format',
         'maldives' => 'https://images.unsplash.com/photo-1590523277543-a94d2e4eb00b?w=900&h=600&fit=crop&auto=format',
@@ -153,12 +153,9 @@ return [
     ],
 
     'team' => [
-        ['name' => 'Team Member 01', 'role' => 'Head of Marine Engineering', 'years' => '18 Years Experience', 'spec' => 'Marine Propulsion & Vessel Systems', 'img' => 'engineer'],
-        ['name' => 'Team Member 02', 'role' => 'Senior Power Systems Engineer', 'years' => '14 Years Experience', 'spec' => 'Generators & Powerhouse Systems', 'img' => 'workerClimb'],
-        ['name' => 'Team Member 03', 'role' => 'Mechanical & Electrical Engineer', 'years' => '12 Years Experience', 'spec' => 'Pumps, HVAC & Electrical Infrastructure', 'img' => 'industrial'],
-        ['name' => 'Team Member 04', 'role' => 'Fabrication Specialist', 'years' => '10 Years Experience', 'spec' => 'Steel, Stainless & Aluminium Fabrication', 'img' => 'hero'],
-        ['name' => 'Team Member 05', 'role' => 'Heavy Equipment Engineer', 'years' => '15 Years Experience', 'spec' => 'Construction Machinery & Diesel Engines', 'img' => 'welding'],
-        ['name' => 'Team Member 06', 'role' => 'Preventive Maintenance Coordinator', 'years' => '9 Years Experience', 'spec' => 'Maintenance Planning & Asset Management', 'img' => 'weldingSparks'],
+        ['name' => 'Team Member 01', 'role' => 'Head of Marine Engineering', 'years' => '18 Years Experience', 'spec' => 'Marine Propulsion & Vessel Systems', 'img' => 'images/team/member/Team member 01.jpeg'],
+        ['name' => 'Team Member 02', 'role' => 'Senior Power Systems Engineer', 'years' => '14 Years Experience', 'spec' => 'Generators & Powerhouse Systems', 'img' => 'images/team/member/Team member 02.jpeg'],
+        ['name' => 'Team Member 03', 'role' => 'Mechanical & Electrical Engineer', 'years' => '12 Years Experience', 'spec' => 'Pumps, HVAC & Electrical Infrastructure', 'img' => 'images/team/member/Team member 03.jpeg'],
     ],
 
     'team_values' => [

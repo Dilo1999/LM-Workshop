@@ -42,24 +42,30 @@
             <x-lm.section-label>The Team</x-lm.section-label>
             <h2 class="font-display font-bold text-display text-navy">Engineering Professionals</h2>
         </div>
-        <div class="team-cards-grid grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
+        <div class="team-cards-grid grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 items-stretch">
             @foreach($team as $member)
-                <div class="team-card bg-white group overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                    <div class="relative h-40 sm:h-56 overflow-hidden">
-                        <img src="{{ $images[$member['img']] }}" alt="{{ $member['name'] }}" class="w-full h-full object-cover grayscale-[20%] transition-transform duration-500 group-hover:scale-105">
+                @php
+                    $rawImg = $images[$member['img']] ?? $member['img'];
+                    $memberImg = str_starts_with($rawImg, 'http') ? $rawImg : asset($rawImg);
+                @endphp
+                <div class="team-card h-full flex flex-col bg-white group overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="relative h-40 sm:h-56 shrink-0 overflow-hidden">
+                        <img src="{{ $memberImg }}" alt="{{ $member['name'] }}" class="w-full h-full object-cover object-top grayscale-[20%] transition-transform duration-500 group-hover:scale-105">
                         <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-navy-deep/40"></div>
                         <div class="team-bar absolute bottom-0 left-0 right-0 h-1 bg-gold origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></div>
                     </div>
-                    <div class="p-4 sm:p-6 border-l-4 border-gold">
+                    <div class="flex-1 flex flex-col p-4 sm:p-6 border-l-4 border-gold">
                         <h3 class="font-heading font-bold text-sm sm:text-lg mb-1 text-navy leading-snug">{{ $member['name'] }}</h3>
-                        <p class="text-[10px] sm:text-xs font-heading font-bold uppercase tracking-widest mb-2 text-gold line-clamp-2">{{ $member['role'] }}</p>
-                        <div class="flex items-start gap-2 mb-1">
-                            <div class="w-1 h-1 rounded-full bg-gold mt-1.5 shrink-0"></div>
-                            <p class="text-gray-500 text-[10px] sm:text-xs font-body leading-snug">{{ $member['years'] }}</p>
-                        </div>
-                        <div class="hidden sm:flex items-start gap-2">
-                            <div class="w-1 h-1 rounded-full bg-gold mt-1.5 shrink-0"></div>
-                            <p class="text-gray-500 text-xs font-body leading-snug">{{ $member['spec'] }}</p>
+                        <p class="text-[10px] sm:text-xs font-heading font-bold uppercase tracking-widest mb-2 text-gold min-h-[2.5em] line-clamp-2">{{ $member['role'] }}</p>
+                        <div class="mt-auto">
+                            <div class="flex items-start gap-2 mb-1">
+                                <div class="w-1 h-1 rounded-full bg-gold mt-1.5 shrink-0"></div>
+                                <p class="text-gray-500 text-[10px] sm:text-xs font-body leading-snug">{{ $member['years'] }}</p>
+                            </div>
+                            <div class="hidden sm:flex items-start gap-2">
+                                <div class="w-1 h-1 rounded-full bg-gold mt-1.5 shrink-0"></div>
+                                <p class="text-gray-500 text-xs font-body leading-snug min-h-[2.5em]">{{ $member['spec'] }}</p>
+                            </div>
                         </div>
                     </div>
                 </div>

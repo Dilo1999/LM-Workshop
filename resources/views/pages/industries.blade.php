@@ -24,7 +24,7 @@
             @foreach($industries as $industry)
                 <div class="industry-slider__slide">
                     <div class="group industry-card relative overflow-hidden h-64 md:h-80 cursor-default">
-                        <img src="{{ $images[$industry['img']] }}" alt="{{ $industry['title'] }}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                        <img src="{{ str_starts_with($images[$industry['img']], 'http') ? $images[$industry['img']] : asset($images[$industry['img']]) }}" alt="{{ $industry['title'] }}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
                         <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(7,21,41,0.96) 0%, rgba(11,31,63,0.53) 55%, transparent 100%)"></div>
                         <div class="industry-overlay absolute inset-0 opacity-0 transition-opacity duration-300 bg-navy-deep/73"></div>
                         <div class="industry-bar absolute left-0 top-0 bottom-0 w-1.5 bg-gold"></div>

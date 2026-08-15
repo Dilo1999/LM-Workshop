@@ -38,7 +38,7 @@
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
             @foreach($gallery as $item)
                 <div class="group gallery-item relative overflow-hidden h-40 sm:h-52 cursor-default">
-                    <img src="{{ $images[$item['img']] }}" alt="{{ $item['label'] }}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500">
+                    <img src="{{ str_starts_with($images[$item['img']], 'http') ? $images[$item['img']] : asset($images[$item['img']]) }}" alt="{{ $item['label'] }}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500">
                     <div class="gallery-overlay absolute inset-0 opacity-0 transition-opacity duration-300 bg-navy-deep/88"></div>
                     <div class="gallery-caption absolute inset-0 flex flex-col justify-end p-4 opacity-0 transition-opacity duration-300">
                         <p class="text-white font-heading font-bold text-sm">{{ $item['label'] }}</p>
