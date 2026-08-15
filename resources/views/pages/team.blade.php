@@ -31,7 +31,7 @@
                     @endforeach
                 </div>
             </div>
-            <img src="{{ $images['engineer'] }}" alt="LM Workshop engineering team" class="w-full h-56 sm:h-80 lg:h-[400px] object-cover">
+            <img src="{{ asset('images/team/Expertise You Can Count On.png') }}" alt="LM Workshop engineering team" class="w-full h-56 sm:h-80 lg:h-[400px] object-cover">
         </div>
     </div>
 </section>

@@ -113,7 +113,7 @@
                 </blockquote>
             </div>
             <div class="order-1 lg:order-2 home-split-media relative">
-                <img src="{{ $images['workerGears'] }}" alt="LM Workshop engineers repairing industrial machinery in the Maldives" class="w-full h-52 sm:h-64 lg:h-[480px] object-cover">
+                <img src="{{ asset('images/home/Every Minute of Downtime Has a Cost.jpeg') }}" alt="LM Workshop engineers repairing industrial machinery in the Maldives" class="w-full h-52 sm:h-64 lg:h-[480px] object-cover">
                 <div class="lm-home-badge lm-home-badge--offset hidden lg:flex absolute bottom-3 left-3 sm:bottom-4 sm:left-4 lg:-bottom-6 lg:-left-6 w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 flex-col items-center justify-center text-center bg-gold text-white shadow-lg">
                     <span class="text-2xl sm:text-3xl font-display font-bold">24/7</span>
                     <span class="text-[10px] sm:text-xs font-heading font-bold uppercase tracking-wider mt-1">Support</span>
@@ -128,7 +128,7 @@
     <div class="max-w-7xl mx-auto px-6">
         <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div class="home-split-media relative">
-                <img src="{{ $images['engineer'] }}" alt="LM Workshop engineer on site" class="w-full h-52 sm:h-64 lg:h-[480px] object-cover">
+                <img src="{{ asset('images/home/Engineering You Can Count On.jpeg') }}" alt="LM Workshop engineer on site" class="w-full h-52 sm:h-64 lg:h-[480px] object-cover">
                 <div class="lm-home-badge lm-home-badge--top hidden lg:flex absolute top-3 right-3 sm:top-4 sm:right-4 lg:-top-5 lg:-right-5 w-24 h-24 sm:w-28 sm:h-28 lg:w-36 lg:h-36 flex-col items-center justify-center text-center bg-navy shadow-lg">
                     <span class="text-[10px] sm:text-xs font-heading font-bold uppercase tracking-widest text-white/60 mb-1">Division of</span>
                     <span class="text-base sm:text-lg font-display font-bold text-white tracking-[0.08em]">LITUS</span>
