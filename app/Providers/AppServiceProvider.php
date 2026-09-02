@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Support\Cta;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -20,15 +22,17 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        // MySQL (e.g. MariaDB / older MySQL) has a 1000-byte index limit with utf8mb4.
-        // Default string length 191 keeps unique indexes under that limit.
         Schema::defaultStringLength(191);
 
-        // Use current request origin for storage URLs so Filament file previews
-        // work without CORS (e.g. when using 127.0.0.1:8000 vs localhost).
         if (! $this->app->runningInConsole() && $this->app->request?->getHost()) {
             $url = $this->app->request->getSchemeAndHttpHost();
             config(['filesystems.disks.public.url' => $url.'/storage']);
         }
+
+        View::composer('*', function ($view) {
+            if (! array_key_exists('cta', $view->getData())) {
+                $view->with('cta', Cta::urls());
+            }
+        });
     }
 }

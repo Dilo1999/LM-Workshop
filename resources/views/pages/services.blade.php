@@ -28,7 +28,7 @@
         <x-lm.section-label light>Ready to Start?</x-lm.section-label>
         <h2 class="font-display font-bold text-white mb-4 text-display">Need Reliable Engineering Support?</h2>
         <p class="text-white/60 max-w-xl mx-auto mb-8 leading-relaxed font-body">Whether supporting preventive maintenance, emergency breakdowns or complex engineering projects, LM Workshop helps your business operate with confidence.</p>
-        <x-lm.gold-btn :href="route('contact')">Contact Us</x-lm.gold-btn>
+        <x-lm.gold-btn :href="$cta['quote']">Request a Quote</x-lm.gold-btn>
     </div>
 </section>
 @endsection

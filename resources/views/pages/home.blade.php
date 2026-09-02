@@ -46,18 +46,18 @@
             </p>
 
             <div class="hero-actions">
-                <a href="{{ route('contact') }}" class="hero-btn btn-gold">
+                <a href="{{ $cta['quote'] }}" class="hero-btn btn-gold">
                     <span class="hero-btn-icon lg:hidden" aria-hidden="true">
                         <x-lm.icon name="phone" :size="16" />
                     </span>
-                    <span class="hero-btn-text">Get Engineering Support</span>
+                    <span class="hero-btn-text">Request a Quote</span>
                     <span class="hero-btn-arrow" aria-hidden="true">&rarr;</span>
                 </a>
-                <a href="{{ route('services') }}" class="hero-btn btn-outline">
+                <a href="{{ $cta['emergency'] }}" class="hero-btn btn-outline">
                     <span class="hero-btn-icon lg:hidden" aria-hidden="true">
-                        <x-lm.icon name="wrench" :size="16" />
+                        <x-lm.icon name="headset" :size="16" />
                     </span>
-                    <span class="hero-btn-text">View Services</span>
+                    <span class="hero-btn-text">Emergency Support</span>
                 </a>
             </div>
 
@@ -251,7 +251,7 @@
             <blockquote class="pl-5 py-3 border-l-4 border-gold mb-8 bg-gold/7">
                 <p class="text-white/90 font-semibold italic leading-snug font-body">&ldquo;Your success depends on reliable operations. Our success depends on earning your trust.&rdquo;</p>
             </blockquote>
-            <x-lm.gold-btn :href="route('contact')">Contact LM Workshop</x-lm.gold-btn>
+            <x-lm.gold-btn :href="$cta['site_assessment']">Book a Site Assessment</x-lm.gold-btn>
         </div>
     </div>
 </section>
@@ -261,18 +261,23 @@
     <div class="max-w-7xl mx-auto px-6">
         <div class="flex flex-col xl:flex-row xl:items-start xl:justify-between gap-10 xl:gap-12">
             <div class="max-w-xl shrink-0">
-                <x-lm.section-label>Get In Touch</x-lm.section-label>
+                <x-lm.section-label>Take Action</x-lm.section-label>
                 <h2 class="font-display font-bold mb-4 text-[clamp(2rem,4vw,2.8rem)] text-navy">Need Engineering Support?</h2>
-                <p class="text-gray-500 mb-6 leading-relaxed font-body">Tell us about your equipment, site or project. We provide emergency response, preventive maintenance and technical expertise for marine, industrial and commercial operations across the Maldives.</p>
-                <div class="flex flex-col gap-3 mb-8">
-                    @foreach([['Phone', $brand['phone']], ['WhatsApp', $brand['whatsapp']], ['Email', $brand['email']], ['Website', $brand['website']]] as [$l, $v])
-                        <div class="flex items-center gap-3">
-                            <span class="text-xs font-heading font-bold uppercase tracking-widest w-20 shrink-0 text-gold">{{ $l }}</span>
-                            <span class="text-gray-600 text-sm font-body">{{ $v }}</span>
-                        </div>
+                <p class="text-gray-500 mb-6 leading-relaxed font-body">Request a quote, speak to an engineer on WhatsApp, or flag an emergency. We support marine, industrial and commercial operations across the Maldives.</p>
+                <div class="flex flex-col sm:flex-row flex-wrap gap-3 mb-6">
+                    <x-lm.gold-btn :href="$cta['quote']">Request a Quote</x-lm.gold-btn>
+                    <a href="{{ $cta['whatsapp'] }}" class="inline-flex items-center justify-center gap-2 px-7 py-3 font-heading font-bold uppercase tracking-[0.12em] text-sm border border-navy/20 text-navy transition-all hover:bg-navy hover:text-white w-full sm:w-auto" @if(str_starts_with($cta['whatsapp'], 'https://wa.me')) target="_blank" rel="noopener noreferrer" @endif>
+                        WhatsApp an Engineer
+                    </a>
+                    <a href="{{ $cta['emergency'] }}" class="inline-flex items-center justify-center gap-2 px-7 py-3 font-heading font-bold uppercase tracking-[0.12em] text-sm border border-gold text-gold transition-all hover:bg-gold hover:text-white w-full sm:w-auto">
+                        Emergency Support
+                    </a>
+                </div>
+                <div class="flex flex-col gap-2 text-sm font-body text-gray-500">
+                    @foreach([['Phone', $brand['phone']], ['WhatsApp', $brand['whatsapp']], ['Email', $brand['email']]] as [$l, $v])
+                        <p><span class="font-heading font-bold uppercase tracking-widest text-xs text-gold mr-2">{{ $l }}</span>{{ $v }}</p>
                     @endforeach
                 </div>
-                <x-lm.gold-btn :href="route('contact')">Request a Quote</x-lm.gold-btn>
             </div>
 
             <div class="w-full xl:max-w-md xl:shrink-0 xl:ml-auto">

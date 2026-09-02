@@ -66,13 +66,22 @@
                             </li>
                         @endforeach
                     </ul>
-                    <a
-                        href="{{ route('contact') }}"
-                        class="lm-footer-cta mt-4 inline-flex items-center gap-1.5 px-5 py-2 text-xs font-heading font-bold tracking-[0.12em] uppercase bg-gold text-white transition-all hover:brightness-110"
-                    >
-                        Let's Talk
-                        <x-lm.icon name="chevron-right" :size="11" />
-                    </a>
+                    <div class="flex flex-col gap-2 mt-4">
+                        <a
+                            href="{{ $cta['quote'] }}"
+                            class="lm-footer-cta inline-flex items-center justify-center gap-1.5 px-5 py-2 text-xs font-heading font-bold tracking-[0.12em] uppercase bg-gold text-white transition-all hover:brightness-110"
+                        >
+                            Request a Quote
+                            <x-lm.icon name="chevron-right" :size="11" />
+                        </a>
+                        <a
+                            href="{{ $cta['whatsapp'] }}"
+                            class="inline-flex items-center justify-center gap-1.5 px-5 py-2 text-xs font-heading font-bold tracking-[0.12em] uppercase border border-white/20 text-white/80 transition-all hover:bg-white/10"
+                            @if(str_starts_with($cta['whatsapp'] ?? '', 'https://wa.me')) target="_blank" rel="noopener noreferrer" @endif
+                        >
+                            WhatsApp an Engineer
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

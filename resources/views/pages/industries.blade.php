@@ -74,7 +74,7 @@
         <x-lm.section-label light>Let's Connect</x-lm.section-label>
         <h2 class="font-display font-bold text-white mb-4 text-display">Supporting Your Industry</h2>
         <p class="text-white/60 max-w-lg mx-auto mb-8 leading-relaxed font-body">Talk to our team about your specific engineering requirements and how LM Workshop can support your operations.</p>
-        <x-lm.gold-btn :href="route('contact')">Get in Touch</x-lm.gold-btn>
+        <x-lm.gold-btn :href="$cta['site_assessment']">Book a Site Assessment</x-lm.gold-btn>
     </div>
 </section>
 @endsection

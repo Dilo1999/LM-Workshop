@@ -33,10 +33,10 @@
 
         <div class="flex items-center gap-3">
             <a
-                href="{{ route('contact') }}"
+                href="{{ $cta['quote'] }}"
                 class="hidden sm:inline-flex items-center gap-1.5 px-5 py-2 text-xs font-heading font-bold tracking-[0.12em] uppercase bg-gold text-white transition-all hover:brightness-110"
             >
-                Let's Talk
+                Request a Quote
                 <x-lm.icon name="chevron-right" :size="11" />
             </a>
             <button
@@ -67,11 +67,11 @@
             @endforeach
         </ul>
         <a
-            href="{{ route('contact') }}"
+            href="{{ $cta['quote'] }}"
             class="mt-4 block text-center py-3 text-sm font-heading font-bold uppercase tracking-widest bg-gold text-white"
             data-mobile-menu-close
         >
-            Let's Talk
+            Request a Quote
         </a>
     </div>
 </nav>

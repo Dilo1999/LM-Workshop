@@ -96,7 +96,7 @@
         <x-lm.section-label light>Join Our Team</x-lm.section-label>
         <h2 class="font-display font-bold text-white mb-4 text-display">Work With Our Engineers</h2>
         <p class="text-white/60 max-w-lg mx-auto mb-8 leading-relaxed font-body">Contact LM Workshop to learn about career opportunities or to discuss a project with our engineering team.</p>
-        <x-lm.gold-btn :href="route('contact')">Get in Touch</x-lm.gold-btn>
+        <x-lm.gold-btn :href="$cta['quote']">Request a Quote</x-lm.gold-btn>
     </div>
 </section>
 @endsection

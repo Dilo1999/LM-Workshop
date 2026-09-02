@@ -65,7 +65,7 @@
         <x-lm.section-label>Start a Conversation</x-lm.section-label>
         <h2 class="font-display font-bold mb-4 text-display-md text-navy">Experience the Difference</h2>
         <p class="text-gray-500 max-w-lg mx-auto mb-8 leading-relaxed font-body">Contact LM Workshop to discuss your engineering requirements and discover how we can support your operations.</p>
-        <x-lm.gold-btn :href="route('contact')">Get in Touch</x-lm.gold-btn>
+        <x-lm.gold-btn :href="$cta['quote']">Request a Quote</x-lm.gold-btn>
     </div>
 </section>
 @endsection

@@ -11,8 +11,8 @@
 
 <x-lm.section-hero
     label="Reach Out"
-    title="Contact LM Workshop"
-    body="Contact LM Workshop for emergency engineering support, preventive maintenance or technical expertise for your next project in the Maldives."
+    title="Request Engineering Support"
+    body="Request a quote, book a site assessment, or get emergency engineering support for marine and industrial operations across the Maldives."
     :img="$images['weldingAdrian']"
 />
 
@@ -28,10 +28,22 @@
                         <p class="text-white/55 text-sm leading-relaxed font-body">{{ $brand['description'] }}</p>
                     </div>
 
+                    <div class="flex flex-col gap-2 mb-8">
+                        <a href="{{ $cta['emergency'] }}" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-heading font-bold uppercase tracking-[0.12em] bg-gold text-white transition-all hover:brightness-110">
+                            Emergency Support
+                        </a>
+                        <a href="{{ $cta['whatsapp'] }}" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-heading font-bold uppercase tracking-[0.12em] border border-white/20 text-white/80 transition-all hover:bg-white/10" @if(str_starts_with($cta['whatsapp'], 'https://wa.me')) target="_blank" rel="noopener noreferrer" @endif>
+                            WhatsApp an Engineer
+                        </a>
+                        <a href="{{ $cta['site_assessment'] }}" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-heading font-bold uppercase tracking-[0.12em] border border-white/20 text-white/80 transition-all hover:bg-white/10">
+                            Book a Site Assessment
+                        </a>
+                    </div>
+
                     <div class="flex flex-col gap-5 mb-8">
                         @foreach([
                             ['phone', 'Phone', $brand['phone'], null],
-                            ['phone', 'WhatsApp', $brand['whatsapp'], null],
+                            ['phone', 'WhatsApp', $brand['whatsapp'], str_starts_with($cta['whatsapp'], 'https://wa.me') ? $cta['whatsapp'] : null],
                             ['mail', 'Email', $brand['email'], 'mailto:' . $brand['email']],
                             ['globe', 'Website', $brand['website'], 'https://' . preg_replace('#^https?://#', '', $brand['website'])],
                             ['map-pin', 'Location', $brand['location'], null],
@@ -66,7 +78,7 @@
             </div>
 
             <div class="lg:col-span-3">
-                <x-lm.section-label>Send an Inquiry</x-lm.section-label>
+                <x-lm.section-label>Request a Quote</x-lm.section-label>
                 <h2 class="font-display font-bold mb-8 leading-tight text-display-md text-navy">Tell Us About Your Requirement</h2>
                 <p class="text-gray-500 text-sm font-body mb-8 -mt-4">The more detail you provide, the faster we can assess your enquiry and respond.</p>
 
@@ -137,7 +149,7 @@
                             >
                                 <option value="">Select urgency</option>
                                 @foreach($urgencyLevels as $value => $label)
-                                    <option value="{{ $value }}" @selected(old('urgency') === $value)>{{ $label }}</option>
+                                    <option value="{{ $value }}" @selected(old('urgency', request('urgency')) === $value)>{{ $label }}</option>
                                 @endforeach
                             </select>
                             @error('urgency')
@@ -172,9 +184,9 @@
                             >
                                 <option value="">Select a service</option>
                                 @foreach($services as $service)
-                                    <option value="{{ $service['title'] }}" @selected(old('service') === $service['title'])>{{ $service['title'] }}</option>
+                                    <option value="{{ $service['title'] }}" @selected(old('service', request('service')) === $service['title'])>{{ $service['title'] }}</option>
                                 @endforeach
-                                <option value="Other" @selected(old('service') === 'Other')>Other / General Inquiry</option>
+                                <option value="Other" @selected(old('service', request('service')) === 'Other')>Other / General Inquiry</option>
                             </select>
                             @error('service')
                                 <p class="text-red-500 text-xs mt-1 font-body">{{ $message }}</p>
@@ -213,7 +225,7 @@
 
                         <div class="sm:col-span-2">
                             <button type="submit" class="lm-mobile-full-btn inline-flex items-center gap-2 px-8 py-3.5 font-heading font-bold uppercase tracking-[0.12em] text-sm bg-navy text-white transition-all hover:brightness-110">
-                                Send Inquiry
+                                Request a Quote
                                 <x-lm.icon name="send" :size="14" />
                             </button>
                         </div>
