@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\SitemapController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
@@ -35,6 +36,7 @@ Route::match(['get', 'head'], 'storage/{path}', function () {
 Route::get('/', [PageController::class, 'home'])->name('home');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/services', [PageController::class, 'services'])->name('services');
+Route::get('/services/{slug}', [ServiceController::class, 'show'])->name('services.show');
 Route::get('/industries', [PageController::class, 'industries'])->name('industries');
 Route::get('/why', [PageController::class, 'why'])->name('why');
 Route::get('/capability', [PageController::class, 'capability'])->name('capability');

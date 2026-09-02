@@ -16,7 +16,12 @@
     <div class="max-w-7xl mx-auto px-6">
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             @foreach($services as $service)
-                <x-lm.service-card :icon="$service['icon']" :title="$service['title']" :desc="$service['desc']" />
+                <x-lm.service-card
+                    :icon="$service['icon']"
+                    :title="$service['title']"
+                    :desc="$service['desc']"
+                    :href="route('services.show', $service['slug'])"
+                />
             @endforeach
         </div>
     </div>

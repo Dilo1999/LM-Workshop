@@ -161,7 +161,12 @@
         </div>
         <div class="home-services-grid grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5">
             @foreach(array_slice($services, 0, 6) as $service)
-                <x-lm.service-card :icon="$service['icon']" :title="$service['title']" :desc="$service['desc']" />
+                <x-lm.service-card
+                    :icon="$service['icon']"
+                    :title="$service['title']"
+                    :desc="$service['desc']"
+                    :href="route('services.show', $service['slug'])"
+                />
             @endforeach
         </div>
         <div class="text-center mt-12">

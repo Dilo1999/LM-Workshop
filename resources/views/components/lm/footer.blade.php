@@ -41,7 +41,7 @@
                     <ul class="flex flex-col gap-1.5">
                         @foreach(array_slice($services, 0, 5) as $service)
                             <li>
-                                <a href="{{ route('services') }}" class="text-white/60 hover:text-white text-sm transition-colors font-body">{{ $service['title'] }}</a>
+                                <a href="{{ route('services.show', $service['slug']) }}" class="text-white/60 hover:text-white text-sm transition-colors font-body">{{ $service['title'] }}</a>
                             </li>
                         @endforeach
                     </ul>
