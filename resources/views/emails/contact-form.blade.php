@@ -9,11 +9,26 @@
 
     <p style="margin: 0 0 8px;"><strong>Name:</strong> {{ $senderName }}</p>
     <p style="margin: 0 0 8px;"><strong>Email:</strong> {{ $senderEmail }}</p>
-    <p style="margin: 0 0 8px;"><strong>Subject:</strong> {{ $formSubject }}</p>
+    @if($company)
+        <p style="margin: 0 0 8px;"><strong>Company:</strong> {{ $company }}</p>
+    @endif
+    @if($phone)
+        <p style="margin: 0 0 8px;"><strong>Phone:</strong> {{ $phone }}</p>
+    @endif
+    <p style="margin: 0 0 8px;"><strong>Location / Island:</strong> {{ $location }}</p>
+    <p style="margin: 0 0 8px;"><strong>Urgency:</strong> {{ $urgency }}</p>
+    <p style="margin: 0 0 8px;"><strong>Equipment Type:</strong> {{ $equipmentType }}</p>
+    @if($service)
+        <p style="margin: 0 0 8px;"><strong>Service Required:</strong> {{ $service }}</p>
+    @endif
 
     <hr style="border: none; border-top: 1px solid #e5e7eb; margin: 20px 0;">
 
-    <p style="margin: 0 0 8px;"><strong>Message:</strong></p>
-    <p style="margin: 0; white-space: pre-wrap;">{{ $messageBody }}</p>
+    <p style="margin: 0 0 8px;"><strong>Problem Description:</strong></p>
+    <p style="margin: 0; white-space: pre-wrap;">{{ $problemDescription }}</p>
+
+    @if($attachment)
+        <p style="margin: 16px 0 0;"><strong>Attachment:</strong> Included with this email.</p>
+    @endif
 </body>
 </html>

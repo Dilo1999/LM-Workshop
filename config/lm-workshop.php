@@ -36,6 +36,25 @@ return [
         ],
     ],
 
+    'contact' => [
+        'equipment_types' => [
+            'Marine Engine / Vessel',
+            'Generator / Power System',
+            'Pump / Hydraulic System',
+            'Electrical Panel / Control System',
+            'Heavy Equipment / Construction Machinery',
+            'Fabrication / Structural',
+            'Fuel / Water System',
+            'HVAC / Refrigeration',
+            'Other',
+        ],
+        'urgency_levels' => [
+            'emergency' => 'Emergency — equipment down now',
+            'urgent' => 'Urgent — within 24–48 hours',
+            'planned' => 'Planned — scheduled maintenance or project',
+            'general' => 'General enquiry',
+        ],
+    ],
 
     'nav' => [
         ['label' => 'Home', 'route' => 'home'],

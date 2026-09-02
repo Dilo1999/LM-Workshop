@@ -39,25 +39,25 @@
 
             <div class="hero-title-line lg:hidden" aria-hidden="true"></div>
 
-            <h2 class="hero-subtitle">Engineering You Can<span class="hero-mobile-br lg:hidden"><br></span> Count On</h2>
+            <h2 class="hero-subtitle">Marine &amp; Industrial Engineering<span class="hero-mobile-br lg:hidden"><br></span> Support Across the Maldives</h2>
 
             <p class="hero-description">
-                LM Workshop provides reliable engineering support for marine, industrial and commercial operations across the Maldives.
+                Emergency repairs, preventive maintenance and project delivery for resorts, vessels, construction sites and industrial facilities. One trusted engineering partner when downtime costs matter.
             </p>
 
             <div class="hero-actions">
-                <a href="{{ route('services') }}" class="hero-btn btn-gold">
+                <a href="{{ route('contact') }}" class="hero-btn btn-gold">
+                    <span class="hero-btn-icon lg:hidden" aria-hidden="true">
+                        <x-lm.icon name="phone" :size="16" />
+                    </span>
+                    <span class="hero-btn-text">Get Engineering Support</span>
+                    <span class="hero-btn-arrow" aria-hidden="true">&rarr;</span>
+                </a>
+                <a href="{{ route('services') }}" class="hero-btn btn-outline">
                     <span class="hero-btn-icon lg:hidden" aria-hidden="true">
                         <x-lm.icon name="wrench" :size="16" />
                     </span>
                     <span class="hero-btn-text">View Services</span>
-                    <span class="hero-btn-arrow" aria-hidden="true">&rarr;</span>
-                </a>
-                <a href="{{ route('contact') }}" class="hero-btn btn-outline">
-                    <span class="hero-btn-icon lg:hidden" aria-hidden="true">
-                        <x-lm.icon name="phone" :size="16" />
-                    </span>
-                    <span class="hero-btn-text">Contact Us</span>
                 </a>
             </div>
 
@@ -101,16 +101,20 @@
             <div class="order-2 lg:order-1 home-split-copy">
                 <x-lm.section-label>The Challenge</x-lm.section-label>
                 <h2 class="font-display font-bold mb-4 lg:mb-6 leading-tight text-display text-navy">Every Minute of Downtime Has a Cost</h2>
-                <p class="text-gray-500 mb-4 leading-relaxed font-body">Reliable operations don't happen by chance.</p>
-                <p class="text-gray-500 mb-4 leading-relaxed font-body">Every successful business depends on equipment, systems and infrastructure performing exactly as they should. Whether it's a resort welcoming guests, a vessel transporting cargo, a construction project working against strict deadlines or an industrial facility operating around the clock, uninterrupted operations are essential to success.</p>
-                <p class="max-lg:hidden text-gray-500 mb-4 leading-relaxed font-body">When critical equipment fails, the impact extends far beyond the repair itself. Productivity slows, operating costs increase, schedules are disrupted and customer experience can be affected. In many industries, even a few hours of downtime can result in significant financial and operational consequences.</p>
-                <p class="max-lg:hidden text-gray-500 mb-4 leading-relaxed font-body">At LM Workshop, we understand these challenges because we've worked alongside businesses operating in the demanding environments of the Maldives. Our role is not simply to repair equipment, it is to help organisations maintain reliable operations through practical engineering expertise, responsive technical support and dependable workmanship.</p>
-                <p class="lg:hidden text-gray-500 mb-4 leading-relaxed font-body">When equipment fails, productivity slows and costs rise. LM Workshop helps organisations across the Maldives maintain reliable operations through practical engineering expertise and responsive support.</p>
-                <p class="max-lg:hidden text-gray-500 mb-4 leading-relaxed font-body">Whether supporting preventive maintenance, emergency breakdowns or complex engineering projects, we focus on one objective:</p>
-                <p class="text-gray-500 mb-6 lg:mb-8 leading-relaxed font-body font-medium text-navy/80">Helping your business operate with confidence.</p>
-                <blockquote class="home-split-quote pl-4 lg:pl-5 py-3 lg:py-4 border-l-4 border-gold bg-quote-bg rounded-r-sm">
-                    <p class="font-semibold italic leading-snug text-navy font-body text-sm lg:text-[1.05rem]">&ldquo;Reliable engineering is not about fixing problems. It's about preventing disruption.&rdquo;</p>
-                </blockquote>
+                <p class="text-gray-500 mb-5 leading-relaxed font-body">When equipment fails, schedules slip and costs rise. Resorts, vessels and industrial facilities across the Maldives need engineering support that responds fast.</p>
+                <ul class="space-y-3 mb-6 font-body text-gray-500 text-sm sm:text-base">
+                    @foreach([
+                        'Emergency breakdowns and urgent on-site repairs',
+                        'Preventive maintenance to reduce future risk',
+                        'Marine, mechanical, electrical and fabrication in one team',
+                    ] as $point)
+                        <li class="flex items-start gap-3">
+                            <span class="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0"></span>
+                            <span>{{ $point }}</span>
+                        </li>
+                    @endforeach
+                </ul>
+                <p class="text-navy/80 font-medium font-body leading-snug">Minimise disruption. Restore reliability. Keep your business running.</p>
             </div>
             <div class="order-1 lg:order-2 home-split-media relative">
                 <img src="{{ asset('images/home/Every Minute of Downtime Has a Cost.jpeg') }}" alt="LM Workshop engineers repairing industrial machinery in the Maldives" class="w-full h-52 sm:h-64 lg:h-[480px] object-cover">
@@ -137,10 +141,10 @@
             </div>
             <div class="home-split-copy">
                 <x-lm.section-label>Who We Are</x-lm.section-label>
-                <h2 class="font-display font-bold mb-4 lg:mb-6 leading-tight text-display text-navy">Engineering You Can Count On</h2>
-                <p class="text-gray-500 mb-4 leading-relaxed font-body">LM Workshop is the engineering division of LITUS Maldives, providing multidisciplinary engineering solutions for marine, industrial and commercial operations throughout the Maldives.</p>
-                <p class="max-lg:hidden text-gray-500 mb-4 leading-relaxed font-body">Our team combines practical expertise across marine engineering, mechanical systems, electrical infrastructure, fabrication, power generation and industrial maintenance to deliver dependable engineering support.</p>
-                <p class="text-gray-500 mb-6 lg:mb-8 leading-relaxed font-body">Every project we undertake is guided by the same commitment: to deliver practical engineering solutions with professionalism, reliability and accountability.</p>
+                <h2 class="font-display font-bold mb-4 lg:mb-6 leading-tight text-display text-navy">One Engineering Partner for Marine &amp; Industrial Operations</h2>
+                <p class="text-gray-500 mb-4 leading-relaxed font-body">LM Workshop is the engineering division of LITUS Maldives—delivering marine engineering, power systems, fabrication and industrial maintenance across the country from a single accountable team.</p>
+                <p class="max-lg:hidden text-gray-500 mb-4 leading-relaxed font-body">Instead of coordinating multiple contractors, you get multi-disciplinary capability on one site visit: diagnostics, repairs, fabrication and ongoing maintenance support tailored to your operation.</p>
+                <p class="text-gray-500 mb-6 lg:mb-8 leading-relaxed font-body">Practical solutions. Responsive support. Workmanship you can rely on when it matters most.</p>
                 <x-lm.gold-btn :href="route('about')">Learn More About Us</x-lm.gold-btn>
             </div>
         </div>
@@ -152,8 +156,8 @@
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-14">
             <x-lm.section-label>What We Do</x-lm.section-label>
-            <h2 class="font-display font-bold mb-4 text-display text-navy">Engineering Solutions</h2>
-            <p class="text-gray-500 max-w-xl mx-auto font-body">LM Workshop delivers comprehensive engineering services across multiple technical disciplines, enabling clients to work with one trusted engineering partner.</p>
+            <h2 class="font-display font-bold mb-4 text-display text-navy">Marine, Power, Fabrication &amp; Maintenance</h2>
+            <p class="text-gray-500 max-w-xl mx-auto font-body">Full-scope engineering services for organisations that need equipment running reliably—without juggling multiple contractors.</p>
         </div>
         <div class="home-services-grid grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5">
             @foreach(array_slice($services, 0, 6) as $service)
@@ -258,8 +262,8 @@
         <div class="flex flex-col xl:flex-row xl:items-start xl:justify-between gap-10 xl:gap-12">
             <div class="max-w-xl shrink-0">
                 <x-lm.section-label>Get In Touch</x-lm.section-label>
-                <h2 class="font-display font-bold mb-4 text-[clamp(2rem,4vw,2.8rem)] text-navy">Let's Talk</h2>
-                <p class="text-gray-500 mb-6 leading-relaxed font-body">Whether you require emergency engineering support, preventive maintenance or technical expertise for your next project, our team is ready to assist.</p>
+                <h2 class="font-display font-bold mb-4 text-[clamp(2rem,4vw,2.8rem)] text-navy">Need Engineering Support?</h2>
+                <p class="text-gray-500 mb-6 leading-relaxed font-body">Tell us about your equipment, site or project. We provide emergency response, preventive maintenance and technical expertise for marine, industrial and commercial operations across the Maldives.</p>
                 <div class="flex flex-col gap-3 mb-8">
                     @foreach([['Phone', $brand['phone']], ['WhatsApp', $brand['whatsapp']], ['Email', $brand['email']], ['Website', $brand['website']]] as [$l, $v])
                         <div class="flex items-center gap-3">
@@ -268,7 +272,7 @@
                         </div>
                     @endforeach
                 </div>
-                <x-lm.gold-btn :href="route('contact')">Send an Inquiry</x-lm.gold-btn>
+                <x-lm.gold-btn :href="route('contact')">Request a Quote</x-lm.gold-btn>
             </div>
 
             <div class="w-full xl:max-w-md xl:shrink-0 xl:ml-auto">

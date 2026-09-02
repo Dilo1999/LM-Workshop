@@ -3,8 +3,10 @@
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Address;
+use Illuminate\Mail\Mailables\Attachment;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
@@ -17,7 +19,14 @@ class ContactFormMail extends Mailable
         public string $senderName,
         public string $senderEmail,
         public string $formSubject,
-        public string $messageBody
+        public ?string $company,
+        public ?string $phone,
+        public ?string $location,
+        public ?string $service,
+        public ?string $equipmentType,
+        public ?string $urgency,
+        public string $problemDescription,
+        public ?UploadedFile $attachment = null,
     ) {}
 
     public function envelope(): Envelope
@@ -37,5 +46,18 @@ class ContactFormMail extends Mailable
         return new Content(
             view: 'emails.contact-form',
         );
+    }
+
+    public function attachments(): array
+    {
+        if (! $this->attachment) {
+            return [];
+        }
+
+        return [
+            Attachment::fromPath($this->attachment->getRealPath())
+                ->as($this->attachment->getClientOriginalName())
+                ->withMime($this->attachment->getMimeType() ?: 'application/octet-stream'),
+        ];
     }
 }

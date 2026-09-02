@@ -5,6 +5,8 @@
     $images = config('lm-workshop.images');
     $brand = config('lm-workshop.brand');
     $services = config('lm-workshop.services');
+    $equipmentTypes = config('lm-workshop.contact.equipment_types');
+    $urgencyLevels = config('lm-workshop.contact.urgency_levels');
 @endphp
 
 <x-lm.section-hero
@@ -65,7 +67,8 @@
 
             <div class="lg:col-span-3">
                 <x-lm.section-label>Send an Inquiry</x-lm.section-label>
-                <h2 class="font-display font-bold mb-8 leading-tight text-display-md text-navy">Tell Us About Your Requirements</h2>
+                <h2 class="font-display font-bold mb-8 leading-tight text-display-md text-navy">Tell Us About Your Requirement</h2>
+                <p class="text-gray-500 text-sm font-body mb-8 -mt-4">The more detail you provide, the faster we can assess your enquiry and respond.</p>
 
                 @if(session('contact_error'))
                     <div class="mb-6 p-4 border border-red-300 bg-red-50 text-red-700 text-sm font-body">
@@ -82,15 +85,15 @@
                         <p class="text-gray-500 text-sm font-body">Thank you for reaching out. Our team will be in touch with you shortly.</p>
                     </div>
                 @else
-                    <form action="{{ route('contact.store') }}" method="POST" class="grid sm:grid-cols-2 gap-5">
+                    <form action="{{ route('contact.store') }}" method="POST" enctype="multipart/form-data" class="grid sm:grid-cols-2 gap-5">
                         @csrf
 
                         @foreach([
-                            ['name', 'Name', 'text', 'Your full name'],
-                            ['company', 'Company Name', 'text', 'Your company'],
-                            ['phone', 'Phone Number', 'tel', '+960 XXX XXXX'],
-                            ['email', 'Email Address', 'email', 'email@company.com'],
-                        ] as [$id, $label, $type, $placeholder])
+                            ['name', 'Name', 'text', 'Your full name', true],
+                            ['company', 'Company Name', 'text', 'Your company', false],
+                            ['phone', 'Phone Number', 'tel', '+960 XXX XXXX', false],
+                            ['email', 'Email Address', 'email', 'email@company.com', true],
+                        ] as [$id, $label, $type, $placeholder, $required])
                             <div>
                                 <label for="{{ $id }}" class="block text-xs font-heading font-bold uppercase tracking-widest mb-2 text-navy">{{ $label }}</label>
                                 <input
@@ -99,7 +102,7 @@
                                     type="{{ $type }}"
                                     value="{{ old($id) }}"
                                     placeholder="{{ $placeholder }}"
-                                    @if(in_array($id, ['name', 'email'])) required @endif
+                                    @if($required) required @endif
                                     class="lm-input w-full px-4 py-3 text-sm border border-navy/15 bg-[#f7f9fc] text-navy font-body @error($id) border-red-500 @enderror"
                                 >
                                 @error($id)
@@ -108,7 +111,59 @@
                             </div>
                         @endforeach
 
-                        <div class="sm:col-span-2">
+                        <div>
+                            <label for="location" class="block text-xs font-heading font-bold uppercase tracking-widest mb-2 text-navy">Location / Island</label>
+                            <input
+                                id="location"
+                                name="location"
+                                type="text"
+                                value="{{ old('location') }}"
+                                placeholder="e.g. Malé, Hulhumalé, resort island"
+                                required
+                                class="lm-input w-full px-4 py-3 text-sm border border-navy/15 bg-[#f7f9fc] text-navy font-body @error('location') border-red-500 @enderror"
+                            >
+                            @error('location')
+                                <p class="text-red-500 text-xs mt-1 font-body">{{ $message }}</p>
+                            @enderror
+                        </div>
+
+                        <div>
+                            <label for="urgency" class="block text-xs font-heading font-bold uppercase tracking-widest mb-2 text-navy">Urgency</label>
+                            <select
+                                id="urgency"
+                                name="urgency"
+                                required
+                                class="lm-input w-full px-4 py-3 text-sm border border-navy/15 bg-[#f7f9fc] font-body @error('urgency') border-red-500 @enderror"
+                            >
+                                <option value="">Select urgency</option>
+                                @foreach($urgencyLevels as $value => $label)
+                                    <option value="{{ $value }}" @selected(old('urgency') === $value)>{{ $label }}</option>
+                                @endforeach
+                            </select>
+                            @error('urgency')
+                                <p class="text-red-500 text-xs mt-1 font-body">{{ $message }}</p>
+                            @enderror
+                        </div>
+
+                        <div>
+                            <label for="equipment_type" class="block text-xs font-heading font-bold uppercase tracking-widest mb-2 text-navy">Equipment Type</label>
+                            <select
+                                id="equipment_type"
+                                name="equipment_type"
+                                required
+                                class="lm-input w-full px-4 py-3 text-sm border border-navy/15 bg-[#f7f9fc] font-body @error('equipment_type') border-red-500 @enderror"
+                            >
+                                <option value="">Select equipment type</option>
+                                @foreach($equipmentTypes as $type)
+                                    <option value="{{ $type }}" @selected(old('equipment_type') === $type)>{{ $type }}</option>
+                                @endforeach
+                            </select>
+                            @error('equipment_type')
+                                <p class="text-red-500 text-xs mt-1 font-body">{{ $message }}</p>
+                            @enderror
+                        </div>
+
+                        <div>
                             <label for="service" class="block text-xs font-heading font-bold uppercase tracking-widest mb-2 text-navy">Service Required</label>
                             <select
                                 id="service"
@@ -127,15 +182,31 @@
                         </div>
 
                         <div class="sm:col-span-2">
-                            <label for="message" class="block text-xs font-heading font-bold uppercase tracking-widest mb-2 text-navy">Message</label>
+                            <label for="problem_description" class="block text-xs font-heading font-bold uppercase tracking-widest mb-2 text-navy">Problem Description</label>
                             <textarea
-                                id="message"
-                                name="message"
+                                id="problem_description"
+                                name="problem_description"
                                 rows="5"
-                                placeholder="Briefly describe your engineering requirements or project..."
-                                class="lm-input w-full px-4 py-3 text-sm border border-navy/15 bg-[#f7f9fc] resize-none font-body @error('message') border-red-500 @enderror"
-                            >{{ old('message') }}</textarea>
-                            @error('message')
+                                required
+                                placeholder="Describe the issue, symptoms, equipment model, when it started, and any actions already taken..."
+                                class="lm-input w-full px-4 py-3 text-sm border border-navy/15 bg-[#f7f9fc] resize-none font-body @error('problem_description') border-red-500 @enderror"
+                            >{{ old('problem_description') }}</textarea>
+                            @error('problem_description')
+                                <p class="text-red-500 text-xs mt-1 font-body">{{ $message }}</p>
+                            @enderror
+                        </div>
+
+                        <div class="sm:col-span-2">
+                            <label for="attachment" class="block text-xs font-heading font-bold uppercase tracking-widest mb-2 text-navy">Photo / Document <span class="font-normal normal-case tracking-normal text-gray-400">(optional)</span></label>
+                            <input
+                                id="attachment"
+                                name="attachment"
+                                type="file"
+                                accept=".jpg,.jpeg,.png,.pdf,.doc,.docx,image/*"
+                                class="lm-input w-full px-4 py-3 text-sm border border-navy/15 bg-[#f7f9fc] font-body file:mr-4 file:py-1 file:px-3 file:border-0 file:text-xs file:font-heading file:uppercase file:tracking-wider file:bg-navy file:text-white @error('attachment') border-red-500 @enderror"
+                            >
+                            <p class="text-gray-400 text-xs mt-1 font-body">JPG, PNG, PDF, DOC or DOCX. Max 10 MB.</p>
+                            @error('attachment')
                                 <p class="text-red-500 text-xs mt-1 font-body">{{ $message }}</p>
                             @enderror
                         </div>
