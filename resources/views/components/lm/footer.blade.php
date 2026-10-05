@@ -87,7 +87,7 @@
         </div>
 
         <div class="lm-footer-bottom pt-4 border-t border-white/8 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <p class="text-white/35 text-xs font-body">&copy; LM Workshop. All rights reserved. Engineering Division of LITUS Maldives.</p>
+            <p class="text-white/35 text-xs font-body">&copy; LM Workshop. All rights reserved. Engineering Division of LITUS Maldives. Developed by LITUS IT.</p>
             <p class="text-white/25 text-xs font-body">Marine · Industrial · Commercial · Maldives</p>
         </div>
     </div>

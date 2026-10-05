@@ -296,13 +296,9 @@
                     </div>
                     <p class="text-white/55 text-sm leading-relaxed font-body mb-6">{{ $brand['description'] }}</p>
                     <div class="pt-6 border-t border-white/10 flex items-center gap-4">
-                        <div class="w-20 h-20 flex items-center justify-center shrink-0 bg-white">
-                            <div class="grid grid-cols-3 gap-0.5 p-2">
-                                @foreach([0,1,2,3,4,5,6,7,8] as $i)
-                                    <div class="w-2 h-2 rounded-sm {{ in_array($i, [0,2,6,8]) ? 'bg-navy' : 'bg-gold' }}"></div>
-                                @endforeach
-                            </div>
-                        </div>
+                        <a href="{{ $cta['general_whatsapp'] }}" target="_blank" rel="noopener noreferrer" class="shrink-0 bg-white" style="width:6rem;height:6rem;padding:0.5rem" aria-label="Open WhatsApp chat with LM Workshop">
+                            <img src="{{ asset('images/contact/whatsapp-qr.svg') }}" alt="QR code to chat with LM Workshop on WhatsApp" width="256" height="256" class="w-full h-full">
+                        </a>
                         <p class="text-white/45 text-xs leading-snug font-body">Scan to connect with our team directly via WhatsApp.</p>
                     </div>
                 </div>
