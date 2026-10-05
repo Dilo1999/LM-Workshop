@@ -51,7 +51,7 @@
                     <h4 class="text-xs font-heading font-bold uppercase tracking-[0.18em] mb-3 text-gold-light">Contact</h4>
                     <ul class="flex flex-col gap-2">
                         @foreach([
-                            ['phone', $brand['phone'], str_contains($brand['phone'], 'XXX') ? null : 'tel:'.preg_replace('/\s+/', '', $brand['phone'])],
+                            ['phone', $brand['phone'], 'tel:'.preg_replace('/\s+/', '', $brand['phone'])],
                             ['mail', $brand['email'], 'mailto:'.$brand['email']],
                             ['globe', $brand['website'], 'https://'.preg_replace('#^https?://#', '', $brand['website'])],
                             ['map-pin', $brand['location'], null],

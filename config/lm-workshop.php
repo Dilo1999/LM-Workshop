@@ -12,8 +12,10 @@ return [
         ],
         'tagline' => 'Engineering You Can Count On',
         'description' => 'LM Workshop is an engineering company in the Maldives providing reliable marine, industrial and commercial engineering support.',
-        'phone' => '+960 XXX XXXX',
-        'whatsapp' => '+960 XXX XXXX',
+        'phone' => '+960 7811144',
+        'whatsapp' => '+960 7811144',
+        'emergency_phone' => '+960 7779304',
+        'engineer_whatsapp' => '+960 7779304',
         'email' => 'info@lmworkshop.com',
         'website' => 'www.lmworkshop.com',
         'location' => 'Malé, Maldives',
@@ -404,9 +406,9 @@ return [
     ],
 
     'team' => [
-        ['name' => 'Team Member 01', 'role' => 'Head of Marine Engineering', 'years' => '18 Years Experience', 'spec' => 'Marine Propulsion & Vessel Systems', 'img' => 'images/team/member/Team member 01.jpeg'],
-        ['name' => 'Team Member 02', 'role' => 'Senior Power Systems Engineer', 'years' => '14 Years Experience', 'spec' => 'Generators & Powerhouse Systems', 'img' => 'images/team/member/Team member 02.jpeg'],
-        ['name' => 'Team Member 03', 'role' => 'Mechanical & Electrical Engineer', 'years' => '12 Years Experience', 'spec' => 'Pumps, HVAC & Electrical Infrastructure', 'img' => 'images/team/member/Team member 03.jpeg'],
+        ['name' => 'Abdul Razzaq', 'role' => 'Head of Marine Engineering', 'years' => '18 Years Experience', 'spec' => 'Marine Propulsion & Vessel Systems', 'img' => 'images/team/member/Team member 01.jpeg'],
+        ['name' => 'Agmed Mahir', 'role' => 'Senior Power Systems Engineer', 'years' => '14 Years Experience', 'spec' => 'Generators & Powerhouse Systems', 'img' => 'images/team/member/Team member 02.jpeg'],
+        ['name' => 'Ahmed Azoor', 'role' => 'Mechanical & Electrical Engineer', 'years' => '12 Years Experience', 'spec' => 'Pumps, HVAC & Electrical Infrastructure', 'img' => null],
     ],
 
     'team_values' => [

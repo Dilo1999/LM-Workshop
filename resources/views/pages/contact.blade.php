@@ -42,8 +42,9 @@
 
                     <div class="flex flex-col gap-5 mb-8">
                         @foreach([
-                            ['phone', 'Phone', $brand['phone'], null],
-                            ['phone', 'WhatsApp', $brand['whatsapp'], str_starts_with($cta['whatsapp'], 'https://wa.me') ? $cta['whatsapp'] : null],
+                            ['phone', 'Phone', $brand['phone'], 'tel:'.preg_replace('/\s+/', '', $brand['phone'])],
+                            ['phone', 'WhatsApp', $brand['whatsapp'], $cta['general_whatsapp']],
+                            ['phone', 'Emergency Support (24/7)', $brand['emergency_phone'], 'tel:'.preg_replace('/\s+/', '', $brand['emergency_phone'])],
                             ['mail', 'Email', $brand['email'], 'mailto:' . $brand['email']],
                             ['globe', 'Website', $brand['website'], 'https://' . preg_replace('#^https?://#', '', $brand['website'])],
                             ['map-pin', 'Location', $brand['location'], null],
@@ -103,7 +104,7 @@
                         @foreach([
                             ['name', 'Name', 'text', 'Your full name', true],
                             ['company', 'Company Name', 'text', 'Your company', false],
-                            ['phone', 'Phone Number', 'tel', '+960 XXX XXXX', false],
+                            ['phone', 'Phone Number', 'tel', '+960 7811144', false],
                             ['email', 'Email Address', 'email', 'email@company.com', true],
                         ] as [$id, $label, $type, $placeholder, $required])
                             <div>

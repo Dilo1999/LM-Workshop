@@ -45,12 +45,18 @@
         <div class="team-cards-grid grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 items-stretch">
             @foreach($team as $member)
                 @php
-                    $rawImg = $images[$member['img']] ?? $member['img'];
-                    $memberImg = str_starts_with($rawImg, 'http') ? $rawImg : asset($rawImg);
+                    $rawImg = $member['img'] ? ($images[$member['img']] ?? $member['img']) : null;
+                    $memberImg = $rawImg ? (str_starts_with($rawImg, 'http') ? $rawImg : asset($rawImg)) : null;
                 @endphp
                 <div class="team-card h-full flex flex-col bg-white group overflow-hidden hover:shadow-xl transition-shadow duration-300">
                     <div class="relative h-40 sm:h-56 shrink-0 overflow-hidden">
-                        <img src="{{ $memberImg }}" alt="{{ $member['name'] }}" class="w-full h-full object-cover object-top grayscale-[20%] transition-transform duration-500 group-hover:scale-105">
+                        @if($memberImg)
+                            <img src="{{ $memberImg }}" alt="{{ $member['name'] }}" class="w-full h-full object-cover object-top grayscale-[20%] transition-transform duration-500 group-hover:scale-105">
+                        @else
+                            <div class="w-full h-full flex items-end justify-center" style="background:#eef1f6" role="img" aria-label="{{ $member['name'] }} photo coming soon">
+                                <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMax meet" style="height:85%;width:auto;fill:#c5ccd8" aria-hidden="true"><circle cx="50" cy="34" r="17"/><path d="M14 100c0-22 14-36 36-36s36 14 36 36z"/></svg>
+                            </div>
+                        @endif
                         <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-navy-deep/40"></div>
                         <div class="team-bar absolute bottom-0 left-0 right-0 h-1 bg-gold origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></div>
                     </div>
