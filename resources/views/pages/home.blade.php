@@ -66,7 +66,7 @@
                     @foreach([
                         ['10+', 'Years Experience', 'Years Exp.', 'shield-check'],
                         ['6', 'Engineering Disciplines', 'Disciplines', 'settings'],
-                        ['200+', 'Projects Completed', 'Projects', 'hard-hat'],
+                        ['50+', 'Projects Completed', 'Projects', 'hard-hat'],
                         ['24/7', 'Support Available', 'Support', 'headset'],
                     ] as [$n, $l, $lShort, $icon])
                         <div class="stat-item">

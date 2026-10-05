@@ -23,7 +23,7 @@
                 <p class="text-gray-500 mb-4 leading-relaxed font-body">LM Workshop's engineering team brings together decades of experience across marine engineering, mechanical systems, electrical infrastructure, fabrication, diesel engines and industrial maintenance.</p>
                 <p class="text-gray-500 mb-8 leading-relaxed font-body">Their combined expertise enables us to deliver dependable engineering support across a broad range of industries while maintaining the high standards our clients expect.</p>
                 <div class="team-intro-stats grid grid-cols-3 gap-4 sm:gap-8">
-                    @foreach([['60+', 'Combined Years'], ['6+', 'Disciplines'], ['100%', 'Professional']] as [$n, $l])
+                    @foreach([['15+', 'Combined Years'], ['6+', 'Disciplines'], ['100%', 'Professional']] as [$n, $l])
                         <div>
                             <div class="text-xl sm:text-2xl font-display font-bold text-gold">{{ $n }}</div>
                             <div class="text-[10px] sm:text-xs text-gray-500 uppercase tracking-widest font-heading leading-snug">{{ $l }}</div>
