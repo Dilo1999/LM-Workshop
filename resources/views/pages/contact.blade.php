@@ -235,12 +235,21 @@
 </section>
 
 <section class="h-64 relative overflow-hidden bg-cream">
-    <img src="{{ $images['islandBoat'] }}" alt="Maldives operations" class="absolute inset-0 w-full h-full object-cover opacity-40">
+    <iframe
+        src="https://maps.google.com/maps?q=Mal%C3%A9%2C%20Maldives&z=13&output=embed"
+        title="Map of Malé, Maldives"
+        class="absolute inset-0 w-full h-full border-0 pointer-events-none"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        aria-hidden="true"
+        tabindex="-1"
+    ></iframe>
+    <div class="absolute inset-0" style="background: rgba(255,255,255,0.62);"></div>
     <div class="absolute inset-0 flex items-center justify-center">
-        <div class="text-center">
+        <div class="text-center" style="text-shadow: 0 0 6px #fff, 0 0 12px #fff, 0 0 18px #fff;">
             <x-lm.icon name="map-pin" :size="32" class="text-gold mx-auto mb-2" />
             <p class="font-heading font-bold text-sm uppercase tracking-widest text-navy">{{ $brand['location'] }}</p>
-            <p class="text-gray-500 text-xs mt-1 font-body">Serving engineering operations across the Maldives</p>
+            <p class="text-gray-700 text-xs mt-1 font-body font-medium">Serving engineering operations across the Maldives</p>
         </div>
     </div>
 </section>
