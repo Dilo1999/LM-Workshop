@@ -28,7 +28,7 @@
 </section>
 
 <section class="relative py-24 overflow-hidden bg-navy">
-    <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('{{ $images['industrial'] }}')"></div>
+    <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('{{ asset($images['industrial']) }}')"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
         <x-lm.section-label light>Ready to Start?</x-lm.section-label>
         <h2 class="font-display font-bold text-white mb-4 text-display">Need Reliable Engineering Support?</h2>

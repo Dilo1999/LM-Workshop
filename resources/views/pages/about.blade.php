@@ -22,7 +22,7 @@
                 <p class="text-gray-500 leading-relaxed font-body">Every project we undertake is guided by the same commitment, to deliver practical engineering solutions with professionalism, reliability and accountability.</p>
             </div>
             <div class="relative">
-                <img src="{{ asset('images/aboutus/Who We Are.jpeg') }}" alt="LM Workshop engineers working on industrial machinery" class="w-full h-64 sm:h-80 lg:h-[480px] object-cover">
+                <img src="{{ asset('images/aboutus/who-we-are.webp') }}" alt="LM Workshop engineers working on industrial machinery" class="w-full h-64 sm:h-80 lg:h-[480px] object-cover">
             </div>
         </div>
     </div>

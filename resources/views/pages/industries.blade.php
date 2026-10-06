@@ -69,7 +69,7 @@
 </section>
 
 <section class="relative py-20 sm:py-24 bg-navy">
-    <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('{{ $images['construction'] }}')"></div>
+    <div class="absolute inset-0 bg-cover bg-center opacity-10" style="background-image: url('{{ asset($images['industriesCta']) }}')"></div>
     <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
         <x-lm.section-label light>Let's Connect</x-lm.section-label>
         <h2 class="font-display font-bold text-white mb-4 text-display">Supporting Your Industry</h2>
