@@ -71,10 +71,12 @@
                                 <div class="w-1 h-1 rounded-full bg-gold mt-1.5 shrink-0"></div>
                                 <p class="text-gray-500 text-[10px] sm:text-xs font-body leading-snug">{{ $member['years'] }}</p>
                             </div>
-                            <div class="hidden sm:flex items-start gap-2">
-                                <div class="w-1 h-1 rounded-full bg-gold mt-1.5 shrink-0"></div>
-                                <p class="text-gray-500 text-xs font-body leading-snug min-h-[2.5em]">{{ $member['spec'] }}</p>
-                            </div>
+                            @if(!empty($member['spec']))
+                                <div class="hidden sm:flex items-start gap-2">
+                                    <div class="w-1 h-1 rounded-full bg-gold mt-1.5 shrink-0"></div>
+                                    <p class="text-gray-500 text-xs font-body leading-snug min-h-[2.5em]">{{ $member['spec'] }}</p>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>

@@ -412,9 +412,8 @@ return [
         ['name' => 'Ahmed Azoor', 'role' => 'Chief Mechanic', 'years' => '24+ Years Experience', 'spec' => 'Mechanical Engineering, Hydraulic (Heavy Vehicles), Petrol Engineering', 'img' => 'images/Azoor.png', 'cutout' => true],
         ['name' => 'Abdul Razzag', 'role' => 'Mechanic', 'years' => '35+ Years Experience', 'spec' => 'Multi Specialty (All Rounder): Automobiles, Heavy Vehicles, Boats (Marine Engine)', 'img' => 'images/team/member/Team member 01.jpeg'],
         ['name' => 'Ahmed Mahir', 'role' => 'Engineering Assistant', 'years' => '15+ Years Experience', 'spec' => 'Mechanical Engineering (Diesel)', 'img' => 'images/team/member/Team member 02.jpeg'],
-        // TODO: confirm role, experience and specialisation for the two members below
-        ['name' => 'MD Alam Mia', 'role' => 'Engineer', 'years' => 'Years Experience', 'spec' => 'Specialisation', 'img' => 'images/MD Alam Mia.png', 'cutout' => true],
-        ['name' => 'Mohammad Nasir', 'role' => 'Engineer', 'years' => 'Years Experience', 'spec' => 'Specialisation', 'img' => 'images/Mohammad Nasir.png', 'cutout' => true],
+        ['name' => 'MD Alam Mia', 'role' => 'Store Keeper', 'years' => '8 Years Experience', 'img' => 'images/MD Alam Mia.png', 'cutout' => true],
+        ['name' => 'Mohammad Nasir', 'role' => 'Welder', 'years' => '7 Years Experience', 'img' => 'images/Mohammad Nasir.png', 'cutout' => true],
     ],
 
     'team_values' => [
