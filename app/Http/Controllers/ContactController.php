@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Mail\ContactFormMail;
 use App\Services\SeoService;
+use App\Services\TelegramService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -27,7 +28,7 @@ class ContactController extends Controller
         return view('pages.contact');
     }
 
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request, TelegramService $telegram): RedirectResponse
     {
         $urgencyLevels = array_keys(config('lm-workshop.contact.urgency_levels', []));
 
@@ -62,6 +63,9 @@ class ContactController extends Controller
             $validated['equipment_type'],
         ])->filter()->implode(' — ') ?: 'General Inquiry';
 
+        $emailSent = false;
+        $telegramSent = false;
+
         try {
             Mail::to(config('mail.contact_to', config('mail.from.address')))
                 ->send(new ContactFormMail(
@@ -77,9 +81,32 @@ class ContactController extends Controller
                     problemDescription: $validated['problem_description'],
                     attachment: $request->file('attachment'),
                 ));
+            $emailSent = true;
         } catch (\Throwable $e) {
             report($e);
+        }
 
+        try {
+            $e = fn (?string $v) => e($v ?? '—');
+            $telegramSent = $telegram->send(
+                ($validated['urgency'] === 'emergency' ? '🚨 <b>EMERGENCY</b>' . "\n" : '')
+                . '<b>New contact inquiry</b>' . "\n\n"
+                . '<b>Name:</b> ' . $e($validated['name']) . "\n"
+                . '<b>Company:</b> ' . $e($validated['company'] ?? null) . "\n"
+                . '<b>Phone:</b> ' . $e($validated['phone'] ?? null) . "\n"
+                . '<b>Email:</b> ' . $e($validated['email']) . "\n"
+                . '<b>Location:</b> ' . $e($validated['location']) . "\n"
+                . '<b>Service:</b> ' . $e($validated['service'] ?? null) . "\n"
+                . '<b>Equipment:</b> ' . $e($validated['equipment_type']) . "\n"
+                . '<b>Urgency:</b> ' . $e($urgencyLabel) . "\n\n"
+                . '<b>Problem:</b>' . "\n" . $e($validated['problem_description']),
+                $request->file('attachment'),
+            );
+        } catch (\Throwable $ex) {
+            report($ex);
+        }
+
+        if (! $emailSent && ! $telegramSent) {
             return back()
                 ->withInput()
                 ->with('contact_error', 'We could not send your inquiry right now. Please email us directly at ' . config('lm-workshop.brand.email') . '.');
