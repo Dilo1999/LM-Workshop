@@ -13,7 +13,7 @@
     label="Reach Out"
     title="Request Engineering Support"
     body="Request a quote, book a site assessment, or get emergency engineering support for marine and industrial operations across the Maldives."
-    :img="$images['weldingAdrian']"
+    :img="$images['contactHero']"
 />
 
 <section class="bg-white py-24">
