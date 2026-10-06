@@ -29,13 +29,13 @@
                     </div>
 
                     <div class="flex flex-col gap-2 mb-8">
-                        <a href="{{ $cta['emergency'] }}" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-heading font-bold uppercase tracking-[0.12em] bg-gold text-white transition-all hover:brightness-110">
+                        <a href="{{ $cta['emergency'] }}" class="m-btn m-btn--sm inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-heading font-bold uppercase tracking-[0.12em] bg-gold text-white transition-all hover:brightness-110">
                             Emergency Support
                         </a>
-                        <a href="{{ $cta['whatsapp'] }}" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-heading font-bold uppercase tracking-[0.12em] border border-white/20 text-white/80 transition-all hover:bg-white/10" @if(str_starts_with($cta['whatsapp'], 'https://wa.me')) target="_blank" rel="noopener noreferrer" @endif>
+                        <a href="{{ $cta['whatsapp'] }}" class="m-btn m-btn--sm inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-heading font-bold uppercase tracking-[0.12em] border border-white/20 text-white/80 transition-all hover:bg-white/10" @if(str_starts_with($cta['whatsapp'], 'https://wa.me')) target="_blank" rel="noopener noreferrer" @endif>
                             WhatsApp an Engineer
                         </a>
-                        <a href="{{ $cta['site_assessment'] }}" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-heading font-bold uppercase tracking-[0.12em] border border-white/20 text-white/80 transition-all hover:bg-white/10">
+                        <a href="{{ $cta['site_assessment'] }}" class="m-btn m-btn--sm inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-heading font-bold uppercase tracking-[0.12em] border border-white/20 text-white/80 transition-all hover:bg-white/10">
                             Book a Site Assessment
                         </a>
                     </div>
@@ -222,7 +222,7 @@
                         </div>
 
                         <div class="sm:col-span-2">
-                            <button type="submit" class="lm-mobile-full-btn inline-flex items-center gap-2 px-8 py-3.5 font-heading font-bold uppercase tracking-[0.12em] text-sm bg-navy text-white transition-all hover:brightness-110">
+                            <button type="submit" class="m-btn lm-mobile-full-btn inline-flex items-center gap-2 px-8 py-3.5 font-heading font-bold uppercase tracking-[0.12em] text-sm bg-navy text-white transition-all hover:brightness-110">
                                 Request a Quote
                                 <x-lm.icon name="send" :size="14" />
                             </button>

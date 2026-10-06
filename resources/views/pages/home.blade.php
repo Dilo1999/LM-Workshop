@@ -198,7 +198,7 @@
             @endforeach
         </div>
         <div class="text-center mt-12">
-            <a href="{{ route('industries') }}" class="inline-flex items-center gap-2 px-8 py-3 font-heading font-bold uppercase tracking-[0.12em] text-sm border border-gold-light text-gold-light transition-all hover:bg-white/10">
+            <a href="{{ route('industries') }}" class="m-btn inline-flex items-center gap-2 px-8 py-3 font-heading font-bold uppercase tracking-[0.12em] text-sm border border-gold-light text-gold-light transition-all hover:bg-white/10">
                 Explore Industries
                 <x-lm.icon name="arrow-right" :size="14" />
             </a>
@@ -216,7 +216,7 @@
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             @foreach($why as $item)
-                <div class="p-6 border border-navy/8 border-l-[3px] border-l-gold transition-all duration-300 hover:shadow-md">
+                <div class="m-card p-6 border border-navy/8 border-l-[3px] border-l-gold transition-all duration-300 hover:shadow-md">
                     <div class="flex items-center gap-3 mb-3">
                         <x-lm.icon :name="$item['icon']" :size="18" class="text-gold" />
                         <h3 class="font-heading font-bold text-base text-navy">{{ $item['title'] }}</h3>
@@ -259,14 +259,14 @@
                 <p class="text-gray-500 mb-6 leading-relaxed font-body">Request a quote, speak to an engineer on WhatsApp, or flag an emergency. We support marine, industrial and commercial operations across the Maldives.</p>
                 <div class="flex flex-col sm:flex-row flex-wrap gap-3 mb-6">
                     <x-lm.gold-btn :href="$cta['quote']">Request a Quote</x-lm.gold-btn>
-                    <a href="{{ $cta['whatsapp'] }}" class="inline-flex items-center justify-center gap-2 px-7 py-3 font-heading font-bold uppercase tracking-[0.12em] text-sm border border-navy/20 text-navy transition-all hover:bg-navy hover:text-white w-full sm:w-auto" @if(str_starts_with($cta['whatsapp'], 'https://wa.me')) target="_blank" rel="noopener noreferrer" @endif>
+                    <a href="{{ $cta['whatsapp'] }}" class="m-btn inline-flex items-center justify-center gap-2 px-7 py-3 font-heading font-bold uppercase tracking-[0.12em] text-sm border border-navy/20 text-navy transition-all hover:bg-navy hover:text-white w-full sm:w-auto" @if(str_starts_with($cta['whatsapp'], 'https://wa.me')) target="_blank" rel="noopener noreferrer" @endif>
                         WhatsApp an Engineer
                     </a>
-                    <a href="{{ $cta['emergency'] }}" class="inline-flex items-center justify-center gap-2 px-7 py-3 font-heading font-bold uppercase tracking-[0.12em] text-sm border border-gold text-gold transition-all hover:bg-gold hover:text-white w-full sm:w-auto">
+                    <a href="{{ $cta['emergency'] }}" class="m-btn inline-flex items-center justify-center gap-2 px-7 py-3 font-heading font-bold uppercase tracking-[0.12em] text-sm border border-gold text-gold transition-all hover:bg-gold hover:text-white w-full sm:w-auto">
                         Emergency Support
                     </a>
                 </div>
-                <div class="flex flex-col gap-2 text-sm font-body text-gray-500">
+                <div class="m-contact-lines flex flex-col gap-2 text-sm font-body text-gray-500">
                     @foreach([['Phone', $brand['phone']], ['WhatsApp', $brand['whatsapp']], ['Email', $brand['email']]] as [$l, $v])
                         <p><span class="font-heading font-bold uppercase tracking-widest text-xs text-gold mr-2">{{ $l }}</span>{{ $v }}</p>
                     @endforeach
@@ -274,7 +274,7 @@
             </div>
 
             <div class="w-full xl:max-w-md xl:shrink-0 xl:ml-auto">
-                <div class="p-6 sm:p-8 bg-navy-deep">
+                <div class="m-panel p-6 sm:p-8 bg-navy-deep">
                     <div class="flex items-center gap-3 mb-6">
                         <div class="w-9 h-9 flex items-center justify-center font-heading font-bold text-sm bg-gold text-white">LM</div>
                         <div>

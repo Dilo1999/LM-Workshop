@@ -93,7 +93,7 @@
         </div>
         <div class="team-values-grid grid md:grid-cols-3 gap-4 sm:gap-6">
             @foreach($teamValues as $value)
-                <div class="p-5 sm:p-8 border border-navy/10 border-t-[3px] border-t-gold">
+                <div class="m-card p-5 sm:p-8 border border-navy/10 border-t-[3px] border-t-gold">
                     <h3 class="font-heading font-bold text-base sm:text-lg mb-2 sm:mb-3 text-navy">{{ $value['heading'] }}</h3>
                     <p class="text-gray-500 text-sm leading-relaxed font-body">{{ $value['body'] }}</p>
                 </div>

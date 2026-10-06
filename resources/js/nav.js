@@ -6,11 +6,15 @@ function initNav() {
   const toggleBtn = document.querySelector('[data-mobile-menu-toggle]');
   const panel = document.querySelector('[data-mobile-menu-panel]');
 
+  const actionBar = document.querySelector('[data-action-bar]');
+
   if (nav) {
     const onScroll = () => {
       const scrolled = window.scrollY > 40;
       nav.classList.toggle('border-gold/18', scrolled);
       nav.classList.toggle('border-transparent', !scrolled);
+      nav.classList.toggle('is-scrolled', scrolled);
+      if (actionBar) actionBar.classList.toggle('is-visible', window.scrollY > 280);
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
@@ -28,6 +32,7 @@ function initNav() {
     if (iconOpen) iconOpen.classList.toggle('hidden', isOpen);
     if (iconClose) iconClose.classList.toggle('hidden', !isOpen);
     document.body.classList.toggle('overflow-hidden', isOpen);
+    document.body.classList.toggle('lm-menu-open', isOpen);
   }
 
   toggleBtn.addEventListener('click', () => {

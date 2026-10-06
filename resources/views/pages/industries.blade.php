@@ -59,7 +59,7 @@
     <div class="max-w-7xl mx-auto px-6">
         <div class="grid lg:grid-cols-3 gap-4 sm:gap-8">
             @foreach($industriesValue as $value)
-                <div class="bg-white p-5 sm:p-8 border-l-4 border-gold">
+                <div class="m-card bg-white p-5 sm:p-8 border-l-4 border-gold">
                     <h3 class="font-heading font-bold text-base sm:text-lg mb-2 sm:mb-3 text-navy">{{ $value['heading'] }}</h3>
                     <p class="text-gray-500 text-sm leading-relaxed font-body">{{ $value['body'] }}</p>
                 </div>

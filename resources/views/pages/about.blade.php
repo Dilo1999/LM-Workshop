@@ -36,7 +36,7 @@
                 ['eye', 'Our Vision', "To become the Maldives' most trusted engineering partner, recognised for reliability, technical excellence and long-term client relationships."],
                 ['compass', 'Our Mission', 'To help businesses operate safely, efficiently and with confidence by delivering dependable engineering services, practical solutions and responsive technical support.'],
             ] as [$icon, $title, $body])
-                <div class="p-8 bg-white border-t-4 border-gold">
+                <div class="m-card p-8 bg-white border-t-4 border-gold">
                     <div class="w-12 h-12 flex items-center justify-center mb-5 bg-cream">
                         <x-lm.icon :name="$icon" :size="22" class="text-gold" />
                     </div>

@@ -23,7 +23,7 @@
             </div>
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 lm-stat-grid">
                 @foreach([['10+', 'Years Active'], ['6', 'Disciplines'], ['200+', 'Projects'], ['24/7', 'Response'], ['Multi-Island', 'Coverage'], ['One Partner', 'All Services']] as [$n, $l])
-                    <div class="p-4 sm:p-5 text-center border border-navy/10">
+                    <div class="m-card m-stat p-4 sm:p-5 text-center border border-navy/10">
                         <div class="font-display font-bold text-lg sm:text-xl mb-1 text-gold">{{ $n }}</div>
                         <div class="capability-stat-label text-[10px] sm:text-xs text-gray-500 uppercase tracking-widest font-heading">{{ $l }}</div>
                     </div>

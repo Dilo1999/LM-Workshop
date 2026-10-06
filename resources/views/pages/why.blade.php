@@ -22,7 +22,7 @@
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             @foreach($reasons as $item)
-                <div class="group p-8 border border-navy/10 border-l-[3px] border-l-gold transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                <div class="m-card group p-8 border border-navy/10 border-l-[3px] border-l-gold transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
                     <div class="flex items-center gap-3 mb-4">
                         <div class="w-10 h-10 flex items-center justify-center shrink-0 bg-cream">
                             <x-lm.icon :name="$item['icon']" :size="20" class="text-gold" />
@@ -50,7 +50,7 @@
             </div>
             <div class="flex flex-col gap-4">
                 @foreach($promiseItems as $item)
-                    <div class="flex items-start gap-3 p-4 border border-white/10">
+                    <div class="m-card-dark flex items-start gap-3 p-4 border border-white/10">
                         <x-lm.icon name="check-circle" :size="16" class="text-gold-light shrink-0 mt-0.5" />
                         <span class="text-white/75 text-sm font-body">{{ $item }}</span>
                     </div>

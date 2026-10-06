@@ -1,5 +1,6 @@
 @php
     $navLinks = config('lm-workshop.nav');
+    $brand = config('lm-workshop.brand');
 @endphp
 
 <nav
@@ -41,7 +42,7 @@
             </a>
             <button
                 type="button"
-                class="xl:hidden text-white p-1"
+                class="lm-menu-btn xl:hidden text-white p-1"
                 data-mobile-menu-toggle
                 aria-label="Toggle menu"
                 aria-expanded="false"
@@ -52,26 +53,47 @@
         </div>
     </div>
 
-    <div class="xl:hidden hidden max-h-[calc(100vh-4rem)] overflow-y-auto px-6 pb-6 pt-2 bg-navy-deep" data-mobile-menu-panel>
-        <ul class="flex flex-col gap-0.5">
-            @foreach($navLinks as $link)
-                <li>
+    <div class="lm-drawer xl:hidden hidden" data-mobile-menu-panel>
+        <p class="lm-drawer-kicker">Menu</p>
+        <ul class="lm-drawer-list">
+            @foreach($navLinks as $i => $link)
+                <li style="--i: {{ $i }}">
                     <a
                         href="{{ route($link['route']) }}"
-                        class="block py-3 px-3 text-sm font-heading font-bold text-white/80 hover:text-white border-b border-white/10 uppercase tracking-widest"
+                        class="lm-drawer-link {{ request()->routeIs($link['route']) ? 'is-active' : '' }}"
+                        @if(request()->routeIs($link['route'])) aria-current="page" @endif
                         data-mobile-menu-close
                     >
-                        {{ $link['label'] }}
+                        <span class="lm-drawer-num">{{ str_pad($i + 1, 2, '0', STR_PAD_LEFT) }}</span>
+                        <span class="lm-drawer-label">{{ $link['label'] }}</span>
+                        <x-lm.icon name="chevron-right" :size="16" class="lm-drawer-chevron" />
                     </a>
                 </li>
             @endforeach
         </ul>
-        <a
-            href="{{ $cta['quote'] }}"
-            class="mt-4 block text-center py-3 text-sm font-heading font-bold uppercase tracking-widest bg-gold text-white"
-            data-mobile-menu-close
-        >
+
+        <div class="lm-drawer-quick">
+            <a href="tel:{{ preg_replace('/\s+/', '', $brand['phone']) }}" class="lm-drawer-tile">
+                <x-lm.icon name="phone" :size="18" />
+                <span>Call</span>
+            </a>
+            <a href="{{ $cta['general_whatsapp'] }}" class="lm-drawer-tile" target="_blank" rel="noopener noreferrer">
+                <x-lm.icon name="message-circle" :size="18" />
+                <span>WhatsApp</span>
+            </a>
+            <a href="mailto:{{ $brand['email'] }}" class="lm-drawer-tile">
+                <x-lm.icon name="mail" :size="18" />
+                <span>Email</span>
+            </a>
+        </div>
+
+        <a href="{{ $cta['quote'] }}" class="lm-drawer-cta" data-mobile-menu-close>
             Request a Quote
+            <x-lm.icon name="arrow-right" :size="16" />
+        </a>
+        <a href="{{ $cta['emergency'] }}" class="lm-drawer-emergency">
+            <span class="lm-live-dot" aria-hidden="true"></span>
+            24/7 Emergency Support · {{ $brand['emergency_phone'] }}
         </a>
     </div>
 </nav>
