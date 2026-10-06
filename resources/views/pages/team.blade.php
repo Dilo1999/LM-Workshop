@@ -42,13 +42,13 @@
             <x-lm.section-label>The Team</x-lm.section-label>
             <h2 class="font-display font-bold text-display text-navy">Engineering Professionals</h2>
         </div>
-        <div class="team-cards-grid grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 items-stretch">
+        <div class="team-cards-grid flex flex-wrap justify-center gap-3 sm:gap-6 items-stretch">
             @foreach($team as $member)
                 @php
                     $rawImg = $member['img'] ? ($images[$member['img']] ?? $member['img']) : null;
                     $memberImg = $rawImg ? (str_starts_with($rawImg, 'http') ? $rawImg : asset($rawImg)) : null;
                 @endphp
-                <div class="team-card h-full flex flex-col bg-white group overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div class="team-card w-[calc(50%-0.375rem)] sm:w-[calc(50%-0.75rem)] lg:w-[calc((100%-3rem)/3)] flex flex-col bg-white group overflow-hidden hover:shadow-xl transition-shadow duration-300">
                     <div class="relative h-40 sm:h-56 shrink-0 overflow-hidden" style="background:#fafafc">
                         @if($memberImg && !empty($member['cutout']))
                             {{-- Tightly cropped transparent PNG: scale and offset it to match the framing of the full photos --}}

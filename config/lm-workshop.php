@@ -409,9 +409,12 @@ return [
     ],
 
     'team' => [
-        ['name' => 'Ahmed Azoor', 'role' => 'Chief Engineer', 'years' => '12 Years Experience', 'spec' => 'Pumps, HVAC & Electrical Infrastructure', 'img' => 'images/Azoor.png', 'cutout' => true],
-        ['name' => 'Abdul Razzaq', 'role' => 'Head of Marine Engineering', 'years' => '18 Years Experience', 'spec' => 'Marine Propulsion & Vessel Systems', 'img' => 'images/team/member/Team member 01.jpeg'],
-        ['name' => 'Agmed Mahir', 'role' => 'Senior Power Systems Engineer', 'years' => '14 Years Experience', 'spec' => 'Generators & Powerhouse Systems', 'img' => 'images/team/member/Team member 02.jpeg'],
+        ['name' => 'Ahmed Azoor', 'role' => 'Chief Mechanic', 'years' => '24+ Years Experience', 'spec' => 'Mechanical Engineering, Hydraulic (Heavy Vehicles), Petrol Engineering', 'img' => 'images/Azoor.png', 'cutout' => true],
+        ['name' => 'Abdul Razzag', 'role' => 'Mechanic', 'years' => '35+ Years Experience', 'spec' => 'Multi Specialty (All Rounder): Automobiles, Heavy Vehicles, Boats (Marine Engine)', 'img' => 'images/team/member/Team member 01.jpeg'],
+        ['name' => 'Ahmed Mahir', 'role' => 'Engineering Assistant', 'years' => '15+ Years Experience', 'spec' => 'Mechanical Engineering (Diesel)', 'img' => 'images/team/member/Team member 02.jpeg'],
+        // TODO: confirm role, experience and specialisation for the two members below
+        ['name' => 'MD Alam Mia', 'role' => 'Engineer', 'years' => 'Years Experience', 'spec' => 'Specialisation', 'img' => 'images/MD Alam Mia.png', 'cutout' => true],
+        ['name' => 'Mohammad Nasir', 'role' => 'Engineer', 'years' => 'Years Experience', 'spec' => 'Specialisation', 'img' => 'images/Mohammad Nasir.png', 'cutout' => true],
     ],
 
     'team_values' => [
