@@ -49,8 +49,11 @@
                     $memberImg = $rawImg ? (str_starts_with($rawImg, 'http') ? $rawImg : asset($rawImg)) : null;
                 @endphp
                 <div class="team-card h-full flex flex-col bg-white group overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                    <div class="relative h-40 sm:h-56 shrink-0 overflow-hidden">
-                        @if($memberImg)
+                    <div class="relative h-40 sm:h-56 shrink-0 overflow-hidden" style="background:#fafafc">
+                        @if($memberImg && !empty($member['cutout']))
+                            {{-- Tightly cropped transparent PNG: scale and offset it to match the framing of the full photos --}}
+                            <img loading="lazy" decoding="async" src="{{ $memberImg }}" alt="{{ $member['name'] }}" class="absolute left-1/2 top-[10%] h-[145%] w-auto max-w-none -translate-x-1/2 grayscale-[20%] transition-transform duration-500 group-hover:scale-105">
+                        @elseif($memberImg)
                             <img loading="lazy" decoding="async" src="{{ $memberImg }}" alt="{{ $member['name'] }}" class="w-full h-full object-cover object-top grayscale-[20%] transition-transform duration-500 group-hover:scale-105">
                         @else
                             <div class="w-full h-full flex items-end justify-center" style="background:#eef1f6" role="img" aria-label="{{ $member['name'] }} photo coming soon">

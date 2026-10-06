@@ -409,7 +409,7 @@ return [
     ],
 
     'team' => [
-        ['name' => 'Ahmed Azoor', 'role' => 'Chief Engineer', 'years' => '12 Years Experience', 'spec' => 'Pumps, HVAC & Electrical Infrastructure', 'img' => null],
+        ['name' => 'Ahmed Azoor', 'role' => 'Chief Engineer', 'years' => '12 Years Experience', 'spec' => 'Pumps, HVAC & Electrical Infrastructure', 'img' => 'images/Azoor.png', 'cutout' => true],
         ['name' => 'Abdul Razzaq', 'role' => 'Head of Marine Engineering', 'years' => '18 Years Experience', 'spec' => 'Marine Propulsion & Vessel Systems', 'img' => 'images/team/member/Team member 01.jpeg'],
         ['name' => 'Agmed Mahir', 'role' => 'Senior Power Systems Engineer', 'years' => '14 Years Experience', 'spec' => 'Generators & Powerhouse Systems', 'img' => 'images/team/member/Team member 02.jpeg'],
     ],
