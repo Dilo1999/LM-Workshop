@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-use Artesaos\SEOTools\Facades\JsonLd;
+use Artesaos\SEOTools\Facades\JsonLdMulti;
 use Artesaos\SEOTools\Facades\OpenGraph;
 use Artesaos\SEOTools\Facades\SEOMeta;
 use Artesaos\SEOTools\Facades\TwitterCard;
@@ -78,7 +78,7 @@ class SeoService
         OpenGraph::setUrl($url);
         OpenGraph::setType($pageType);
         OpenGraph::setSiteName($this->siteName);
-        OpenGraph::addProperty('locale', 'en_MV');
+        OpenGraph::addProperty('locale', 'en_US');
         OpenGraph::addImage($resolvedOgImage, [
             'width' => 1200,
             'height' => 630,
@@ -91,17 +91,57 @@ class SeoService
         TwitterCard::setImage($twImage);
         TwitterCard::setUrl($url);
 
-        JsonLd::setTitle($metaTitle);
-        JsonLd::setDescription($metaDesc);
-        JsonLd::setType('WebPage');
-        JsonLd::setUrl($url);
-        JsonLd::addImage($resolvedOgImage);
-        JsonLd::addValue('inLanguage', 'en');
-        JsonLd::addValue('isPartOf', [
+        JsonLdMulti::setTitle($metaTitle);
+        JsonLdMulti::setDescription($metaDesc);
+        JsonLdMulti::setType('WebPage');
+        JsonLdMulti::setUrl($url);
+        JsonLdMulti::addImage($resolvedOgImage);
+        JsonLdMulti::addValue('inLanguage', 'en');
+        JsonLdMulti::addValue('isPartOf', [
             '@type' => 'WebSite',
             'name' => $this->siteName,
             'url' => url('/'),
         ]);
+
+        $crumbs = $defaults['breadcrumbs'] ?? $this->defaultBreadcrumbs($routeName, $metaTitle);
+        if (count($crumbs) > 1) {
+            JsonLdMulti::addValue('breadcrumb', [
+                '@type' => 'BreadcrumbList',
+                'itemListElement' => array_map(fn (array $crumb, int $i) => [
+                    '@type' => 'ListItem',
+                    'position' => $i + 1,
+                    'name' => $crumb['name'],
+                    'item' => $crumb['url'],
+                ], $crumbs, array_keys($crumbs)),
+            ]);
+        }
+
+        foreach ($defaults['jsonld'] ?? [] as $key => $value) {
+            JsonLdMulti::addValue($key, $value);
+        }
+    }
+
+    /**
+     * @return array<int, array{name: string, url: string}>
+     */
+    protected function defaultBreadcrumbs(string $routeName, string $metaTitle): array
+    {
+        $crumbs = [['name' => 'Home', 'url' => url('/')]];
+
+        if ($routeName === 'home') {
+            return $crumbs;
+        }
+
+        if (str_starts_with($routeName, 'services.')) {
+            $crumbs[] = ['name' => 'Services', 'url' => route('services')];
+            $crumbs[] = ['name' => trim(explode('—', explode('|', $metaTitle)[1] ?? $metaTitle)[0]), 'url' => url()->current()];
+
+            return $crumbs;
+        }
+
+        $crumbs[] = ['name' => ucwords(str_replace('-', ' ', $routeName)), 'url' => url()->current()];
+
+        return $crumbs;
     }
 
     protected function resolveAssetUrl(string $path): string

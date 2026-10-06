@@ -68,7 +68,7 @@
 
                     <div class="pt-6 border-t border-white/10 flex items-center gap-4 lm-qr-row">
                         <a href="{{ $cta['general_whatsapp'] }}" target="_blank" rel="noopener noreferrer" class="shrink-0 bg-white" style="width:6rem;height:6rem;padding:0.5rem" aria-label="Open WhatsApp chat with LM Workshop">
-                            <img src="{{ asset('images/contact/whatsapp-qr.svg') }}" alt="QR code to chat with LM Workshop on WhatsApp" width="256" height="256" class="w-full h-full">
+                            <img loading="lazy" decoding="async" src="{{ asset('images/contact/whatsapp-qr.svg') }}" alt="QR code to chat with LM Workshop on WhatsApp" width="256" height="256" class="w-full h-full">
                         </a>
                         <p class="text-white/45 text-xs leading-snug font-body">Scan to connect with our team directly via WhatsApp.</p>
                     </div>

@@ -26,6 +26,16 @@ class ServiceController extends Controller
                 $service['keywords'] ?? []
             ),
             'og_image' => $heroImage,
+            'jsonld' => [
+                'mainEntity' => [
+                    '@type' => 'Service',
+                    'name' => $service['title'],
+                    'description' => $service['meta_description'] ?? $service['desc'],
+                    'serviceType' => $service['title'],
+                    'areaServed' => ['@type' => 'Country', 'name' => 'Maldives'],
+                    'provider' => ['@id' => url('/').'#organization'],
+                ],
+            ],
         ]);
 
         return view('pages.service-show', [

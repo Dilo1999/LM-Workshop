@@ -10,6 +10,7 @@
             <div class="lm-footer-brand max-w-sm shrink-0">
                 <a href="{{ route('home') }}" class="inline-flex items-center mb-4 select-none -ml-3">
                     <img
+                        loading="lazy"
                         src="{{ asset(config('lm-workshop.images.logo')) }}"
                         alt="{{ $brand['name'] }}"
                         class="h-[5.5rem] w-auto"

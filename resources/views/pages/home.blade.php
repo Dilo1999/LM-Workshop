@@ -105,7 +105,7 @@
                 <p class="text-navy/80 font-medium font-body leading-snug">Minimise disruption. Restore reliability. Keep your business running.</p>
             </div>
             <div class="order-1 lg:order-2 home-split-media relative">
-                <img src="{{ asset('images/home/downtime-cost.webp') }}" alt="LM Workshop engineers repairing industrial machinery in the Maldives" class="w-full h-52 sm:h-64 lg:h-[480px] object-cover">
+                <img loading="lazy" decoding="async" src="{{ asset('images/home/downtime-cost.webp') }}" alt="LM Workshop engineers repairing industrial machinery in the Maldives" class="w-full h-52 sm:h-64 lg:h-[480px] object-cover">
                 <div class="lm-home-badge lm-home-badge--offset hidden lg:flex absolute bottom-3 left-3 sm:bottom-4 sm:left-4 lg:-bottom-6 lg:-left-6 w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 flex-col items-center justify-center text-center bg-gold text-white shadow-lg">
                     <span class="text-2xl sm:text-3xl font-display font-bold">24/7</span>
                     <span class="text-[10px] sm:text-xs font-heading font-bold uppercase tracking-wider mt-1">Support</span>
@@ -120,7 +120,7 @@
     <div class="max-w-7xl mx-auto px-6">
         <div class="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div class="home-split-media relative">
-                <img src="{{ asset('images/home/engineering-count-on.webp') }}" alt="LM Workshop engineer on site" class="w-full h-52 sm:h-64 lg:h-[480px] object-cover">
+                <img loading="lazy" decoding="async" src="{{ asset('images/home/engineering-count-on.webp') }}" alt="LM Workshop engineer on site" class="w-full h-52 sm:h-64 lg:h-[480px] object-cover">
                 <div class="lm-home-badge lm-home-badge--top hidden lg:flex absolute top-3 right-3 sm:top-4 sm:right-4 lg:-top-5 lg:-right-5 w-24 h-24 sm:w-28 sm:h-28 lg:w-36 lg:h-36 flex-col items-center justify-center text-center bg-navy shadow-lg">
                     <span class="text-[10px] sm:text-xs font-heading font-bold uppercase tracking-widest text-white/60 mb-1">Division of</span>
                     <span class="text-base sm:text-lg font-display font-bold text-white tracking-[0.08em]">LITUS</span>
@@ -175,7 +175,7 @@
             @foreach($industries as $industry)
                 <div class="industry-slider__slide">
                     <div class="group industry-card relative overflow-hidden h-64 sm:h-72 lg:h-64 cursor-default">
-                        <img src="{{ str_starts_with($images[$industry['img']], 'http') ? $images[$industry['img']] : asset($images[$industry['img']]) }}" alt="{{ $industry['title'] }}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500">
+                        <img loading="lazy" decoding="async" src="{{ str_starts_with($images[$industry['img']], 'http') ? $images[$industry['img']] : asset($images[$industry['img']]) }}" alt="{{ $industry['title'] }}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500">
                         <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(7,21,41,0.94) 0%, rgba(11,31,63,0.53) 60%, rgba(11,31,63,0.27) 100%)"></div>
                         <div class="industry-overlay absolute inset-0 opacity-0 transition-opacity duration-300 bg-navy-deep/80"></div>
                         <div class="industry-bar absolute left-0 top-0 bottom-0 w-1 bg-gold"></div>
@@ -285,7 +285,7 @@
                     <p class="text-white/55 text-sm leading-relaxed font-body mb-6">{{ $brand['description'] }}</p>
                     <div class="pt-6 border-t border-white/10 flex items-center gap-4">
                         <a href="{{ $cta['general_whatsapp'] }}" target="_blank" rel="noopener noreferrer" class="shrink-0 bg-white" style="width:6rem;height:6rem;padding:0.5rem" aria-label="Open WhatsApp chat with LM Workshop">
-                            <img src="{{ asset('images/contact/whatsapp-qr.svg') }}" alt="QR code to chat with LM Workshop on WhatsApp" width="256" height="256" class="w-full h-full">
+                            <img loading="lazy" decoding="async" src="{{ asset('images/contact/whatsapp-qr.svg') }}" alt="QR code to chat with LM Workshop on WhatsApp" width="256" height="256" class="w-full h-full">
                         </a>
                         <p class="text-white/45 text-xs leading-snug font-body">Scan to connect with our team directly via WhatsApp.</p>
                     </div>

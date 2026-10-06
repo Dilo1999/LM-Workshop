@@ -20,7 +20,7 @@ class SitemapController extends Controller
             ['route' => 'contact', 'priority' => '0.9', 'changefreq' => 'monthly'],
         ];
 
-        $lastmod = now()->toAtomString();
+        $lastmod = date('c', filemtime(config_path('lm-workshop.php')));
         $urls = '';
 
         foreach ($pages as $page) {

@@ -31,7 +31,7 @@
                     @endforeach
                 </div>
             </div>
-            <img src="{{ asset('images/team/expertise.webp') }}" alt="LM Workshop engineering team" class="w-full h-56 sm:h-80 lg:h-[400px] object-cover">
+            <img loading="lazy" decoding="async" src="{{ asset('images/team/expertise.webp') }}" alt="LM Workshop engineering team" class="w-full h-56 sm:h-80 lg:h-[400px] object-cover">
         </div>
     </div>
 </section>
@@ -51,7 +51,7 @@
                 <div class="team-card h-full flex flex-col bg-white group overflow-hidden hover:shadow-xl transition-shadow duration-300">
                     <div class="relative h-40 sm:h-56 shrink-0 overflow-hidden">
                         @if($memberImg)
-                            <img src="{{ $memberImg }}" alt="{{ $member['name'] }}" class="w-full h-full object-cover object-top grayscale-[20%] transition-transform duration-500 group-hover:scale-105">
+                            <img loading="lazy" decoding="async" src="{{ $memberImg }}" alt="{{ $member['name'] }}" class="w-full h-full object-cover object-top grayscale-[20%] transition-transform duration-500 group-hover:scale-105">
                         @else
                             <div class="w-full h-full flex items-end justify-center" style="background:#eef1f6" role="img" aria-label="{{ $member['name'] }} photo coming soon">
                                 <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMax meet" style="height:85%;width:auto;fill:#c5ccd8" aria-hidden="true"><circle cx="50" cy="34" r="17"/><path d="M14 100c0-22 14-36 36-36s36 14 36 36z"/></svg>
