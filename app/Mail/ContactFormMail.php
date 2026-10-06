@@ -31,12 +31,12 @@ class ContactFormMail extends Mailable
 
     public function envelope(): Envelope
     {
-        $to = config('mail.contact_to') ?: config('mail.from.address');
+        $to = config('mail.contact_to') ?: [config('mail.from.address')];
 
         return new Envelope(
             from: new Address(config('mail.from.address'), config('mail.from.name')),
             replyTo: [new Address($this->senderEmail, $this->senderName)],
-            to: [$to],
+            to: $to,
             subject: '[Contact Form] ' . $this->formSubject,
         );
     }

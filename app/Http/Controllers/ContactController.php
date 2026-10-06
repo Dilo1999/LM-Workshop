@@ -15,12 +15,12 @@ class ContactController extends Controller
     {
         $seo->applyForPage('contact', [
             'meta_title' => 'LM Workshop | Contact — Engineering Support in Malé, Maldives',
-            'meta_description' => 'Contact LM Workshop for engineering support in the Maldives. Reach our Malé team for marine, industrial and commercial projects. Email info@lmworkshop.com.',
+            'meta_description' => 'Contact LM Workshop for engineering support in the Maldives. Reach our Malé team for marine, industrial and commercial projects. Email sales@lmworkshop.com.',
             'keywords' => [
                 'LM Workshop',
                 'contact LM Workshop',
                 'LM Workshop Malé',
-                'info@lmworkshop.com',
+                'sales@lmworkshop.com',
             ],
         ]);
 

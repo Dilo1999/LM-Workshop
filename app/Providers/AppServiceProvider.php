@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Mail\Transport\BrevoApiTransport;
 use App\Support\Cta;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -23,6 +25,11 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Schema::defaultStringLength(191);
+
+        Mail::extend('brevo', fn (array $config) => new BrevoApiTransport(
+            $config['key'] ?? '',
+            (bool) ($config['verify_ssl'] ?? true),
+        ));
 
         if (! $this->app->runningInConsole() && $this->app->request?->getHost()) {
             $url = $this->app->request->getSchemeAndHttpHost();

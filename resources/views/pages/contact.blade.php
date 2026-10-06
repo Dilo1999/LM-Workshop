@@ -45,7 +45,8 @@
                             ['phone', 'Phone', $brand['phone'], 'tel:'.preg_replace('/\s+/', '', $brand['phone'])],
                             ['phone', 'WhatsApp', $brand['whatsapp'], $cta['general_whatsapp']],
                             ['phone', 'Emergency Support (24/7)', $brand['emergency_phone'], 'tel:'.preg_replace('/\s+/', '', $brand['emergency_phone'])],
-                            ['mail', 'Email', $brand['email'], 'mailto:' . $brand['email']],
+                            ['mail', 'Sales Email', $brand['email'], 'mailto:' . $brand['email']],
+                            ['mail', 'Operations Email', $brand['operations_email'], 'mailto:' . $brand['operations_email']],
                             ['globe', 'Website', $brand['website'], 'https://' . preg_replace('#^https?://#', '', $brand['website'])],
                             ['map-pin', 'Location', $brand['location'], null],
                         ] as [$icon, $label, $value, $href])

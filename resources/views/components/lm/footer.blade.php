@@ -53,6 +53,7 @@
                         @foreach([
                             ['phone', $brand['phone'], 'tel:'.preg_replace('/\s+/', '', $brand['phone'])],
                             ['mail', $brand['email'], 'mailto:'.$brand['email']],
+                            ['mail', $brand['operations_email'], 'mailto:'.$brand['operations_email']],
                             ['globe', $brand['website'], 'https://'.preg_replace('#^https?://#', '', $brand['website'])],
                             ['map-pin', $brand['location'], null],
                         ] as [$icon, $text, $href])

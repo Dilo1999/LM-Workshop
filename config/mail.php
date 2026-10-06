@@ -46,6 +46,12 @@ return [
             'local_domain' => env('MAIL_EHLO_DOMAIN'),
         ],
 
+        'brevo' => [
+            'transport' => 'brevo',
+            'key' => env('BREVO_API_KEY'),
+            'verify_ssl' => env('BREVO_VERIFY_SSL', true),
+        ],
+
         'ses' => [
             'transport' => 'ses',
         ],
@@ -118,11 +124,14 @@ return [
     |--------------------------------------------------------------------------
     |
     | Emails sent from the contact form will be delivered to this address.
-    | Defaults to MAIL_FROM_ADDRESS if not set.
+    | Accepts a comma-separated list. Defaults to MAIL_FROM_ADDRESS if not set.
     |
     */
 
-    'contact_to' => env('MAIL_CONTACT_RECIPIENT') ?: env('MAIL_FROM_ADDRESS', 'hello@example.com'),
+    'contact_to' => array_values(array_filter(array_map(
+        'trim',
+        explode(',', env('MAIL_CONTACT_RECIPIENT') ?: env('MAIL_FROM_ADDRESS', 'hello@example.com'))
+    ))),
 
     /*
     |--------------------------------------------------------------------------

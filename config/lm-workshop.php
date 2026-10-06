@@ -16,7 +16,8 @@ return [
         'whatsapp' => '+960 7811144',
         'emergency_phone' => '+960 7779304',
         'engineer_whatsapp' => '+960 7779304',
-        'email' => 'info@lmworkshop.com',
+        'email' => 'sales@lmworkshop.com',
+        'operations_email' => 'operations@lmworkshop.com',
         'website' => 'www.lmworkshop.com',
         'location' => 'Malé, Maldives',
         'same_as' => [
