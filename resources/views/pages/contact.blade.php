@@ -236,8 +236,8 @@
 
 <section class="h-64 relative overflow-hidden bg-cream">
     <iframe
-        src="https://maps.google.com/maps?q=Mal%C3%A9%2C%20Maldives&z=13&output=embed"
-        title="Map of Malé, Maldives"
+        src="https://maps.google.com/maps?q=LITUS%20WORKSHOP%404.1790611%2C73.4553486&z=17&output=embed"
+        title="Map of LITUS Workshop, Maldives"
         class="absolute inset-0 w-full h-full border-0 pointer-events-none"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
