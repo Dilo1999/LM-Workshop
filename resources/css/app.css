@@ -165,6 +165,138 @@ body {
   transform: scaleX(1);
 }
 
+/* Flip card: front sets the height, back is overlaid and scrolls if long */
+.team-card--flip {
+  perspective: 1400px;
+  cursor: pointer;
+}
+
+.team-card--flip .team-flip {
+  position: relative;
+  flex: 1;
+  display: grid;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.team-card--flip .team-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+}
+
+.team-card--flip .team-face {
+  grid-area: 1 / 1;
+}
+
+.team-card--flip .team-face--back {
+  position: relative;
+  transform: rotateY(180deg);
+}
+
+.team-card--flip .team-face--back {
+  background:
+    radial-gradient(120% 70% at 100% 0%, rgba(201, 162, 74, 0.16), transparent 60%),
+    linear-gradient(165deg, #0f2a52 0%, #0a1c3a 100%);
+}
+
+.team-card--flip .team-face--back::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-gold, #c9a24a), transparent);
+}
+
+.team-back-body {
+  padding: 1.5rem;
+}
+
+.team-back-bio {
+  font-size: 0.8125rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.team-back-label {
+  margin: 1.125rem 0 0.625rem;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-family: var(--font-heading, inherit);
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.team-back-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.team-back-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+.team-back-tags li {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.6875rem;
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 2px;
+}
+
+@media (max-width: 639px) {
+  .team-back-body {
+    padding: 1rem 0.875rem;
+  }
+
+  .team-back-bio {
+    font-size: 0.6875rem;
+    line-height: 1.55;
+  }
+
+  .team-back-tags li {
+    font-size: 0.625rem;
+    padding: 0.1875rem 0.375rem;
+  }
+}
+
+.team-card--flip:focus-visible {
+  outline: 2px solid var(--color-gold, #c9a24a);
+  outline-offset: 2px;
+}
+
+.team-card--flip.is-flipped .team-flip {
+  transform: rotateY(180deg);
+}
+
+@media (hover: hover) {
+  .team-card--flip:hover .team-flip {
+    transform: rotateY(180deg);
+  }
+}
+
+/* The front photo should grow to fill the taller card */
+.team-card--flip .team-face--front > .relative {
+  flex: 1 1 auto;
+  min-height: 10rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .team-card--flip .team-flip {
+    transition-duration: 0.01ms;
+  }
+}
+
 .team-card:hover img {
   transform: scale(1.05);
 }

@@ -48,7 +48,11 @@
                     $rawImg = $member['img'] ? ($images[$member['img']] ?? $member['img']) : null;
                     $memberImg = $rawImg ? (str_starts_with($rawImg, 'http') ? $rawImg : asset($rawImg)) : null;
                 @endphp
-                <div class="team-card w-[calc(50%-0.375rem)] sm:w-[calc(50%-0.75rem)] lg:w-[calc((100%-3rem)/3)] flex flex-col bg-white group overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                @php $flippable = !empty($member['bio']) || !empty($member['expertise']); @endphp
+                <div class="team-card w-[calc(50%-0.375rem)] sm:w-[calc(50%-0.75rem)] lg:w-[calc((100%-3rem)/3)] flex flex-col group hover:shadow-xl transition-shadow duration-300 {{ $flippable ? 'team-card--flip' : 'bg-white overflow-hidden' }}"
+                    @if($flippable) tabindex="0" role="button" aria-label="{{ $member['name'] }} — show details" aria-pressed="false" @endif>
+                <div class="{{ $flippable ? 'team-flip' : 'flex flex-col flex-1' }}">
+                <div class="{{ $flippable ? 'team-face team-face--front' : 'flex flex-col flex-1' }} flex flex-col bg-white">
                     <div class="relative h-40 sm:h-56 shrink-0 overflow-hidden" style="background:#fafafc">
                         @if($memberImg && !empty($member['cutout']))
                             {{-- Tightly cropped transparent PNG: scale and offset it to match the framing of the full photos --}}
@@ -62,6 +66,9 @@
                         @endif
                         <div class="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-navy-deep/40"></div>
                         <div class="team-bar absolute bottom-0 left-0 right-0 h-1 bg-gold origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></div>
+                        @if($flippable)
+                            <span class="team-flip-hint absolute top-2 right-2 bg-navy/85 text-white text-[9px] sm:text-[10px] font-heading font-bold uppercase tracking-widest px-2 py-1">View details</span>
+                        @endif
                     </div>
                     <div class="flex-1 flex flex-col p-4 sm:p-6 border-l-4 border-gold">
                         <h3 class="font-heading font-bold text-sm sm:text-lg mb-1 text-navy leading-snug">{{ $member['name'] }}</h3>
@@ -79,6 +86,27 @@
                             @endif
                         </div>
                     </div>
+                </div>
+                @if($flippable)
+                    <div class="team-face team-face--back text-white">
+                        <div>
+                            <div class="team-back-body">
+                                @if(!empty($member['bio']))
+                                    <p class="team-back-bio font-body">{{ $member['bio'] }}</p>
+                                @endif
+                                @if(!empty($member['expertise']))
+                                    <p class="team-back-label">Areas of Expertise</p>
+                                    <ul class="team-back-tags">
+                                        @foreach($member['expertise'] as $item)
+                                            <li>{{ $item }}</li>
+                                        @endforeach
+                                    </ul>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+                @endif
+                </div>
                 </div>
             @endforeach
         </div>
@@ -111,3 +139,18 @@
     </div>
 </section>
 @endsection
+
+@push('scripts')
+<script>
+    document.querySelectorAll('.team-card--flip').forEach(function (card) {
+        var toggle = function () {
+            var on = card.classList.toggle('is-flipped');
+            card.setAttribute('aria-pressed', on ? 'true' : 'false');
+        };
+        card.addEventListener('click', toggle);
+        card.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+        });
+    });
+</script>
+@endpush
