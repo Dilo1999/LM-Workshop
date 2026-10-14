@@ -2040,25 +2040,34 @@ body {
   }
 
   /* ─── Inner page hero ───────────────────────────────────────────────────── */
+  /* Hero banners are 1920×720 (8:3). Show the whole photo at full screen
+     width under the navbar, then fade it into navy behind the copy. */
   .section-hero {
+    --m-hero-img-h: calc(100vw * 0.375);
     min-height: 0;
     padding-top: 4rem;
-    background-position: center;
+    background-color: var(--color-navy-deep);
+    background-size: 100% auto;
+    background-position: center 4rem;
+    background-repeat: no-repeat;
   }
 
   .section-hero::before {
     background:
-      linear-gradient(180deg, rgba(2, 11, 22, 0.6) 0%, rgba(2, 11, 22, 0.78) 45%, rgba(2, 11, 22, 0.95) 100%);
+      linear-gradient(180deg,
+        rgba(7, 21, 41, 0.05) 0,
+        rgba(7, 21, 41, 0.12) calc(4rem + var(--m-hero-img-h) * 0.5),
+        rgba(7, 21, 41, 0.85) calc(4rem + var(--m-hero-img-h) * 0.88),
+        var(--color-navy-deep) calc(4rem + var(--m-hero-img-h)),
+        var(--color-navy-deep) 100%);
   }
 
   .section-hero::after {
-    background-size: 32px 32px;
-    mask-image: linear-gradient(180deg, #000 0%, transparent 70%);
-    opacity: 0.15;
+    display: none;
   }
 
   .section-hero .section-hero-container {
-    padding: 2.75rem 1.25rem 4rem;
+    padding: calc(var(--m-hero-img-h) - 1.25rem) 1.25rem 3.5rem;
   }
 
   .section-hero .section-eyebrow {
