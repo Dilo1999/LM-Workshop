@@ -2484,3 +2484,173 @@ body {
     transition: none;
   }
 }
+
+/* ─── Team page (phones): profile rows + tap-to-expand details ───────────── */
+@media (max-width: 767px) {
+  .team-cards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+  }
+
+  .team-cards-grid .team-card {
+    width: 100%;
+    border: 1px solid rgba(11, 31, 63, 0.07);
+    border-radius: var(--m-radius);
+    background: #ffffff;
+    overflow: hidden;
+    box-shadow: var(--m-shadow);
+    perspective: none;
+  }
+
+  /* No 3D flip on phones — the back face expands below the front instead */
+  .team-card--flip .team-flip,
+  .team-card--flip.is-flipped .team-flip,
+  .team-card--flip:hover .team-flip {
+    display: block;
+    transform: none;
+    transition: none;
+  }
+
+  .team-card--flip .team-face {
+    backface-visibility: visible;
+    -webkit-backface-visibility: visible;
+  }
+
+  .team-card--flip .team-face--back {
+    display: none;
+    transform: none;
+  }
+
+  .team-card--flip.is-flipped .team-face--back {
+    display: block;
+    animation: mFadeUp 0.35s ease both;
+  }
+
+  .team-card--flip .team-face--back::before {
+    background: linear-gradient(90deg, var(--m-accent), transparent);
+    height: 2px;
+  }
+
+  /* Front: photo left, details right */
+  .team-card > div > div:first-child {
+    flex-direction: row;
+    min-height: 8.5rem;
+  }
+
+  .team-card > div > div:first-child > .relative,
+  .team-card--flip .team-face--front > .relative {
+    flex: 0 0 7.25rem;
+    width: 7.25rem;
+    height: auto;
+    min-height: 8.5rem;
+  }
+
+  .team-card > div > div:first-child > div:last-child {
+    justify-content: center;
+    padding: 0.875rem 1rem;
+    border-left-width: 0;
+    min-width: 0;
+  }
+
+  .team-cards-grid .team-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .team-card h3 + p {
+    min-height: 0;
+    margin-bottom: 0.625rem;
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
+    color: var(--m-accent-deep);
+  }
+
+  .team-card .mt-auto {
+    margin-top: 0;
+  }
+
+  .team-card .mt-auto > div + div {
+    display: flex;
+  }
+
+  .team-card .mt-auto p {
+    min-height: 0;
+    font-size: 0.75rem;
+  }
+
+  /* Touch: drop hover-only decorations that would stick after a tap */
+  .team-card .team-bar,
+  .team-card .group-hover\:opacity-100,
+  .team-card .team-flip-hint {
+    display: none;
+  }
+
+  .team-card:hover img {
+    transform: none;
+    scale: 1;
+  }
+
+  /* “View profile” affordance on cards that have details */
+  .team-card--flip .team-face--front > div:last-child::after {
+    content: "View profile  +";
+    align-self: flex-start;
+    margin-top: 0.625rem;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    background: rgba(26, 122, 148, 0.1);
+    color: var(--m-accent-deep);
+    font-family: var(--font-heading);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    white-space: pre;
+  }
+
+  .team-card--flip.is-flipped .team-face--front > div:last-child::after {
+    content: "Hide profile  −";
+    background: var(--color-navy);
+    color: #ffffff;
+  }
+
+  .team-card--flip.is-flipped {
+    box-shadow: var(--m-shadow-lg);
+  }
+
+  /* Expanded details panel */
+  .team-back-body {
+    padding: 1.125rem 1.125rem 1.25rem;
+  }
+
+  .team-back-bio {
+    font-size: 0.8125rem;
+    line-height: 1.6;
+  }
+
+  .team-back-label {
+    margin-top: 1rem;
+  }
+
+  .team-back-tags li {
+    padding: 0.3rem 0.625rem;
+    border-radius: 999px;
+    font-size: 0.6875rem;
+  }
+
+  /* Intro stats as a tidy three-up strip */
+  .team-intro-stats {
+    gap: 0.5rem;
+  }
+
+  .team-intro-stats > div {
+    padding: 0.875rem 0.5rem;
+    border-radius: var(--m-radius-sm);
+    background: var(--color-cream);
+    text-align: center;
+  }
+
+  .team-intro-stats > div > div:last-child {
+    font-size: 0.625rem;
+    letter-spacing: 0.08em;
+  }
+}
